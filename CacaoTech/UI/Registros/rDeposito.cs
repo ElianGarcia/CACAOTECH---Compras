@@ -16,12 +16,33 @@ namespace CacaoTech.UI.Registros
     {
         GenericaBLL<Vendedores> genericaVendedorBLL;
         GenericaBLL<Cacao> genericaCacaoBLL;
+        public List<DepositosDetalle> depositosDetalles { get; set; }
         public rDeposito()
         {
             genericaVendedorBLL = new GenericaBLL<Vendedores>();
             genericaCacaoBLL = new GenericaBLL<Cacao>();
             InitializeComponent();
             LlenarCombos();
+            this.depositosDetalles = new List<DepositosDetalle>();
+            cargarGrid();
+        }
+
+        private void cargarGrid()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Depositos LlenaClase()
+        {
+            Depositos deposito = new Depositos();
+            deposito.DepositosDetalle = this.depositosDetalles;
+            return deposito;
+        }
+
+        private void LlenaCampos(Depositos deposito)
+        {
+            this.depositosDetalles = deposito.DepositosDetalle;
+            cargarGrid();
         }
 
         public void LlenarCombos()
@@ -51,7 +72,19 @@ namespace CacaoTech.UI.Registros
 
         private void AgregarDepositobutton_Click(object sender, EventArgs e)
         {
+            if(dataGridView.DataSource != null)
+            {
+                this.depositosDetalles = (List<DepositosDetalle>)dataGridView.DataSource;
+            }
 
+            this.depositosDetalles.Add(
+                new DepositosDetalle(
+                    TipoCacaocomboBox.SelectedIndex.ToString(),
+
+                );
+            TipoCacaocomboBox.Focus();
+            TipoCacaocomboBox.SelectedIndex = 0;
+            CantidadtextBox.Clear();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

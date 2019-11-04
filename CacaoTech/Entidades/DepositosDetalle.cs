@@ -15,5 +15,21 @@ namespace CacaoTech.Entidades
         public int CacaoID { get; set; }
         [ForeignKey("CacaoID")]
         public Cacao Cacao { get; set; }
+        public decimal Cantidad { get; set; }
+
+        public DepositosDetalle(int depositosDetalleID, int cacaoID, Cacao cacao, decimal cantidad)
+        {
+            DepositosDetalleID = depositosDetalleID;
+            CacaoID = cacaoID;
+            Cacao = cacao ?? throw new ArgumentNullException(nameof(cacao));
+            Cantidad = cantidad;
+        }
+
+        public DepositosDetalle(int cacaoID, Cacao cacao, decimal cantidad)
+        {
+            CacaoID = cacaoID;
+            Cacao = cacao ?? throw new ArgumentNullException(nameof(cacao));
+            Cantidad = cantidad;
+        }
     }
 }
