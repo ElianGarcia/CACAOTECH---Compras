@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace CacaoTech.Entidades
         [Key]
         public int ContratoID { get; set; }
         public int CacaoID { get; set; }
+        [ForeignKey("CacaoID")]
+        public Cacao Cacao { get; set; }
         public int CantidadCacao { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }

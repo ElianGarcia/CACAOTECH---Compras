@@ -8,10 +8,13 @@ create table Cacaos (
 	Tipo varchar(25)
 );
 
-insert into Cacaos(Precio, Tipo) Values (63660, 'HISPANIOLA ORGANICO')
-insert into Cacaos(Precio, Tipo) Values (6366.00, 'HISPANIOLA CONVENCIONAL')
-insert into Cacaos(Precio, Tipo) Values (3366.00, 'SANCHEZ ORGANICO')
-insert into Cacaos(Precio, Tipo) Values (6366.00, 'SANCHEZ CONVENCIONAL')
+if not exists (Select 1 from Cacaos)
+	Begin
+		insert into Cacaos(Precio, Tipo) Values (63660, 'HISPANIOLA ORGANICO')
+		insert into Cacaos(Precio, Tipo) Values (6366.00, 'HISPANIOLA CONVENCIONAL')
+		insert into Cacaos(Precio, Tipo) Values (3366.00, 'SANCHEZ ORGANICO')
+		insert into Cacaos(Precio, Tipo) Values (6366.00, 'SANCHEZ CONVENCIONAL')
+	end
 
 create table Vendedores (
 	VendedorID int primary key identity,

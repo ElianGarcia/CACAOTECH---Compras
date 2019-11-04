@@ -285,6 +285,7 @@
             this.MaximizeBox = false;
             this.Name = "rDeposito";
             this.Text = "Deposito";
+            this.Load += new System.EventHandler(this.rDeposito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

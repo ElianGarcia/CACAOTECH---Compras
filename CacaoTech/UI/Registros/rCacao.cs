@@ -43,6 +43,15 @@ namespace CacaoTech.UI.Registros
             return (cacao != null);
         }
 
+        public void LlenarCombo()
+        {
+            TipocomboBox.DataSource = null;
+            List<Cacao> lista = genericaBLL.GetList(p => true);
+            TipocomboBox.DataSource = lista;
+            TipocomboBox.DisplayMember = "Tipo";
+            TipocomboBox.ValueMember = "CacaoID";
+        }
+
         private Cacao LlenaClase()
         {
             Cacao cacao = new Cacao();
@@ -163,15 +172,6 @@ namespace CacaoTech.UI.Registros
             {
                 MessageBox.Show("No Encontrado");
             }
-        }
-
-        public void LlenarCombo()
-        {
-            TipocomboBox.DataSource = null;
-            List<Cacao> lista = genericaBLL.GetList(p => true);
-            TipocomboBox.DataSource = lista;
-            TipocomboBox.DisplayMember = "Tipo";
-            TipocomboBox.ValueMember = "CacaoID";
         }
 
         private void rCacao_Load(object sender, EventArgs e)
