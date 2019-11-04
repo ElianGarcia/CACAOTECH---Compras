@@ -31,26 +31,93 @@ namespace CacaoTech.UI.Registros
 
         private bool Existe()
         {
-            Cacao cacao = genericaBLL.Buscar((int)IDnumericUpDown.Value);
+            Vendedores vendedor = genericaBLL.Buscar((int)IDnumericUpDown.Value);
 
-            return (cacao != null);
+            return (vendedor != null);
         }
 
-        private Cacao LlenaClase()
+        private Vendedores LlenaClase()
         {
-            Cacao cacao = new Cacao();
-            cacao.CacaoID = Convert.ToInt32(IDnumericUpDown.Value);
-            cacao.Tipo = TipocomboBox.SelectedIndex.ToString();
-            cacao.Precio = PreciotextBox.Text;
+            Vendedores vendedor = new Vendedores();
+            vendedor.VendedorID = Convert.ToInt32(IDnumericUpDown.Value);
+            vendedor.Nombre = NombretextBox.Text;
+            vendedor.Apellidos = ApellidostextBox.Text;
+            vendedor.Email = ApellidostextBox.Text;
+            vendedor.Direccion = DirecciontextBox.Text;
+            vendedor.Telefono = TelefonomaskedTextBox.Text;
+            vendedor.Celular = CelularmaskedTextBox.Text;
 
-            return cacao;
+            return vendedor;
         }
 
-        private void LlenaCampos(Cacao cacao)
+        private void LlenaCampos(Vendedores vendedor)
         {
-            IDnumericUpDown.Value = cacao.CacaoID;
-            TipocomboBox.Text = cacao.Tipo;
-            PreciotextBox.Text = cacao.Precio;
+            IDnumericUpDown.Value = vendedor.VendedorID;
+            NombretextBox.Text = vendedor.Nombre;
+            ApellidostextBox.Text = vendedor.Apellidos;
+            ApellidostextBox.Text = vendedor.Email;
+            DirecciontextBox.Text = vendedor.Direccion;
+            TelefonomaskedTextBox.Text = vendedor.Telefono;
+            CelularmaskedTextBox.Text = vendedor.Celular;
+        }
+
+        private bool Validar()
+        {
+            bool realizado = true;
+            string obligatorio = "Este campo es obligatorio";
+
+            errorProvider.Clear();
+
+            if (string.IsNullOrWhiteSpace(IDnumericUpDown.Text))
+            {
+                errorProvider.SetError(IDnumericUpDown, obligatorio);
+                IDnumericUpDown.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(NombretextBox.Text))
+            {
+                errorProvider.SetError(NombretextBox, obligatorio);
+                NombretextBox.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(ApellidostextBox.Text))
+            {
+                errorProvider.SetError(ApellidostextBox, obligatorio);
+                ApellidostextBox.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(DirecciontextBox.Text))
+            {
+                errorProvider.SetError(DirecciontextBox, obligatorio);
+                DirecciontextBox.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(EmailtextBox.Text))
+            {
+                errorProvider.SetError(EmailtextBox, obligatorio);
+                EmailtextBox.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")))
+            {
+                errorProvider.SetError(CedulamaskedTextBox, obligatorio);
+                CedulamaskedTextBox.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")))
+            {
+                errorProvider.SetError(CelularmaskedTextBox, obligatorio);
+                CelularmaskedTextBox.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")))
+            {
+                errorProvider.SetError(TelefonomaskedTextBox, obligatorio);
+                TelefonomaskedTextBox.Focus();
+                realizado = false;
+            }
+
+            return realizado;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

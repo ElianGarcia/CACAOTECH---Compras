@@ -16,5 +16,30 @@ namespace CacaoTech.UI.Registros
         {
             InitializeComponent();
         }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgregarDepositobutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

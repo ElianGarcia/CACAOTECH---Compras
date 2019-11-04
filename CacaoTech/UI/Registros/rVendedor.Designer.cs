@@ -59,16 +59,16 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Eliminarbutton.FlatAppearance.BorderSize = 2;
             this.Eliminarbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
             this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(331, 222);
+            this.Eliminarbutton.Location = new System.Drawing.Point(331, 213);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(118, 56);
+            this.Eliminarbutton.Size = new System.Drawing.Size(118, 62);
             this.Eliminarbutton.TabIndex = 19;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -77,15 +77,15 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Guardarbutton.FlatAppearance.BorderSize = 2;
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Guardarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(169, 222);
+            this.Guardarbutton.Location = new System.Drawing.Point(169, 213);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(118, 56);
+            this.Guardarbutton.Size = new System.Drawing.Size(118, 62);
             this.Guardarbutton.TabIndex = 18;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -94,38 +94,38 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Nuevobutton.FlatAppearance.BorderSize = 2;
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Nuevobutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(9, 222);
+            this.Nuevobutton.Location = new System.Drawing.Point(9, 213);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(118, 56);
+            this.Nuevobutton.Size = new System.Drawing.Size(118, 62);
             this.Nuevobutton.TabIndex = 17;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Nuevobutton.UseVisualStyleBackColor = false;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click_1);
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.CustomFormat = "dd/mm/yyyy";
-            this.FechadateTimePicker.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.FechadateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(353, 14);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(346, 14);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(94, 22);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(101, 25);
             this.FechadateTimePicker.TabIndex = 24;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Buscarbutton.FlatAppearance.BorderSize = 2;
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(172, 3);
@@ -139,158 +139,158 @@
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.IDnumericUpDown.Location = new System.Drawing.Point(82, 12);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(73, 22);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(73, 25);
             this.IDnumericUpDown.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(292, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 18);
+            this.label2.Size = new System.Drawing.Size(48, 19);
             this.label2.TabIndex = 21;
             this.label2.Text = "Fecha:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(6, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 18);
+            this.label1.Size = new System.Drawing.Size(26, 19);
             this.label1.TabIndex = 20;
             this.label1.Text = "ID:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(6, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 18);
+            this.label3.Size = new System.Drawing.Size(63, 19);
             this.label3.TabIndex = 25;
             this.label3.Text = "Nombre:";
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.NombretextBox.Location = new System.Drawing.Point(84, 53);
+            this.NombretextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.NombretextBox.Location = new System.Drawing.Point(84, 54);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(365, 22);
+            this.NombretextBox.Size = new System.Drawing.Size(365, 25);
             this.NombretextBox.TabIndex = 26;
             // 
             // ApellidostextBox
             // 
-            this.ApellidostextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.ApellidostextBox.Location = new System.Drawing.Point(84, 81);
+            this.ApellidostextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.ApellidostextBox.Location = new System.Drawing.Point(84, 82);
             this.ApellidostextBox.Name = "ApellidostextBox";
-            this.ApellidostextBox.Size = new System.Drawing.Size(365, 22);
+            this.ApellidostextBox.Size = new System.Drawing.Size(365, 25);
             this.ApellidostextBox.TabIndex = 28;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(6, 84);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(6, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 18);
+            this.label4.Size = new System.Drawing.Size(70, 19);
             this.label4.TabIndex = 27;
             this.label4.Text = "Apellidos:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(6, 112);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(6, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 18);
+            this.label5.Size = new System.Drawing.Size(55, 19);
             this.label5.TabIndex = 29;
             this.label5.Text = "Cedula:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(274, 112);
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(274, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 18);
+            this.label6.Size = new System.Drawing.Size(66, 19);
             this.label6.TabIndex = 30;
             this.label6.Text = "Telefono:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(6, 140);
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(6, 141);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 18);
+            this.label7.Size = new System.Drawing.Size(57, 19);
             this.label7.TabIndex = 31;
             this.label7.Text = "Celular:";
             // 
             // CedulamaskedTextBox
             // 
-            this.CedulamaskedTextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.CedulamaskedTextBox.Location = new System.Drawing.Point(84, 109);
+            this.CedulamaskedTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.CedulamaskedTextBox.Location = new System.Drawing.Point(84, 110);
             this.CedulamaskedTextBox.Mask = "999-9999999-9";
             this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
-            this.CedulamaskedTextBox.Size = new System.Drawing.Size(105, 22);
+            this.CedulamaskedTextBox.Size = new System.Drawing.Size(105, 25);
             this.CedulamaskedTextBox.TabIndex = 32;
             // 
             // TelefonomaskedTextBox
             // 
-            this.TelefonomaskedTextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(350, 109);
+            this.TelefonomaskedTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(350, 110);
             this.TelefonomaskedTextBox.Mask = "999-999-9999";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
-            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(99, 22);
+            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(99, 25);
             this.TelefonomaskedTextBox.TabIndex = 33;
             // 
             // CelularmaskedTextBox
             // 
-            this.CelularmaskedTextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.CelularmaskedTextBox.Location = new System.Drawing.Point(84, 138);
+            this.CelularmaskedTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.CelularmaskedTextBox.Location = new System.Drawing.Point(84, 139);
             this.CelularmaskedTextBox.Mask = "999-999-9999";
             this.CelularmaskedTextBox.Name = "CelularmaskedTextBox";
-            this.CelularmaskedTextBox.Size = new System.Drawing.Size(88, 22);
+            this.CelularmaskedTextBox.Size = new System.Drawing.Size(88, 25);
             this.CelularmaskedTextBox.TabIndex = 34;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(183, 141);
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(183, 142);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 18);
+            this.label8.Size = new System.Drawing.Size(52, 19);
             this.label8.TabIndex = 35;
             this.label8.Text = "E-mail:";
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.EmailtextBox.Location = new System.Drawing.Point(247, 138);
+            this.EmailtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.EmailtextBox.Location = new System.Drawing.Point(247, 139);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(202, 22);
+            this.EmailtextBox.Size = new System.Drawing.Size(202, 25);
             this.EmailtextBox.TabIndex = 36;
             // 
             // DirecciontextBox
             // 
-            this.DirecciontextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.DirecciontextBox.Location = new System.Drawing.Point(84, 166);
+            this.DirecciontextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.DirecciontextBox.Location = new System.Drawing.Point(84, 167);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(365, 22);
+            this.DirecciontextBox.Size = new System.Drawing.Size(365, 25);
             this.DirecciontextBox.TabIndex = 38;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(6, 169);
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(6, 170);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 18);
+            this.label9.Size = new System.Drawing.Size(72, 19);
             this.label9.TabIndex = 37;
             this.label9.Text = "Direccion:";
             // 
@@ -303,8 +303,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(250)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(495, 296);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.ClientSize = new System.Drawing.Size(484, 284);
             this.Controls.Add(this.DirecciontextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.EmailtextBox);

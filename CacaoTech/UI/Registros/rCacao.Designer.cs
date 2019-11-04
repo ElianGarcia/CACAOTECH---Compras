@@ -48,48 +48,49 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 18);
+            this.label1.Size = new System.Drawing.Size(26, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDnumericUpDown.Location = new System.Drawing.Point(72, 18);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(90, 22);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(90, 25);
             this.IDnumericUpDown.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 18);
+            this.label2.Size = new System.Drawing.Size(40, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tipo:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 18);
+            this.label3.Size = new System.Drawing.Size(51, 19);
             this.label3.TabIndex = 6;
             this.label3.Text = "Precio:";
             // 
             // PreciotextBox
             // 
-            this.PreciotextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreciotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PreciotextBox.Location = new System.Drawing.Point(72, 87);
             this.PreciotextBox.Name = "PreciotextBox";
-            this.PreciotextBox.Size = new System.Drawing.Size(228, 22);
+            this.PreciotextBox.Size = new System.Drawing.Size(228, 25);
             this.PreciotextBox.TabIndex = 7;
+            this.PreciotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
             // 
             // errorProvider
             // 
@@ -98,18 +99,19 @@
             // 
             // TipocomboBox
             // 
+            this.TipocomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipocomboBox.FormattingEnabled = true;
             this.TipocomboBox.Location = new System.Drawing.Point(72, 58);
             this.TipocomboBox.Name = "TipocomboBox";
-            this.TipocomboBox.Size = new System.Drawing.Size(228, 21);
+            this.TipocomboBox.Size = new System.Drawing.Size(228, 25);
             this.TipocomboBox.TabIndex = 10;
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Eliminarbutton.FlatAppearance.BorderSize = 2;
             this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.Location = new System.Drawing.Point(221, 130);
@@ -123,10 +125,10 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Guardarbutton.FlatAppearance.BorderSize = 2;
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Guardarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.Location = new System.Drawing.Point(118, 130);
@@ -140,10 +142,10 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Nuevobutton.FlatAppearance.BorderSize = 2;
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Nuevobutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.Location = new System.Drawing.Point(16, 130);
@@ -157,10 +159,10 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Buscarbutton.FlatAppearance.BorderSize = 2;
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(203, 9);
@@ -176,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(250)))), ((int)(((byte)(241)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(337, 203);
             this.Controls.Add(this.TipocomboBox);
             this.Controls.Add(this.Eliminarbutton);
@@ -191,6 +193,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rCacao";
             this.Text = "Registro CACAO";
+            this.Load += new System.EventHandler(this.rCacao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

@@ -57,101 +57,102 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 18);
+            this.label1.Size = new System.Drawing.Size(26, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(325, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 18);
+            this.label2.Size = new System.Drawing.Size(48, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fecha:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(13, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 18);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Vendedor:";
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.IDnumericUpDown.Location = new System.Drawing.Point(111, 11);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(73, 22);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(73, 25);
             this.IDnumericUpDown.TabIndex = 3;
             // 
             // VendedorescomboBox
             // 
+            this.VendedorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.VendedorescomboBox.FormattingEnabled = true;
             this.VendedorescomboBox.Location = new System.Drawing.Point(111, 53);
             this.VendedorescomboBox.Name = "VendedorescomboBox";
-            this.VendedorescomboBox.Size = new System.Drawing.Size(368, 21);
+            this.VendedorescomboBox.Size = new System.Drawing.Size(368, 25);
             this.VendedorescomboBox.TabIndex = 6;
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.CustomFormat = "dd/mm/yyyy";
-            this.FechadateTimePicker.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.FechadateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechadateTimePicker.Location = new System.Drawing.Point(380, 13);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(99, 22);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(99, 25);
             this.FechadateTimePicker.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(13, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 18);
+            this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 8;
             this.label4.Text = "Tipo de cacao:";
             // 
             // TipoCacaocomboBox
             // 
-            this.TipoCacaocomboBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.TipoCacaocomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.TipoCacaocomboBox.FormattingEnabled = true;
             this.TipoCacaocomboBox.Location = new System.Drawing.Point(111, 96);
             this.TipoCacaocomboBox.Name = "TipoCacaocomboBox";
-            this.TipoCacaocomboBox.Size = new System.Drawing.Size(142, 26);
+            this.TipoCacaocomboBox.Size = new System.Drawing.Size(142, 25);
             this.TipoCacaocomboBox.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(261, 99);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 18);
+            this.label5.Size = new System.Drawing.Size(68, 19);
             this.label5.TabIndex = 10;
             this.label5.Text = "Cantidad:";
             // 
             // CantidadtextBox
             // 
-            this.CantidadtextBox.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.CantidadtextBox.Location = new System.Drawing.Point(328, 96);
             this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(100, 22);
+            this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
             this.CantidadtextBox.TabIndex = 11;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView);
-            this.groupBox1.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(16, 136);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(463, 156);
@@ -161,10 +162,10 @@
             // 
             // AgregarDepositobutton
             // 
-            this.AgregarDepositobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.AgregarDepositobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.AgregarDepositobutton.FlatAppearance.BorderSize = 2;
             this.AgregarDepositobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AgregarDepositobutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgregarDepositobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.AgregarDepositobutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AgregarDepositobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
             this.AgregarDepositobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -174,13 +175,14 @@
             this.AgregarDepositobutton.TabIndex = 13;
             this.AgregarDepositobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarDepositobutton.UseVisualStyleBackColor = false;
+            this.AgregarDepositobutton.Click += new System.EventHandler(this.AgregarDepositobutton_Click);
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Buscarbutton.FlatAppearance.BorderSize = 2;
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(205, 2);
@@ -190,9 +192,11 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // dataGridView
             // 
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(0, 21);
             this.dataGridView.Name = "dataGridView";
@@ -201,51 +205,54 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Eliminarbutton.FlatAppearance.BorderSize = 2;
             this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.Location = new System.Drawing.Point(361, 307);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(118, 56);
+            this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
             this.Eliminarbutton.TabIndex = 16;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Guardarbutton.FlatAppearance.BorderSize = 2;
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Guardarbutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.Location = new System.Drawing.Point(187, 307);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(118, 56);
+            this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
             this.Guardarbutton.TabIndex = 15;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
+            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Nuevobutton.FlatAppearance.BorderSize = 2;
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Nuevobutton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.Location = new System.Drawing.Point(16, 307);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(118, 56);
+            this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
             this.Nuevobutton.TabIndex = 14;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Nuevobutton.UseVisualStyleBackColor = false;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // errorProvider
             // 
@@ -256,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(250)))), ((int)(((byte)(241)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(528, 379);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);

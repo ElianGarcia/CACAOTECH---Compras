@@ -12,18 +12,18 @@ namespace CacaoTech.Entidades
         [Key]
         public int CacaoID { get; set; }
         public string Tipo { get; set; }
-        public string Precio { get; set; }
+        public decimal Precio { get; set; }
 
         public Cacao()
         {
 
         }
 
-        public Cacao(int cacaoID, string tipo, string precio)
+        public Cacao(int cacaoID, string tipo, decimal precio)
         {
             CacaoID = cacaoID;
             Tipo = tipo ?? throw new ArgumentNullException(nameof(tipo));
-            Precio = precio ?? throw new ArgumentNullException(nameof(precio));
+            Precio = precio;
         }
     }
 }

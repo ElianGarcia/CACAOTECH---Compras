@@ -13,6 +13,11 @@ namespace CacaoTech.BLL
     {
         internal Contexto db;
 
+        public GenericaBLL()
+        {
+            this.db = new Contexto();
+        }
+
         public T Buscar(int id)
         {
             T entity;
@@ -56,6 +61,7 @@ namespace CacaoTech.BLL
         public List<T> GetList(Expression<Func<T, bool>> expression)
         {
             List<T> Listado = new List<T>();
+            db = new Contexto();
 
             try
             {
