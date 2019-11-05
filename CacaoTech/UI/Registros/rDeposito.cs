@@ -100,7 +100,7 @@ namespace CacaoTech.UI.Registros
             Contexto db = new Contexto();
             Cacao cacao;
 
-            if(dataGridView.DataSource != null)
+            if (dataGridView.DataSource != null)
             {
                 this.depositosDetalles = (List<DepositosDetalle>)dataGridView.DataSource;
             }
@@ -232,6 +232,37 @@ namespace CacaoTech.UI.Registros
         private void rDeposito_Load(object sender, EventArgs e)
         {
             LlenarCombos();
+        }
+
+        private void TipoCacaocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Cacao> Lista = new List<Cacao>();
+            Cacao cacao = new Cacao();
+            decimal precio;
+
+            int opcion = Convert.ToInt32(TipoCacaocomboBox.SelectedIndex);
+            cacao = genericaCacaoBLL.Buscar(opcion);
+            if (cacao != null)
+            {
+                precio = cacao.Precio;
+                PreciotextBox.Text = cacao.Precio.ToString();
+            }
+        }
+
+        private Decimal ToDecimal(string valor)
+        {
+            decimal resultado = 0;
+            decimal.TryParse(valor, out resultado);
+
+            return resultado;
+        }
+
+        private void CantidadtextBox_TextChanged(object sender, EventArgs e)
+        {
+            decimal cantidad = ToDecimal(CantidadtextBox.Text);
+            decimal precio = ToDecimal(PreciotextBox.Text);
+
+            ImportetextBox.Text = Convert.ToString(precio * Convert.ToDecimal(cantidad));
         }
     }
 }

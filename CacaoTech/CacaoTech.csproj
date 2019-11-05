@@ -85,6 +85,12 @@
     <Compile Include="UI\Registros\rCacao.Designer.cs">
       <DependentUpon>rCacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rContrato.Designer.cs">
+      <DependentUpon>rContrato.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rDeposito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCacao.resx">
       <DependentUpon>rCacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rContrato.resx">
+      <DependentUpon>rContrato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rDeposito.resx">
       <DependentUpon>rDeposito.cs</DependentUpon>

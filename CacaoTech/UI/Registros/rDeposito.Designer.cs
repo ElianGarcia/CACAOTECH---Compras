@@ -42,12 +42,16 @@
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.AgregarDepositobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.PreciotextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ImportetextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.AgregarDepositobutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -94,6 +98,7 @@
             // 
             // VendedorescomboBox
             // 
+            this.VendedorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.VendedorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.VendedorescomboBox.FormattingEnabled = true;
             this.VendedorescomboBox.Location = new System.Drawing.Point(111, 53);
@@ -105,6 +110,7 @@
             // 
             this.FechadateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Enabled = false;
             this.FechadateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechadateTimePicker.Location = new System.Drawing.Point(380, 13);
@@ -124,12 +130,14 @@
             // 
             // TipoCacaocomboBox
             // 
+            this.TipoCacaocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoCacaocomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.TipoCacaocomboBox.FormattingEnabled = true;
             this.TipoCacaocomboBox.Location = new System.Drawing.Point(111, 96);
             this.TipoCacaocomboBox.Name = "TipoCacaocomboBox";
             this.TipoCacaocomboBox.Size = new System.Drawing.Size(142, 25);
             this.TipoCacaocomboBox.TabIndex = 9;
+            this.TipoCacaocomboBox.SelectedIndexChanged += new System.EventHandler(this.TipoCacaocomboBox_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -148,12 +156,13 @@
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
             this.CantidadtextBox.TabIndex = 11;
+            this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(16, 136);
+            this.groupBox1.Location = new System.Drawing.Point(16, 163);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(463, 156);
             this.groupBox1.TabIndex = 12;
@@ -169,6 +178,100 @@
             this.dataGridView.Size = new System.Drawing.Size(463, 135);
             this.dataGridView.TabIndex = 0;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
+            // 
+            // PreciotextBox
+            // 
+            this.PreciotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.PreciotextBox.Location = new System.Drawing.Point(111, 128);
+            this.PreciotextBox.Name = "PreciotextBox";
+            this.PreciotextBox.ReadOnly = true;
+            this.PreciotextBox.Size = new System.Drawing.Size(100, 25);
+            this.PreciotextBox.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(13, 131);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 19);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Precio:";
+            // 
+            // ImportetextBox
+            // 
+            this.ImportetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.ImportetextBox.Location = new System.Drawing.Point(302, 131);
+            this.ImportetextBox.Name = "ImportetextBox";
+            this.ImportetextBox.ReadOnly = true;
+            this.ImportetextBox.Size = new System.Drawing.Size(127, 25);
+            this.ImportetextBox.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(235, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 19);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Importe:";
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Eliminarbutton.FlatAppearance.BorderSize = 2;
+            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Eliminarbutton.Location = new System.Drawing.Point(361, 334);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
+            this.Eliminarbutton.TabIndex = 16;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Guardarbutton.FlatAppearance.BorderSize = 2;
+            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Guardarbutton.Location = new System.Drawing.Point(187, 334);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
+            this.Guardarbutton.TabIndex = 15;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Nuevobutton.FlatAppearance.BorderSize = 2;
+            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Nuevobutton.Location = new System.Drawing.Point(16, 334);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
+            this.Nuevobutton.TabIndex = 14;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Nuevobutton.UseVisualStyleBackColor = false;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
             // AgregarDepositobutton
             // 
             this.AgregarDepositobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
@@ -178,9 +281,9 @@
             this.AgregarDepositobutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AgregarDepositobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
             this.AgregarDepositobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarDepositobutton.Location = new System.Drawing.Point(434, 88);
+            this.AgregarDepositobutton.Location = new System.Drawing.Point(435, 96);
             this.AgregarDepositobutton.Name = "AgregarDepositobutton";
-            this.AgregarDepositobutton.Size = new System.Drawing.Size(45, 40);
+            this.AgregarDepositobutton.Size = new System.Drawing.Size(45, 60);
             this.AgregarDepositobutton.TabIndex = 13;
             this.AgregarDepositobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarDepositobutton.UseVisualStyleBackColor = false;
@@ -203,68 +306,16 @@
             this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Eliminarbutton.FlatAppearance.BorderSize = 2;
-            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
-            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(361, 307);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
-            this.Eliminarbutton.TabIndex = 16;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.UseVisualStyleBackColor = false;
-            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Guardarbutton.FlatAppearance.BorderSize = 2;
-            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
-            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(187, 307);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
-            this.Guardarbutton.TabIndex = 15;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.UseVisualStyleBackColor = false;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Nuevobutton.FlatAppearance.BorderSize = 2;
-            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(16, 307);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
-            this.Nuevobutton.TabIndex = 14;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.UseVisualStyleBackColor = false;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
-            // 
             // rDeposito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(528, 379);
+            this.ClientSize = new System.Drawing.Size(528, 416);
+            this.Controls.Add(this.ImportetextBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.PreciotextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -315,5 +366,9 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox ImportetextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox PreciotextBox;
+        private System.Windows.Forms.Label label6;
     }
 }

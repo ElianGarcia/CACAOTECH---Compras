@@ -81,6 +81,7 @@
             // 
             // cbFiltrar
             // 
+            this.cbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFiltrar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.cbFiltrar.FormattingEnabled = true;
             this.cbFiltrar.Items.AddRange(new object[] {
