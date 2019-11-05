@@ -13,8 +13,8 @@ namespace CacaoTech.Entidades
         [Key]
         public int ContratoID { get; set; }
         public int CacaoID { get; set; }
-        [ForeignKey("CacaoID")]
-        public Cacao Cacao { get; set; }
+        /*[ForeignKey("CacaoID")]
+        public Cacao Cacao { get; set; }*/
         public int CantidadCacao { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
