@@ -12,7 +12,6 @@ namespace CacaoTech.Entidades
     {
         public int ContratosDetalleID { get; set; }
         public int CacaoID { get; set; }
-        public DateTime Fecha { get; set; }
         //[ForeignKey("CacaoID")]
         //public Cacao Cacao { get; set; }
         public decimal Cantidad { get; set; }
@@ -24,11 +23,10 @@ namespace CacaoTech.Entidades
             Precio = precio;
         }
 
-        public ContratosDetalle(int contratosDetalleID, int cacaoID, DateTime fecha, decimal cantidad, decimal precio)
+        public ContratosDetalle(int contratosDetalleID, int cacaoID, decimal cantidad, decimal precio)
         {
             ContratosDetalleID = contratosDetalleID;
             CacaoID = cacaoID;
-            Fecha = fecha;
             Cantidad = cantidad;
             Precio = precio;
         }

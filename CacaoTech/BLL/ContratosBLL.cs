@@ -40,10 +40,10 @@ namespace CacaoTech.BLL
 
             try
             {
-                var Anterior = db.Deposito.Find(contrato.ContratoID);
-                foreach(var item in Anterior.DepositosDetalle)
+                var Anterior = db.Contrato.Find(contrato.ContratoID);
+                foreach(var item in Anterior.ContratosDetalle)
                 {
-                    if (!contrato.DepositosDetalle.Exists(d => d.DepositosDetalleID == item.DepositosDetalleID))
+                    if (!contrato.ContratosDetalle.Exists(d => d.ContratosDetalleID == item.ContratosDetalleID))
                         db.Entry(item).State = EntityState.Deleted;
                 }
                 db.Entry(contrato).State = EntityState.Modified;
@@ -91,7 +91,7 @@ namespace CacaoTech.BLL
             try
             {
                 contrato = db.Contrato.Find(ID);
-                contrato.ContratoDetalle.Count();
+                contrato.ContratosDetalle.Count();
             }
             catch (Exception)
             {

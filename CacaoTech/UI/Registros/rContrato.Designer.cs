@@ -42,14 +42,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TipoCacaocomboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.VendedorescomboBox = new System.Windows.Forms.ComboBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.FechaFindateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.FechaIniciodateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.VendedorescomboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
@@ -59,7 +61,7 @@
             // PreciotextBox
             // 
             this.PreciotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.PreciotextBox.Location = new System.Drawing.Point(103, 120);
+            this.PreciotextBox.Location = new System.Drawing.Point(119, 53);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(317, 25);
             this.PreciotextBox.TabIndex = 38;
@@ -68,7 +70,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(5, 123);
+            this.label6.Location = new System.Drawing.Point(8, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 19);
             this.label6.TabIndex = 37;
@@ -82,9 +84,9 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(353, 297);
+            this.Eliminarbutton.Location = new System.Drawing.Point(376, 326);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
+            this.Eliminarbutton.Size = new System.Drawing.Size(130, 60);
             this.Eliminarbutton.TabIndex = 36;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -99,9 +101,9 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(179, 297);
+            this.Guardarbutton.Location = new System.Drawing.Point(193, 326);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
+            this.Guardarbutton.Size = new System.Drawing.Size(130, 60);
             this.Guardarbutton.TabIndex = 35;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -116,9 +118,9 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(8, 297);
+            this.Nuevobutton.Location = new System.Drawing.Point(9, 326);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
+            this.Nuevobutton.Size = new System.Drawing.Size(130, 60);
             this.Nuevobutton.TabIndex = 34;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -134,7 +136,7 @@
             this.AgregarTipobutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AgregarTipobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
             this.AgregarTipobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarTipobutton.Location = new System.Drawing.Point(427, 88);
+            this.AgregarTipobutton.Location = new System.Drawing.Point(443, 21);
             this.AgregarTipobutton.Name = "AgregarTipobutton";
             this.AgregarTipobutton.Size = new System.Drawing.Size(45, 60);
             this.AgregarTipobutton.TabIndex = 33;
@@ -145,27 +147,34 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView);
+            this.groupBox1.Controls.Add(this.TipoCacaocomboBox);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.CantidadtextBox);
+            this.groupBox1.Controls.Add(this.AgregarTipobutton);
+            this.groupBox1.Controls.Add(this.PreciotextBox);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(8, 151);
+            this.groupBox1.Location = new System.Drawing.Point(9, 113);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(463, 127);
+            this.groupBox1.Size = new System.Drawing.Size(497, 189);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Contratos:";
+            this.groupBox1.Text = "Contratos";
             // 
             // dataGridView
             // 
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 21);
+            this.dataGridView.Location = new System.Drawing.Point(0, 87);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(463, 102);
+            this.dataGridView.Size = new System.Drawing.Size(497, 102);
             this.dataGridView.TabIndex = 0;
             // 
             // CantidadtextBox
             // 
             this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.CantidadtextBox.Location = new System.Drawing.Point(320, 88);
+            this.CantidadtextBox.Location = new System.Drawing.Point(336, 21);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
             this.CantidadtextBox.TabIndex = 31;
@@ -174,7 +183,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(253, 91);
+            this.label5.Location = new System.Drawing.Point(269, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 19);
             this.label5.TabIndex = 30;
@@ -185,7 +194,7 @@
             this.TipoCacaocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoCacaocomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.TipoCacaocomboBox.FormattingEnabled = true;
-            this.TipoCacaocomboBox.Location = new System.Drawing.Point(103, 88);
+            this.TipoCacaocomboBox.Location = new System.Drawing.Point(119, 21);
             this.TipoCacaocomboBox.Name = "TipoCacaocomboBox";
             this.TipoCacaocomboBox.Size = new System.Drawing.Size(142, 25);
             this.TipoCacaocomboBox.TabIndex = 29;
@@ -194,33 +203,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(5, 91);
+            this.label4.Location = new System.Drawing.Point(8, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 28;
             this.label4.Text = "Tipo de cacao:";
-            // 
-            // FechadateTimePicker
-            // 
-            this.FechadateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechadateTimePicker.Enabled = false;
-            this.FechadateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(372, 16);
-            this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(99, 25);
-            this.FechadateTimePicker.TabIndex = 27;
-            // 
-            // VendedorescomboBox
-            // 
-            this.VendedorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.VendedorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.VendedorescomboBox.FormattingEnabled = true;
-            this.VendedorescomboBox.Location = new System.Drawing.Point(103, 54);
-            this.VendedorescomboBox.Name = "VendedorescomboBox";
-            this.VendedorescomboBox.Size = new System.Drawing.Size(368, 25);
-            this.VendedorescomboBox.TabIndex = 26;
             // 
             // Buscarbutton
             // 
@@ -230,7 +217,7 @@
             this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(197, 5);
+            this.Buscarbutton.Location = new System.Drawing.Point(223, 4);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(97, 40);
             this.Buscarbutton.TabIndex = 25;
@@ -242,30 +229,10 @@
             // IDnumericUpDown
             // 
             this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.IDnumericUpDown.Location = new System.Drawing.Point(103, 14);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(116, 14);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(73, 25);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(88, 25);
             this.IDnumericUpDown.TabIndex = 24;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(5, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 19);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Vendedor:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(317, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 19);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Fecha:";
             // 
             // label1
             // 
@@ -282,33 +249,93 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // FechaFindateTimePicker
+            // 
+            this.FechaFindateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.FechaFindateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaFindateTimePicker.Enabled = false;
+            this.FechaFindateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.FechaFindateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaFindateTimePicker.Location = new System.Drawing.Point(394, 51);
+            this.FechaFindateTimePicker.Name = "FechaFindateTimePicker";
+            this.FechaFindateTimePicker.Size = new System.Drawing.Size(112, 25);
+            this.FechaFindateTimePicker.TabIndex = 40;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(293, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 19);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Fecha de fin:";
+            // 
+            // FechaIniciodateTimePicker
+            // 
+            this.FechaIniciodateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.FechaIniciodateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaIniciodateTimePicker.Enabled = false;
+            this.FechaIniciodateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.FechaIniciodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(116, 51);
+            this.FechaIniciodateTimePicker.Name = "FechaIniciodateTimePicker";
+            this.FechaIniciodateTimePicker.Size = new System.Drawing.Size(101, 25);
+            this.FechaIniciodateTimePicker.TabIndex = 42;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(5, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 19);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Fecha de inicio:";
+            // 
+            // VendedorescomboBox
+            // 
+            this.VendedorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VendedorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.VendedorescomboBox.FormattingEnabled = true;
+            this.VendedorescomboBox.Location = new System.Drawing.Point(116, 82);
+            this.VendedorescomboBox.Name = "VendedorescomboBox";
+            this.VendedorescomboBox.Size = new System.Drawing.Size(390, 25);
+            this.VendedorescomboBox.TabIndex = 44;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(5, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 19);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "Vendedor:";
+            // 
             // rContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(508, 366);
-            this.Controls.Add(this.PreciotextBox);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(546, 396);
+            this.Controls.Add(this.VendedorescomboBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.FechaIniciodateTimePicker);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.FechaFindateTimePicker);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.AgregarTipobutton);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.CantidadtextBox);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.TipoCacaocomboBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.FechadateTimePicker);
-            this.Controls.Add(this.VendedorescomboBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.IDnumericUpDown);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "rContrato";
             this.Text = "Nuevo Contrato";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
@@ -331,13 +358,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox TipoCacaocomboBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
-        private System.Windows.Forms.ComboBox VendedorescomboBox;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ComboBox VendedorescomboBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker FechaIniciodateTimePicker;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker FechaFindateTimePicker;
+        private System.Windows.Forms.Label label2;
     }
 }
