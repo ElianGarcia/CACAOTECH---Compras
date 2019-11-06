@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CacaoTech.DAL;
+using CacaoTech.UI.Consultas;
 
 namespace CacaoTech
 {
@@ -60,6 +61,12 @@ namespace CacaoTech
             Process ejecutar = new Process();
             ejecutar.StartInfo = cmd;
             ejecutar.Start();
+        }
+
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cVendedores consultaVendedores = new cVendedores();
+            consultaVendedores.ShowDialog();
         }
     }
 }

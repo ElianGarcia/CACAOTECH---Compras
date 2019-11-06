@@ -157,6 +157,7 @@
             this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
             this.CantidadtextBox.TabIndex = 11;
             this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
+            this.CantidadtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadtextBox_KeyPress);
             // 
             // groupBox1
             // 

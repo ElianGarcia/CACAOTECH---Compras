@@ -16,6 +16,7 @@ namespace CacaoTech.Entidades
         //public Cacao Cacao { get; set; }
         public decimal Cantidad { get; set; }
         public decimal Precio { get; set; }
+        public decimal Monto { get; set; }
 
         public ContratosDetalle(decimal cantidad, decimal precio)
         {
@@ -29,6 +30,13 @@ namespace CacaoTech.Entidades
             CacaoID = cacaoID;
             Cantidad = cantidad;
             Precio = precio;
+        }
+
+        public ContratosDetalle(string cacao, decimal cantidad, decimal precio, decimal monto)
+        {
+            Cantidad = cantidad;
+            Precio = precio;
+            Monto = monto;
         }
     }
 }

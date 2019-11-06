@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rContrato));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
@@ -38,10 +39,10 @@
             this.AgregarTipobutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.CantidadtextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.TipoCacaocomboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CantidadtextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +53,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.VendedorescomboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Quitarbutton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
@@ -65,6 +71,7 @@
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(317, 25);
             this.PreciotextBox.TabIndex = 38;
+            this.PreciotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
             // 
             // label6
             // 
@@ -166,28 +173,17 @@
             // 
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 87);
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Quitarbutton,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dataGridView.Location = new System.Drawing.Point(0, 84);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(497, 102);
             this.dataGridView.TabIndex = 0;
-            // 
-            // CantidadtextBox
-            // 
-            this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.CantidadtextBox.Location = new System.Drawing.Point(336, 21);
-            this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
-            this.CantidadtextBox.TabIndex = 31;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(269, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 19);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Cantidad:";
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // TipoCacaocomboBox
             // 
@@ -208,6 +204,25 @@
             this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 28;
             this.label4.Text = "Tipo de cacao:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(269, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 19);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Cantidad:";
+            // 
+            // CantidadtextBox
+            // 
+            this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.CantidadtextBox.Location = new System.Drawing.Point(336, 21);
+            this.CantidadtextBox.Name = "CantidadtextBox";
+            this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
+            this.CantidadtextBox.TabIndex = 31;
+            this.CantidadtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadtextBox_KeyPress);
             // 
             // Buscarbutton
             // 
@@ -313,6 +328,38 @@
             this.label3.TabIndex = 43;
             this.label3.Text = "Vendedor:";
             // 
+            // Quitarbutton
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Quitarbutton.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Quitarbutton.FillWeight = 50F;
+            this.Quitarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Quitarbutton.HeaderText = "Quitar";
+            this.Quitarbutton.Name = "Quitarbutton";
+            this.Quitarbutton.Text = "-";
+            this.Quitarbutton.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tipo";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Precio";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Cantidad";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Monto";
+            this.Column4.Name = "Column4";
+            // 
             // rContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,5 +415,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker FechaFindateTimePicker;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewButtonColumn Quitarbutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

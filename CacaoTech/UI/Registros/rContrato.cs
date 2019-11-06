@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,7 +85,8 @@ namespace CacaoTech.UI.Registros
             IDnumericUpDown.Value = 0;
             VendedorescomboBox.Text = string.Empty;
             TipoCacaocomboBox.Text = string.Empty;
-            FechadateTimePicker.Value = DateTime.Now;
+            FechaIniciodateTimePicker.Value = DateTime.Now;
+            FechaFindateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
             errorProvider.Clear();
             //this.depositosDetalles = new List<DepositosDetalle>();
@@ -183,6 +185,40 @@ namespace CacaoTech.UI.Registros
             else
             {
                 errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un deposito inexistente");
+            }
+        }
+
+        private void PreciotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cultureInfo.NumberFormat.NumberDecimalSeparator)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cultureInfo.NumberFormat.NumberDecimalSeparator)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridView.CurrentCell.ColumnIndex == 0)
+            {
+                if (dataGridView.Rows.Count > 0 && dataGridView.CurrentRow != null)
+                {
+                    decimal valorEliminar = Convert.ToDecimal(dataGridView.CurrentRow.Cells[4].Value);
+                    //todo: calcular monto total
+                    contratosDetalle.RemoveAt(dataGridView.CurrentRow.Index);
+                    CargarGrid();
+                }
             }
         }
     }
