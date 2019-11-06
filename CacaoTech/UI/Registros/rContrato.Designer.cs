@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rContrato));
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.AgregarDepositobutton = new System.Windows.Forms.Button();
+            this.AgregarTipobutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
@@ -47,9 +49,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // PreciotextBox
@@ -57,10 +61,8 @@
             this.PreciotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.PreciotextBox.Location = new System.Drawing.Point(103, 120);
             this.PreciotextBox.Name = "PreciotextBox";
-            this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(317, 25);
             this.PreciotextBox.TabIndex = 38;
-            this.PreciotextBox.TextChanged += new System.EventHandler(this.PreciotextBox_TextChanged);
             // 
             // label6
             // 
@@ -80,13 +82,14 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(353, 328);
+            this.Eliminarbutton.Location = new System.Drawing.Point(353, 297);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
             this.Eliminarbutton.TabIndex = 36;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -96,13 +99,14 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(179, 328);
+            this.Guardarbutton.Location = new System.Drawing.Point(179, 297);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
             this.Guardarbutton.TabIndex = 35;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -112,30 +116,31 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(8, 328);
+            this.Nuevobutton.Location = new System.Drawing.Point(8, 297);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
             this.Nuevobutton.TabIndex = 34;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Nuevobutton.UseVisualStyleBackColor = false;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // AgregarDepositobutton
+            // AgregarTipobutton
             // 
-            this.AgregarDepositobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.AgregarDepositobutton.FlatAppearance.BorderSize = 2;
-            this.AgregarDepositobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AgregarDepositobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.AgregarDepositobutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AgregarDepositobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
-            this.AgregarDepositobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarDepositobutton.Location = new System.Drawing.Point(427, 88);
-            this.AgregarDepositobutton.Name = "AgregarDepositobutton";
-            this.AgregarDepositobutton.Size = new System.Drawing.Size(45, 60);
-            this.AgregarDepositobutton.TabIndex = 33;
-            this.AgregarDepositobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AgregarDepositobutton.UseVisualStyleBackColor = false;
-            this.AgregarDepositobutton.Click += new System.EventHandler(this.AgregarDepositobutton_Click);
+            this.AgregarTipobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.AgregarTipobutton.FlatAppearance.BorderSize = 2;
+            this.AgregarTipobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AgregarTipobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.AgregarTipobutton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AgregarTipobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
+            this.AgregarTipobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AgregarTipobutton.Location = new System.Drawing.Point(427, 88);
+            this.AgregarTipobutton.Name = "AgregarTipobutton";
+            this.AgregarTipobutton.Size = new System.Drawing.Size(45, 60);
+            this.AgregarTipobutton.TabIndex = 33;
+            this.AgregarTipobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AgregarTipobutton.UseVisualStyleBackColor = false;
+            this.AgregarTipobutton.Click += new System.EventHandler(this.AgregarDepositobutton_Click);
             // 
             // groupBox1
             // 
@@ -143,10 +148,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(8, 151);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(463, 156);
+            this.groupBox1.Size = new System.Drawing.Size(463, 127);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Depositos:";
+            this.groupBox1.Text = "Contratos:";
             // 
             // dataGridView
             // 
@@ -154,7 +159,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(0, 21);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(463, 135);
+            this.dataGridView.Size = new System.Drawing.Size(463, 102);
             this.dataGridView.TabIndex = 0;
             // 
             // CantidadtextBox
@@ -164,7 +169,6 @@
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
             this.CantidadtextBox.TabIndex = 31;
-            this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
             // 
             // label5
             // 
@@ -185,7 +189,6 @@
             this.TipoCacaocomboBox.Name = "TipoCacaocomboBox";
             this.TipoCacaocomboBox.Size = new System.Drawing.Size(142, 25);
             this.TipoCacaocomboBox.TabIndex = 29;
-            this.TipoCacaocomboBox.SelectedIndexChanged += new System.EventHandler(this.TipoCacaocomboBox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -218,7 +221,6 @@
             this.VendedorescomboBox.Name = "VendedorescomboBox";
             this.VendedorescomboBox.Size = new System.Drawing.Size(368, 25);
             this.VendedorescomboBox.TabIndex = 26;
-            this.VendedorescomboBox.SelectedIndexChanged += new System.EventHandler(this.VendedorescomboBox_SelectedIndexChanged);
             // 
             // Buscarbutton
             // 
@@ -235,6 +237,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // IDnumericUpDown
             // 
@@ -274,18 +277,23 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "ID:";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
+            // 
             // rContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(508, 404);
+            this.ClientSize = new System.Drawing.Size(508, 366);
             this.Controls.Add(this.PreciotextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.AgregarDepositobutton);
+            this.Controls.Add(this.AgregarTipobutton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CantidadtextBox);
             this.Controls.Add(this.label5);
@@ -299,10 +307,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "rContrato";
-            this.Text = "rContrato";
+            this.Text = "Nuevo Contrato";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,7 +324,7 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.Button AgregarDepositobutton;
+        private System.Windows.Forms.Button AgregarTipobutton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TextBox CantidadtextBox;
@@ -329,5 +338,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

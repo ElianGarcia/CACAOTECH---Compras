@@ -27,6 +27,10 @@ namespace CacaoTech.UI.Registros
             IDnumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
             ApellidostextBox.Text = string.Empty;
+            EmailtextBox.Text = string.Empty;
+            DirecciontextBox.Text = string.Empty;
+            TelefonomaskedTextBox.Text = string.Empty;
+            CelularmaskedTextBox.Text = string.Empty;
         }
 
         private bool Existe()
@@ -55,7 +59,7 @@ namespace CacaoTech.UI.Registros
             IDnumericUpDown.Value = vendedor.VendedorID;
             NombretextBox.Text = vendedor.Nombre;
             ApellidostextBox.Text = vendedor.Apellidos;
-            ApellidostextBox.Text = vendedor.Email;
+            EmailtextBox.Text = vendedor.Email;
             DirecciontextBox.Text = vendedor.Direccion;
             TelefonomaskedTextBox.Text = vendedor.Telefono;
             CelularmaskedTextBox.Text = vendedor.Celular;
@@ -98,19 +102,19 @@ namespace CacaoTech.UI.Registros
                 EmailtextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")))
+            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")) && (!CedulamaskedTextBox.MaskFull))
             {
                 errorProvider.SetError(CedulamaskedTextBox, obligatorio);
                 CedulamaskedTextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")))
+            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")) && (!CelularmaskedTextBox.MaskFull))
             {
                 errorProvider.SetError(CelularmaskedTextBox, obligatorio);
                 CelularmaskedTextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")))
+            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")) && (!TelefonomaskedTextBox.MaskFull))
             {
                 errorProvider.SetError(TelefonomaskedTextBox, obligatorio);
                 TelefonomaskedTextBox.Focus();

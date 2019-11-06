@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ContratosBLL.cs" />
     <Compile Include="BLL\DepositosBLL.cs" />
     <Compile Include="BLL\GenericaBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Entidades\Cacao.cs" />
     <Compile Include="Entidades\Contratos.cs" />
     <Compile Include="Entidades\Depositos.cs" />
+    <Compile Include="Entidades\ContratosDetalle.cs" />
     <Compile Include="Entidades\DepositosDetalle.cs" />
     <Compile Include="Entidades\Vendedores.cs" />
     <Compile Include="Program.cs" />

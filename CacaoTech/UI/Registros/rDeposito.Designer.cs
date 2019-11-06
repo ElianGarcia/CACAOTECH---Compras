@@ -122,7 +122,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(13, 99);
+            this.label4.Location = new System.Drawing.Point(13, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 8;
@@ -133,7 +133,7 @@
             this.TipoCacaocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoCacaocomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.TipoCacaocomboBox.FormattingEnabled = true;
-            this.TipoCacaocomboBox.Location = new System.Drawing.Point(111, 96);
+            this.TipoCacaocomboBox.Location = new System.Drawing.Point(111, 86);
             this.TipoCacaocomboBox.Name = "TipoCacaocomboBox";
             this.TipoCacaocomboBox.Size = new System.Drawing.Size(142, 25);
             this.TipoCacaocomboBox.TabIndex = 9;
@@ -143,7 +143,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(261, 99);
+            this.label5.Location = new System.Drawing.Point(261, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 19);
             this.label5.TabIndex = 10;
@@ -152,7 +152,7 @@
             // CantidadtextBox
             // 
             this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.CantidadtextBox.Location = new System.Drawing.Point(328, 96);
+            this.CantidadtextBox.Location = new System.Drawing.Point(328, 86);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
             this.CantidadtextBox.TabIndex = 11;
@@ -162,7 +162,7 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(16, 163);
+            this.groupBox1.Location = new System.Drawing.Point(16, 154);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(463, 156);
             this.groupBox1.TabIndex = 12;
@@ -186,7 +186,7 @@
             // PreciotextBox
             // 
             this.PreciotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.PreciotextBox.Location = new System.Drawing.Point(111, 128);
+            this.PreciotextBox.Location = new System.Drawing.Point(111, 121);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(100, 25);
@@ -196,7 +196,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(13, 131);
+            this.label6.Location = new System.Drawing.Point(13, 124);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 19);
             this.label6.TabIndex = 17;
@@ -205,7 +205,7 @@
             // ImportetextBox
             // 
             this.ImportetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.ImportetextBox.Location = new System.Drawing.Point(302, 131);
+            this.ImportetextBox.Location = new System.Drawing.Point(302, 121);
             this.ImportetextBox.Name = "ImportetextBox";
             this.ImportetextBox.ReadOnly = true;
             this.ImportetextBox.Size = new System.Drawing.Size(127, 25);
@@ -215,7 +215,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(235, 134);
+            this.label7.Location = new System.Drawing.Point(235, 124);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 19);
             this.label7.TabIndex = 19;
@@ -229,7 +229,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(361, 334);
+            this.Eliminarbutton.Location = new System.Drawing.Point(361, 325);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
             this.Eliminarbutton.TabIndex = 16;
@@ -246,7 +246,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(187, 334);
+            this.Guardarbutton.Location = new System.Drawing.Point(187, 325);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
             this.Guardarbutton.TabIndex = 15;
@@ -263,7 +263,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(16, 334);
+            this.Nuevobutton.Location = new System.Drawing.Point(16, 325);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
             this.Nuevobutton.TabIndex = 14;
@@ -281,7 +281,7 @@
             this.AgregarDepositobutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AgregarDepositobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
             this.AgregarDepositobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarDepositobutton.Location = new System.Drawing.Point(435, 96);
+            this.AgregarDepositobutton.Location = new System.Drawing.Point(435, 86);
             this.AgregarDepositobutton.Name = "AgregarDepositobutton";
             this.AgregarDepositobutton.Size = new System.Drawing.Size(45, 60);
             this.AgregarDepositobutton.TabIndex = 13;

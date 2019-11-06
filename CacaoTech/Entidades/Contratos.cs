@@ -12,17 +12,16 @@ namespace CacaoTech.Entidades
     {
         [Key]
         public int ContratoID { get; set; }
-        public int CacaoID { get; set; }
         /*[ForeignKey("CacaoID")]
         public Cacao Cacao { get; set; }*/
         public int CantidadCacao { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
+        public virtual List<ContratosDetalle> ContratosDetalle { get; set; }
 
-        public Contratos(int contratoID, int cacaoID, int cantidadCacao, DateTime fechaInicio, DateTime fechaFin)
+        public Contratos(int contratoID, int cantidadCacao, DateTime fechaInicio, DateTime fechaFin)
         {
             ContratoID = contratoID;
-            CacaoID = cacaoID;
             CantidadCacao = cantidadCacao;
             FechaInicio = fechaInicio;
             FechaFin = fechaFin;
