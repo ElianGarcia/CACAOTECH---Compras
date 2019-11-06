@@ -173,6 +173,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts.sql" />
+    <None Include="Resources\Add_User_Male_32.png" />
+    <None Include="Resources\Add_User_Male_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

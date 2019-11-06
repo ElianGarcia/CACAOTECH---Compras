@@ -32,6 +32,7 @@ namespace CacaoTech.UI.Registros
             DirecciontextBox.Text = string.Empty;
             TelefonomaskedTextBox.Text = string.Empty;
             CelularmaskedTextBox.Text = string.Empty;
+            CedulamaskedTextBox.Text = string.Empty;
         }
 
         private bool Existe()
@@ -118,25 +119,31 @@ namespace CacaoTech.UI.Registros
                 DirecciontextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(EmailtextBox.Text) || !EmailValido(EmailtextBox.Text))
+            if (string.IsNullOrWhiteSpace(EmailtextBox.Text))
             {
                 errorProvider.SetError(EmailtextBox, obligatorio);
                 EmailtextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")) && (!CedulamaskedTextBox.MaskFull))
+            if (!EmailValido(EmailtextBox.Text))
+            {
+                errorProvider.SetError(EmailtextBox, "Email no valido");
+                EmailtextBox.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")) && (CedulamaskedTextBox.MaskFull))
             {
                 errorProvider.SetError(CedulamaskedTextBox, obligatorio);
                 CedulamaskedTextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")) && (!CelularmaskedTextBox.MaskFull))
+            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")) && (CelularmaskedTextBox.MaskFull))
             {
                 errorProvider.SetError(CelularmaskedTextBox, obligatorio);
                 CelularmaskedTextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")) && (!TelefonomaskedTextBox.MaskFull))
+            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")) && (TelefonomaskedTextBox.MaskFull))
             {
                 errorProvider.SetError(TelefonomaskedTextBox, obligatorio);
                 TelefonomaskedTextBox.Focus();

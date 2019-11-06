@@ -17,9 +17,40 @@ namespace CacaoTech.UI.Registros
     public partial class rContrato : Form
     {
         public List<ContratosDetalle> contratosDetalle { get; set; }
+        GenericaBLL<Vendedores> genericaVendedorBLL;
+        GenericaBLL<Cacao> genericaCacaoBLL;
         public rContrato()
         {
+            genericaVendedorBLL = new GenericaBLL<Vendedores>();
+            genericaCacaoBLL = new GenericaBLL<Cacao>();
             InitializeComponent();
+            LlenarCombos();
+        }
+
+        public void LlenarCombos()
+        {
+            //Llenando combobox de tipos de cacao
+            TipoCacaocomboBox.DataSource = null;
+            List<Cacao> lista1 = genericaCacaoBLL.GetList(p => true);
+            TipoCacaocomboBox.DataSource = lista1;
+            TipoCacaocomboBox.DisplayMember = "Tipo";
+            TipoCacaocomboBox.ValueMember = "CacaoID";
+
+
+            //Llenando combobox de vendedores
+            VendedorescomboBox.DataSource = null;
+            List<Vendedores> lista = genericaVendedorBLL.GetList(p => true);
+            VendedorescomboBox.DataSource = lista;
+            VendedorescomboBox.DisplayMember = "Nombre";
+            VendedorescomboBox.ValueMember = "VendedorID";
+        }
+
+        private Decimal ToDecimal(string valor)
+        {
+            decimal resultado = 0;
+            decimal.TryParse(valor, out resultado);
+
+            return resultado;
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -58,16 +89,14 @@ namespace CacaoTech.UI.Registros
                 this.contratosDetalle = (List<ContratosDetalle>)dataGridView.DataSource;
             }
 
-            cacao = db.Cacao.Find(TipoCacaocomboBox.SelectedIndex + 1);
-            decimal importe = cacao.Precio * Convert.ToDecimal(CantidadtextBox.Text);
-
-            /*this.contratosDetalle.Add(
-                new DepositosDetalle(
-                    cacao.Tipo,
-                    cacao.Precio,
-                    Convert.ToDecimal(CantidadtextBox.Text),
-                    importe)
-                );*/
+            this.contratosDetalle.Add(
+                new ContratosDetalle(
+                    contratosDetalleID: 0,
+                    cacaoID: TipoCacaocomboBox.SelectedIndex,
+                    cantidad: ToDecimal(CantidadtextBox.Text),
+                    precio: ToDecimal(PreciotextBox.Text)
+                    )
+                );
 
             CargarGrid();
             TipoCacaocomboBox.Focus();
@@ -212,7 +241,7 @@ namespace CacaoTech.UI.Registros
         {
             if(dataGridView.CurrentCell.ColumnIndex == 0)
             {
-                if (dataGridView.Rows.Count > 0 && dataGridView.CurrentRow != null)
+                if (dataGridView.Rows.Count > 0 && dataGridView.CurrentRow != null && contratosDetalle != null)
                 {
                     decimal valorEliminar = Convert.ToDecimal(dataGridView.CurrentRow.Cells[4].Value);
                     //todo: calcular monto total
@@ -220,6 +249,13 @@ namespace CacaoTech.UI.Registros
                     CargarGrid();
                 }
             }
+        }
+
+        private void RegistrarVendedorbutton_Click(object sender, EventArgs e)
+        {
+            rVendedor registroVendedor = new rVendedor();
+            registroVendedor.ShowDialog();
+            LlenarCombos();
         }
     }
 }

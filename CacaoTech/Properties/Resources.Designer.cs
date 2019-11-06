@@ -73,6 +73,26 @@ namespace CacaoTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_User_Male_16 {
+            get {
+                object obj = ResourceManager.GetObject("Add_User_Male_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Add_User_Male_32 {
+            get {
+                object obj = ResourceManager.GetObject("Add_User_Male_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Plus_Math_16 {
             get {
                 object obj = ResourceManager.GetObject("Plus_Math_16", resourceCulture);
