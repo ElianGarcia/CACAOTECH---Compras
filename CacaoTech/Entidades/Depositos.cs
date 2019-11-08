@@ -14,8 +14,8 @@ namespace CacaoTech.Entidades
         public int DepositoID { get; set; }
         public DateTime Fecha { get; set; }
         public int VendedorID { get; set; }
-        /*[ForeignKey("VendedorID")]*/
-        public Vendedores Vendedor { get; set; }
+        [ForeignKey("VendedorID")]
+        public virtual Vendedores Vendedor { get; set; }
         public virtual List<DepositosDetalle> DepositosDetalle { get; set; }
 
         public Depositos(int depositoID, DateTime fecha, int vendedorID, Vendedores vendedor, List<DepositosDetalle> depositosDetalle)

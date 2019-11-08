@@ -16,13 +16,14 @@ namespace CacaoTech.UI.Registros
 {
     public partial class rContrato : Form
     {
-        public List<ContratosDetalle> contratosDetalle { get; set; }
+        public List<ContratosDetalle> contratosDetalle;
         GenericaBLL<Vendedores> genericaVendedorBLL;
         GenericaBLL<Cacao> genericaCacaoBLL;
         public rContrato()
         {
             genericaVendedorBLL = new GenericaBLL<Vendedores>();
             genericaCacaoBLL = new GenericaBLL<Cacao>();
+            contratosDetalle = new List<ContratosDetalle>();
             InitializeComponent();
             LlenarCombos();
         }
@@ -76,20 +77,30 @@ namespace CacaoTech.UI.Registros
 
         private void LlenaCampos(Contratos contrato)
         {
-            throw new NotImplementedException();
+            IDnumericUpDown.Value = contrato.ContratoID;
+            VendedorescomboBox.SelectedIndex = contrato.VendedorID;
+            FechaIniciodateTimePicker.Value = contrato.FechaInicio;
+            FechaFindateTimePicker.Value = contrato.FechaFin;
+            dataGridView.DataSource = contrato.ContratosDetalle;
         }
 
         private void AgregarDepositobutton_Click(object sender, EventArgs e)
         {
             Contexto db = new Contexto();
-            Cacao cacao;
+            GenericaBLL<Cacao> genericaBLL = new GenericaBLL<Cacao>();
+            Cacao cacao = new Cacao();
 
             if (dataGridView.DataSource != null)
             {
                 this.contratosDetalle = (List<ContratosDetalle>)dataGridView.DataSource;
             }
 
-            this.contratosDetalle.Add(
+            cacao = genericaBLL.Buscar(Convert.ToInt32(TipoCacaocomboBox.SelectedIndex));
+            decimal importe = ToDecimal(CantidadtextBox.Text) * ToDecimal(PreciotextBox.Text);
+
+            dataGridView.Rows.Add("-", cacao.Tipo, PreciotextBox.Text, CantidadtextBox.Text, importe);
+
+            this.contratosDetalle.Add( 
                 new ContratosDetalle(
                     contratosDetalleID: 0,
                     cacaoID: TipoCacaocomboBox.SelectedIndex,
@@ -118,7 +129,7 @@ namespace CacaoTech.UI.Registros
             FechaFindateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
             errorProvider.Clear();
-            //this.depositosDetalles = new List<DepositosDetalle>();
+            this.contratosDetalle = new List<ContratosDetalle>();
             CargarGrid();
         }
 
@@ -132,46 +143,61 @@ namespace CacaoTech.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Depositos deposito = new Depositos();
+            Contratos contrato = new Contratos();
             bool realizado = false;
 
             if (!Validar())
                 return;
 
-            deposito = LlenaClase();
+            contrato = LlenaClase();
 
 
             if (IDnumericUpDown.Value == 0)
-                realizado = DepositosBLL.Guardar(deposito);
+                realizado = ContratosBLL.Guardar(contrato);
             else
             {
                 if (!Existe())
                 {
-                    MessageBox.Show("NO SE PUEDE MODIFICAR UN Deposito INEXISTENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede modificar un contrato inexistente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                realizado = DepositosBLL.Modificar(deposito);
+                realizado = ContratosBLL.Modificar(contrato);
             }
 
             if (realizado)
             {
                 Limpiar();
-                MessageBox.Show("GUARDADO EXITOSAMENTE", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Guardado exitosamente", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("NO SE PUDO GUARDAR", "NO GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar", "NO GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private Depositos LlenaClase()
+        private int ToInt(string valor)
         {
-            throw new NotImplementedException();
+            int resultado = 0;
+            int.TryParse(valor, out resultado);
+
+            return resultado;
+        }
+
+        private Contratos LlenaClase()
+        {
+            Contratos contrato = new Contratos();
+            contrato.ContratoID = ToInt(IDnumericUpDown.Value.ToString());
+            contrato.VendedorID = VendedorescomboBox.SelectedIndex;
+            contrato.FechaInicio = FechaIniciodateTimePicker.Value;
+            contrato.FechaFin = FechaFindateTimePicker.Value;
+            contrato.ContratosDetalle = dataGridView.DataSource;
+
+            return contrato;
         }
 
         private bool Existe()
         {
-            Contratos contrato = ContratosBLL.Buscar((int)IDnumericUpDown.Value);
+            Contratos contrato = ContratosBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
 
             return (contrato != null);
         }

@@ -29,16 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rContrato));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rContrato));
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Quitarbutton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoCacaocomboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
+            this.AgregarTipobutton = new System.Windows.Forms.Button();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -48,16 +54,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.VendedorescomboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Quitarbutton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegistrarVendedorbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.AgregarTipobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -118,6 +118,38 @@
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
+            // Quitarbutton
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Quitarbutton.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Quitarbutton.FillWeight = 50F;
+            this.Quitarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Quitarbutton.HeaderText = "Quitar";
+            this.Quitarbutton.Name = "Quitarbutton";
+            this.Quitarbutton.Text = "-";
+            this.Quitarbutton.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tipo";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Precio";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Cantidad";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Monto";
+            this.Column4.Name = "Column4";
+            // 
             // TipoCacaocomboBox
             // 
             this.TipoCacaocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -151,11 +183,28 @@
             // CantidadtextBox
             // 
             this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.CantidadtextBox.Location = new System.Drawing.Point(336, 21);
+            this.CantidadtextBox.Location = new System.Drawing.Point(343, 21);
             this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(100, 25);
+            this.CantidadtextBox.Size = new System.Drawing.Size(93, 25);
             this.CantidadtextBox.TabIndex = 31;
             this.CantidadtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadtextBox_KeyPress);
+            // 
+            // AgregarTipobutton
+            // 
+            this.AgregarTipobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.AgregarTipobutton.FlatAppearance.BorderSize = 2;
+            this.AgregarTipobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AgregarTipobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.AgregarTipobutton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AgregarTipobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
+            this.AgregarTipobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AgregarTipobutton.Location = new System.Drawing.Point(443, 21);
+            this.AgregarTipobutton.Name = "AgregarTipobutton";
+            this.AgregarTipobutton.Size = new System.Drawing.Size(45, 56);
+            this.AgregarTipobutton.TabIndex = 33;
+            this.AgregarTipobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AgregarTipobutton.UseVisualStyleBackColor = false;
+            this.AgregarTipobutton.Click += new System.EventHandler(this.AgregarDepositobutton_Click);
             // 
             // IDnumericUpDown
             // 
@@ -187,16 +236,16 @@
             this.FechaFindateTimePicker.Enabled = false;
             this.FechaFindateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.FechaFindateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaFindateTimePicker.Location = new System.Drawing.Point(394, 44);
+            this.FechaFindateTimePicker.Location = new System.Drawing.Point(374, 44);
             this.FechaFindateTimePicker.Name = "FechaFindateTimePicker";
-            this.FechaFindateTimePicker.Size = new System.Drawing.Size(112, 25);
+            this.FechaFindateTimePicker.Size = new System.Drawing.Size(132, 25);
             this.FechaFindateTimePicker.TabIndex = 40;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(293, 50);
+            this.label2.Location = new System.Drawing.Point(280, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 39;
@@ -211,7 +260,7 @@
             this.FechaIniciodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(116, 44);
             this.FechaIniciodateTimePicker.Name = "FechaIniciodateTimePicker";
-            this.FechaIniciodateTimePicker.Size = new System.Drawing.Size(101, 25);
+            this.FechaIniciodateTimePicker.Size = new System.Drawing.Size(128, 25);
             this.FechaIniciodateTimePicker.TabIndex = 42;
             // 
             // label7
@@ -243,38 +292,6 @@
             this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 43;
             this.label3.Text = "Vendedor:";
-            // 
-            // Quitarbutton
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Quitarbutton.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Quitarbutton.FillWeight = 50F;
-            this.Quitarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Quitarbutton.HeaderText = "Quitar";
-            this.Quitarbutton.Name = "Quitarbutton";
-            this.Quitarbutton.Text = "-";
-            this.Quitarbutton.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tipo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Precio";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Cantidad";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Monto";
-            this.Column4.Name = "Column4";
             // 
             // RegistrarVendedorbutton
             // 
@@ -343,23 +360,6 @@
             this.Nuevobutton.UseVisualStyleBackColor = false;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // AgregarTipobutton
-            // 
-            this.AgregarTipobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.AgregarTipobutton.FlatAppearance.BorderSize = 2;
-            this.AgregarTipobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AgregarTipobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.AgregarTipobutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AgregarTipobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
-            this.AgregarTipobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarTipobutton.Location = new System.Drawing.Point(443, 21);
-            this.AgregarTipobutton.Name = "AgregarTipobutton";
-            this.AgregarTipobutton.Size = new System.Drawing.Size(45, 60);
-            this.AgregarTipobutton.TabIndex = 33;
-            this.AgregarTipobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AgregarTipobutton.UseVisualStyleBackColor = false;
-            this.AgregarTipobutton.Click += new System.EventHandler(this.AgregarDepositobutton_Click);
-            // 
             // Buscarbutton
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
@@ -382,7 +382,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(546, 396);
+            this.ClientSize = new System.Drawing.Size(536, 396);
             this.Controls.Add(this.RegistrarVendedorbutton);
             this.Controls.Add(this.VendedorescomboBox);
             this.Controls.Add(this.label3);

@@ -131,19 +131,19 @@ namespace CacaoTech.UI.Registros
                 EmailtextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")) && (CedulamaskedTextBox.MaskFull))
+            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")) && (CedulamaskedTextBox.MaskFull == false))
             {
                 errorProvider.SetError(CedulamaskedTextBox, obligatorio);
                 CedulamaskedTextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")) && (CelularmaskedTextBox.MaskFull))
+            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")) && (CelularmaskedTextBox.MaskFull == false))
             {
                 errorProvider.SetError(CelularmaskedTextBox, obligatorio);
                 CelularmaskedTextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")) && (TelefonomaskedTextBox.MaskFull))
+            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")) && (TelefonomaskedTextBox.MaskFull == false))
             {
                 errorProvider.SetError(TelefonomaskedTextBox, obligatorio);
                 TelefonomaskedTextBox.Focus();

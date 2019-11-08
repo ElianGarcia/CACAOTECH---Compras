@@ -275,5 +275,12 @@ namespace CacaoTech.UI.Registros
             else
                 e.Handled = true;
         }
+
+        private void RegistrarVendedorbutton_Click(object sender, EventArgs e)
+        {
+            rVendedor registroVendedor = new rVendedor();
+            registroVendedor.ShowDialog();
+            LlenarCombos();
+        }
     }
 }
