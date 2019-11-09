@@ -12,8 +12,10 @@ namespace CacaoTech.Entidades
         [Key]
         public int VendedorID { get; set; }
         public int ContratoID { get; set; }
-        /*[ForeignKey("ContratoID")]
-        public Contratos Contrato { get; set; }*/
+        [ForeignKey("ContratoID")]
+        public virtual Contratos Contrato { get; set; }
+
+        public DateTime Fecha { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Direccion { get; set; }

@@ -233,7 +233,6 @@
             // 
             this.FechaFindateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
             this.FechaFindateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechaFindateTimePicker.Enabled = false;
             this.FechaFindateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.FechaFindateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechaFindateTimePicker.Location = new System.Drawing.Point(374, 44);
@@ -255,7 +254,6 @@
             // 
             this.FechaIniciodateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
             this.FechaIniciodateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechaIniciodateTimePicker.Enabled = false;
             this.FechaIniciodateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.FechaIniciodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(116, 44);

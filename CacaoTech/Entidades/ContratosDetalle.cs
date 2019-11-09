@@ -12,8 +12,8 @@ namespace CacaoTech.Entidades
     {
         public int ContratosDetalleID { get; set; }
         public int CacaoID { get; set; }
-        //[ForeignKey("CacaoID")]
-        //public Cacao Cacao { get; set; }
+        [ForeignKey("CacaoID")]
+        public virtual Cacao Cacao { get; set; }
         public decimal Cantidad { get; set; }
         public decimal Precio { get; set; }
         public decimal Monto { get; set; }

@@ -23,7 +23,7 @@ namespace CacaoTech.Entidades
             DepositoID = depositoID;
             Fecha = fecha;
             VendedorID = vendedorID;
-            //Vendedor = vendedor ?? throw new ArgumentNullException(nameof(vendedor));
+            Vendedor = vendedor ?? throw new ArgumentNullException(nameof(vendedor));
             DepositosDetalle = new List<DepositosDetalle>();
         }
 

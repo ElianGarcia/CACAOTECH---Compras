@@ -190,7 +190,7 @@ namespace CacaoTech.UI.Registros
             contrato.VendedorID = VendedorescomboBox.SelectedIndex;
             contrato.FechaInicio = FechaIniciodateTimePicker.Value;
             contrato.FechaFin = FechaFindateTimePicker.Value;
-            contrato.ContratosDetalle = dataGridView.DataSource;
+            contrato.ContratosDetalle = this.contratosDetalle;
 
             return contrato;
         }
