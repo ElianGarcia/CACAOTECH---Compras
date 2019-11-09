@@ -78,7 +78,7 @@ namespace CacaoTech.UI.Registros
         private void LlenaCampos(Contratos contrato)
         {
             IDnumericUpDown.Value = contrato.ContratoID;
-            VendedorescomboBox.SelectedIndex = contrato.VendedorID;
+            //VendedorescomboBox.SelectedIndex = contrato.VendedorID;
             FechaIniciodateTimePicker.Value = contrato.FechaInicio;
             FechaFindateTimePicker.Value = contrato.FechaFin;
             dataGridView.DataSource = contrato.ContratosDetalle;
@@ -187,7 +187,7 @@ namespace CacaoTech.UI.Registros
         {
             Contratos contrato = new Contratos();
             contrato.ContratoID = ToInt(IDnumericUpDown.Value.ToString());
-            contrato.VendedorID = VendedorescomboBox.SelectedIndex;
+            //contrato.VendedorID = VendedorescomboBox.SelectedIndex;
             contrato.FechaInicio = FechaIniciodateTimePicker.Value;
             contrato.FechaFin = FechaFindateTimePicker.Value;
             contrato.ContratosDetalle = this.contratosDetalle;
