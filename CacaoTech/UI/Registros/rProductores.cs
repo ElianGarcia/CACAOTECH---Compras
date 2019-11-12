@@ -33,6 +33,9 @@ namespace CacaoTech.UI.Registros
             TelefonomaskedTextBox.Text = string.Empty;
             CelularmaskedTextBox.Text = string.Empty;
             CedulamaskedTextBox.Text = string.Empty;
+            BalancetextBox.Text = string.Empty;
+            AmbulanteradioButton.Checked = false;
+            FijoradioButton.Checked = false;
         }
 
         private bool Existe()
@@ -44,16 +47,34 @@ namespace CacaoTech.UI.Registros
 
         private Productores LlenaClase()
         {
-            Productores vendedor = new Productores();
-            vendedor.ProductorID = Convert.ToInt32(IDnumericUpDown.Value);
-            vendedor.Nombres = NombretextBox.Text;
-            vendedor.Apellidos = ApellidostextBox.Text;
-            vendedor.Email = ApellidostextBox.Text;
-            vendedor.Direccion = DirecciontextBox.Text;
-            vendedor.Telefono = TelefonomaskedTextBox.Text;
-            vendedor.Celular = CelularmaskedTextBox.Text;
+            Productores productor = new Productores();
+            productor.ProductorID = Convert.ToInt32(IDnumericUpDown.Value);
+            productor.Nombres = NombretextBox.Text;
+            productor.Apellidos = ApellidostextBox.Text;
+            productor.Email = ApellidostextBox.Text;
+            productor.Direccion = DirecciontextBox.Text;
+            productor.Telefono = TelefonomaskedTextBox.Text;
+            productor.Celular = CelularmaskedTextBox.Text;
+            productor.Balance = ToDecimal(BalancetextBox.Text);
 
-            return vendedor;
+            if(AmbulanteradioButton.Checked)
+            {
+                productor.Tipo = true;
+
+            } else
+            {
+                productor.Tipo = false;
+            }
+
+            return productor;
+        }
+
+        private decimal ToDecimal(string text)
+        {
+            decimal resultado = 0;
+            decimal.TryParse(text, out resultado);
+
+            return resultado;
         }
 
         private void LlenaCampos(Productores vendedor)
@@ -65,6 +86,17 @@ namespace CacaoTech.UI.Registros
             DirecciontextBox.Text = vendedor.Direccion;
             TelefonomaskedTextBox.Text = vendedor.Telefono;
             CelularmaskedTextBox.Text = vendedor.Celular;
+            BalancetextBox.Text = vendedor.Balance.ToString();
+
+            if (vendedor.Tipo)
+            {
+                AmbulanteradioButton.Checked = true;
+
+            }
+            else
+            {
+                FijoradioButton.Checked = true;
+            }
         }
 
         private Boolean EmailValido(String email)
@@ -149,6 +181,13 @@ namespace CacaoTech.UI.Registros
                 TelefonomaskedTextBox.Focus();
                 realizado = false;
             }
+            if(FijoradioButton.Checked == false && AmbulanteradioButton.Checked == false)
+            {
+                errorProvider.SetError(AmbulanteradioButton, obligatorio);
+                FijoradioButton.Focus();
+                AmbulanteradioButton.Focus();
+                realizado = false;
+            }
 
             return realizado;
         }
@@ -160,25 +199,25 @@ namespace CacaoTech.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Productores vendedor = new Productores();
+            Productores productor = new Productores();
             bool realizado = false;
 
             if (!Validar())
                 return;
 
-            vendedor = LlenaClase();
+            productor = LlenaClase();
 
 
             if (IDnumericUpDown.Value == 0)
-                realizado = genericaBLL.Guardar(vendedor);
+                realizado = genericaBLL.Guardar(productor);
             else
             {
                 if (!Existe())
                 {
-                    MessageBox.Show("NO SE PUEDE MODIFICAR UN CACAO INEXISTENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("NO SE PUEDE MODIFICAR UN Productor INEXISTENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                realizado = genericaBLL.Modificar(vendedor);
+                realizado = genericaBLL.Modificar(productor);
             }
 
             if (realizado)
@@ -208,27 +247,27 @@ namespace CacaoTech.UI.Registros
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un cacao inexistente");
+                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un productor inexistente");
             }
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
-            Productores vendedor = new Productores();
+            Productores productor = new Productores();
             int.TryParse(IDnumericUpDown.Text, out id);
 
             Limpiar();
 
-            vendedor = genericaBLL.Buscar(id);
+            productor = genericaBLL.Buscar(id);
 
-            if (vendedor != null)
+            if (productor != null)
             {
-                LlenaCampos(vendedor);
+                LlenaCampos(productor);
             }
             else
             {
-                MessageBox.Show("Cacao No Encontrado");
+                MessageBox.Show("Productor No Encontrado");
             }
         }
     }

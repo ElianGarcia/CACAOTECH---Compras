@@ -12,6 +12,9 @@ namespace CacaoTech.Entidades
     {
         public int RecepcionID { get; set; }
         public DateTime Fecha { get; set; }
+        public int ProductorID { get; set; }
+        [ForeignKey("ProductorID")]
+        public virtual Productores Productor { get; set; }
         public int CacaoID { get; set; }
         [ForeignKey("CacaoID")]
         public virtual Cacao Cacao { get; set; }

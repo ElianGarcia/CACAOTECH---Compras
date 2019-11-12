@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\PrestamosBLL.cs" />
-    <Compile Include="BLL\DepositosBLL.cs" />
     <Compile Include="BLL\GenericaBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="DAL\Contexto.cs" />

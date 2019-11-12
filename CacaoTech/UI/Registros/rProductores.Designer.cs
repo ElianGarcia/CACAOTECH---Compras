@@ -53,6 +53,11 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
+            this.FijoradioButton = new System.Windows.Forms.RadioButton();
+            this.AmbulanteradioButton = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.BalancetextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +76,7 @@
             // IDnumericUpDown
             // 
             this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.IDnumericUpDown.Location = new System.Drawing.Point(82, 12);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(84, 12);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(73, 25);
             this.IDnumericUpDown.TabIndex = 22;
@@ -256,7 +261,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(331, 213);
+            this.Eliminarbutton.Location = new System.Drawing.Point(331, 250);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(118, 62);
             this.Eliminarbutton.TabIndex = 19;
@@ -273,7 +278,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(169, 213);
+            this.Guardarbutton.Location = new System.Drawing.Point(169, 250);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(118, 62);
             this.Guardarbutton.TabIndex = 18;
@@ -290,7 +295,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(9, 213);
+            this.Nuevobutton.Location = new System.Drawing.Point(9, 250);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(118, 62);
             this.Nuevobutton.TabIndex = 17;
@@ -299,12 +304,71 @@
             this.Nuevobutton.UseVisualStyleBackColor = false;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // rVendedor
+            // FijoradioButton
+            // 
+            this.FijoradioButton.AutoSize = true;
+            this.FijoradioButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.FijoradioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FijoradioButton.Location = new System.Drawing.Point(84, 202);
+            this.FijoradioButton.Name = "FijoradioButton";
+            this.FijoradioButton.Size = new System.Drawing.Size(44, 19);
+            this.FijoradioButton.TabIndex = 39;
+            this.FijoradioButton.TabStop = true;
+            this.FijoradioButton.Text = "Fijo";
+            this.FijoradioButton.UseVisualStyleBackColor = true;
+            // 
+            // AmbulanteradioButton
+            // 
+            this.AmbulanteradioButton.AutoSize = true;
+            this.AmbulanteradioButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.AmbulanteradioButton.Location = new System.Drawing.Point(140, 202);
+            this.AmbulanteradioButton.Name = "AmbulanteradioButton";
+            this.AmbulanteradioButton.Size = new System.Drawing.Size(84, 19);
+            this.AmbulanteradioButton.TabIndex = 40;
+            this.AmbulanteradioButton.TabStop = true;
+            this.AmbulanteradioButton.Text = "Ambulante";
+            this.AmbulanteradioButton.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(6, 201);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 19);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "Tipo:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(243, 201);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 19);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Balance:";
+            // 
+            // BalancetextBox
+            // 
+            this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.BalancetextBox.Location = new System.Drawing.Point(309, 198);
+            this.BalancetextBox.Name = "BalancetextBox";
+            this.BalancetextBox.ReadOnly = true;
+            this.BalancetextBox.Size = new System.Drawing.Size(140, 25);
+            this.BalancetextBox.TabIndex = 43;
+            // 
+            // rProductores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(484, 284);
+            this.ClientSize = new System.Drawing.Size(484, 322);
+            this.Controls.Add(this.BalancetextBox);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.AmbulanteradioButton);
+            this.Controls.Add(this.FijoradioButton);
             this.Controls.Add(this.DirecciontextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.EmailtextBox);
@@ -329,8 +393,8 @@
             this.Controls.Add(this.Nuevobutton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "rVendedor";
-            this.Text = "Nuevo Vendedor";
+            this.Name = "rProductores";
+            this.Text = "Nuevo Productor";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -363,5 +427,10 @@
         private System.Windows.Forms.TextBox DirecciontextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox BalancetextBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RadioButton AmbulanteradioButton;
+        private System.Windows.Forms.RadioButton FijoradioButton;
     }
 }

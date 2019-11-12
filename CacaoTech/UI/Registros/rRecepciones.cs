@@ -17,44 +17,35 @@ namespace CacaoTech.UI.Registros
     public partial class rRecepciones : Form
     {
         GenericaBLL<Productores> genericaVendedorBLL;
+        GenericaBLL<Recepciones> genericaRecepcionBLL;
         GenericaBLL<Cacao> genericaCacaoBLL;
-        public List<DepositosDetalle> depositosDetalles { get; set; }
         public rRecepciones()
         {
             genericaVendedorBLL = new GenericaBLL<Productores>();
             genericaCacaoBLL = new GenericaBLL<Cacao>();
+            genericaRecepcionBLL = new GenericaBLL<Recepciones>();
             InitializeComponent();
             LlenarCombos();
-            this.depositosDetalles = new List<DepositosDetalle>();
-            cargarGrid();
         }
 
-        private void cargarGrid()
+        public Recepciones LlenaClase()
         {
-            dataGridView.DataSource = null;
-            dataGridView.DataSource = depositosDetalles;
+            Recepciones recepcion = new Recepciones();
+            recepcion.RecepcionID = Convert.ToInt32(IDnumericUpDown.Value);
+            recepcion.Fecha = FechadateTimePicker.Value;
+            recepcion.ProductorID = ProductorescomboBox.SelectedIndex;
+            recepcion.Cantidad = ToDecimal(CantidadtextBox.Text);
+
+            return recepcion;
         }
 
-        public Depositos LlenaClase()
+        private void LlenaCampos(Recepciones recepcion)
         {
-            Depositos deposito = new Depositos();
-            deposito.DepositosDetalle = this.depositosDetalles;
-            deposito.Fecha = FechadateTimePicker.Value;
-            deposito.VendedorID = VendedorescomboBox.SelectedIndex;
-            deposito.DepositoID = Convert.ToInt32(IDnumericUpDown.Value);
-
-            return deposito;
-        }
-
-        private void LlenaCampos(Depositos deposito)
-        {
-            IDnumericUpDown.Value = deposito.DepositoID;
-            VendedorescomboBox.Text = deposito.Vendedor.Nombres;
+            IDnumericUpDown.Value = recepcion.RecepcionID;
+            ProductorescomboBox.Text = recepcion.Productor.Nombres;
             TipoCacaocomboBox.Text = string.Empty;
-            FechadateTimePicker.Value = deposito.Fecha;
+            FechadateTimePicker.Value = recepcion.Fecha;
             CantidadtextBox.Text = string.Empty;
-            this.depositosDetalles = deposito.DepositosDetalle;
-            cargarGrid();
         }
 
         public void LlenarCombos()
@@ -68,23 +59,23 @@ namespace CacaoTech.UI.Registros
 
 
             //Llenando combobox de vendedores
-            VendedorescomboBox.DataSource = null;
+            ProductorescomboBox.DataSource = null;
             List<Productores> lista = genericaVendedorBLL.GetList(p => true);
-            VendedorescomboBox.DataSource = lista;
-            VendedorescomboBox.DisplayMember = "Nombre";
-            VendedorescomboBox.ValueMember = "VendedorID";
+            ProductorescomboBox.DataSource = lista;
+            ProductorescomboBox.DisplayMember = "Nombres";
+            ProductorescomboBox.ValueMember = "ProductorID";
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
-            Depositos deposito = new Depositos();
+            Recepciones deposito = new Recepciones();
 
             int.TryParse(IDnumericUpDown.Text, out id);
 
             Limpiar();
 
-            deposito = DepositosBLL.Buscar(id);
+            deposito = genericaRecepcionBLL.Buscar(id);
 
             if (deposito != null)
             {
@@ -96,33 +87,6 @@ namespace CacaoTech.UI.Registros
             }
         }
 
-        private void AgregarDepositobutton_Click(object sender, EventArgs e)
-        {
-            Contexto db = new Contexto();
-            Cacao cacao;
-
-            if (dataGridView.DataSource != null)
-            {
-                this.depositosDetalles = (List<DepositosDetalle>)dataGridView.DataSource;
-            }
-
-            cacao = db.Cacao.Find(TipoCacaocomboBox.SelectedIndex + 1);
-            decimal importe = cacao.Precio * Convert.ToDecimal(CantidadtextBox.Text);
-
-            /*this.depositosDetalles.Add(
-                new DepositosDetalle(
-                    cacao.Tipo,
-                    cacao.Precio,
-                    Convert.ToDecimal(CantidadtextBox.Text),
-                    importe)
-                );*/
-
-            cargarGrid();
-            TipoCacaocomboBox.Focus();
-            TipoCacaocomboBox.SelectedIndex = 0;
-            CantidadtextBox.Clear();
-        }
-
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -131,44 +95,34 @@ namespace CacaoTech.UI.Registros
         private void Limpiar()
         {
             IDnumericUpDown.Value = 0;
-            VendedorescomboBox.Text = string.Empty;
+            ProductorescomboBox.Text = string.Empty;
             TipoCacaocomboBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
             errorProvider.Clear();
-            this.depositosDetalles = new List<DepositosDetalle>();
-            CargarGrid();
-        }
-
-        private void CargarGrid()
-        {
-            DataGridViewCheckBoxColumn columna = new DataGridViewCheckBoxColumn();
-
-            dataGridView.DataSource = null;
-            dataGridView.DataSource = this.depositosDetalles;
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Depositos deposito = new Depositos();
+            Recepciones recepcion = new Recepciones();
             bool realizado = false;
 
             if (!Validar())
                 return;
 
-            deposito = LlenaClase();
+            recepcion = LlenaClase();
 
 
             if (IDnumericUpDown.Value == 0)
-                realizado = DepositosBLL.Guardar(deposito);
+                realizado = genericaRecepcionBLL.Guardar(recepcion);
             else
             {
                 if (!Existe())
                 {
-                    MessageBox.Show("NO SE PUEDE MODIFICAR UN Deposito INEXISTENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("NO SE PUEDE MODIFICAR UNA RECEPCION INEXISTENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                realizado = DepositosBLL.Modificar(deposito);
+                realizado = genericaRecepcionBLL.Modificar(recepcion);
             }
 
             if (realizado)
@@ -184,9 +138,9 @@ namespace CacaoTech.UI.Registros
 
         private bool Existe()
         {
-            Depositos deposito = DepositosBLL.Buscar((int)IDnumericUpDown.Value);
+            Recepciones recepcion = genericaRecepcionBLL.Buscar((int)IDnumericUpDown.Value);
 
-            return (deposito != null);
+            return (recepcion != null);
         }
 
         private bool Validar()
@@ -198,12 +152,6 @@ namespace CacaoTech.UI.Registros
             {
                 errorProvider.SetError(IDnumericUpDown, obligatorio);
                 IDnumericUpDown.Focus();
-                validado = false;
-            }
-            if (this.depositosDetalles.Count == 0)
-            {
-                errorProvider.SetError(dataGridView, obligatorio);
-                TipoCacaocomboBox.Focus();
                 validado = false;
             }
 
@@ -220,13 +168,13 @@ namespace CacaoTech.UI.Registros
 
             Limpiar();
 
-            if (DepositosBLL.Eliminar(id))
+            if (genericaRecepcionBLL.Eliminar(id))
             {
-                MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Eliminada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un deposito inexistente");
+                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar una recepcion inexistente");
             }
         }
 
@@ -276,10 +224,10 @@ namespace CacaoTech.UI.Registros
                 e.Handled = true;
         }
 
-        private void RegistrarVendedorbutton_Click(object sender, EventArgs e)
+        private void RegistrarProductorbutton_Click(object sender, EventArgs e)
         {
-            rProductores registroVendedor = new rProductores();
-            registroVendedor.ShowDialog();
+            rProductores registroProductor = new rProductores();
+            registroProductor.ShowDialog();
             LlenarCombos();
         }
     }
