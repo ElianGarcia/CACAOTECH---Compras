@@ -18,14 +18,13 @@ namespace CacaoTech
     {
         public CacaoTech()
         {
-            ///ejecutarScript();
             InitializeComponent();
         }
 
-        private void vendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void productorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProductores registroVendedores = new rProductores();
-            registroVendedores.ShowDialog();
+            rProductores registroProductor = new rProductores();
+            registroProductor.ShowDialog();
         }
 
         private void cacaoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,39 +33,28 @@ namespace CacaoTech
             registroCacao.ShowDialog();
         }
 
-        private void contratoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void prestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rPrestamos registroContrato = new rPrestamos();
-            registroContrato.ShowDialog();
-        }
-
-        private void depositoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rRecepciones registroDeposito = new rRecepciones();
-            registroDeposito.ShowDialog();
-        }
-
-        private void CacaoTech_Load(object sender, EventArgs e)
-        {
-            //ejecutarScript();
-        }
-
-        private void ejecutarScript()
-        {
-            ProcessStartInfo cmd = new ProcessStartInfo("sqlcmd", ".\\SQLEXPRESS -i " + "C:/Users/ASUS/source/repos/ProyectoFinal/CacaoTech/DAL/Scripts.sql");
-            cmd.UseShellExecute = false;
-            cmd.CreateNoWindow = true;
-            cmd.RedirectStandardOutput = true;
-
-            Process ejecutar = new Process();
-            ejecutar.StartInfo = cmd;
-            ejecutar.Start();
+            rPrestamos registroPrestamo = new rPrestamos();
+            registroPrestamo.ShowDialog();
         }
 
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cVendedores consultaVendedores = new cVendedores();
             consultaVendedores.ShowDialog();
+        }
+
+        private void pagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rPagos pagos = new rPagos();
+            pagos.ShowDialog();
+        }
+
+        private void recepcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rRecepciones registroRecepcion = new rRecepciones();
+            registroRecepcion.ShowDialog();
         }
     }
 }

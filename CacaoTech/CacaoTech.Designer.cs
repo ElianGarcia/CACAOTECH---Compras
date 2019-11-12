@@ -35,8 +35,9 @@
             this.contratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.depositoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recepcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,8 @@
             this.vendedorToolStripMenuItem,
             this.cacaoToolStripMenuItem,
             this.contratoToolStripMenuItem,
-            this.depositoToolStripMenuItem});
+            this.depositoToolStripMenuItem,
+            this.recepcionToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -69,8 +71,8 @@
             // 
             this.vendedorToolStripMenuItem.Name = "vendedorToolStripMenuItem";
             this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.vendedorToolStripMenuItem.Text = "Vendedor";
-            this.vendedorToolStripMenuItem.Click += new System.EventHandler(this.vendedorToolStripMenuItem_Click);
+            this.vendedorToolStripMenuItem.Text = "Productor";
+            this.vendedorToolStripMenuItem.Click += new System.EventHandler(this.productorToolStripMenuItem_Click);
             // 
             // cacaoToolStripMenuItem
             // 
@@ -83,15 +85,15 @@
             // 
             this.contratoToolStripMenuItem.Name = "contratoToolStripMenuItem";
             this.contratoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.contratoToolStripMenuItem.Text = "Contrato";
-            this.contratoToolStripMenuItem.Click += new System.EventHandler(this.contratoToolStripMenuItem_Click);
+            this.contratoToolStripMenuItem.Text = "Prestamo";
+            this.contratoToolStripMenuItem.Click += new System.EventHandler(this.prestamoToolStripMenuItem_Click);
             // 
             // depositoToolStripMenuItem
             // 
-            this.depositoToolStripMenuItem.Name = "depositoToolStripMenuItem";
+            this.depositoToolStripMenuItem.Name = "pagoToolStripMenuItem";
             this.depositoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.depositoToolStripMenuItem.Text = "Deposito";
-            this.depositoToolStripMenuItem.Click += new System.EventHandler(this.depositoToolStripMenuItem_Click);
+            this.depositoToolStripMenuItem.Text = "Pago";
+            this.depositoToolStripMenuItem.Click += new System.EventHandler(this.pagoToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -101,18 +103,25 @@
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
+            // vendedoresToolStripMenuItem
+            // 
+            this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
+            this.vendedoresToolStripMenuItem.Text = "Vendedores";
+            this.vendedoresToolStripMenuItem.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // vendedoresToolStripMenuItem
+            // recepcionToolStripMenuItem
             // 
-            this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.vendedoresToolStripMenuItem.Text = "Vendedores";
-            this.vendedoresToolStripMenuItem.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
+            this.recepcionToolStripMenuItem.Name = "recepcionToolStripMenuItem";
+            this.recepcionToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.recepcionToolStripMenuItem.Text = "Recepcion";
+            this.recepcionToolStripMenuItem.Click += new System.EventHandler(this.recepcionToolStripMenuItem_Click);
             // 
             // CacaoTech
             // 
@@ -123,7 +132,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CacaoTech";
             this.Text = "CacaoTech";
-            this.Load += new System.EventHandler(this.CacaoTech_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -142,6 +150,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem depositoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recepcionToolStripMenuItem;
     }
 }
 
