@@ -8,36 +8,35 @@ using System.Threading.Tasks;
 
 namespace CacaoTech.Entidades
 {
-    public class Vendedores {
-        [Key]
-        public int VendedorID { get; set; }
-        public int ContratoID { get; set; }
-        [ForeignKey("ContratoID")]
-        public virtual Contratos Contrato { get; set; }
+    public class Productores {
 
+        [Key]
+        public int ProductorID { get; set; }
         public DateTime Fecha { get; set; }
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Direccion { get; set; }
         public string Cedula { get; set; }
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public string Email { get; set; }
+        public string Tipo { get; set; }
 
-        public Vendedores(int vendedorID, int contratoID, string nombre, string apellidos, string direccion, string cedula, string telefono, string celular, string email)
+        public Productores(int productorID, DateTime fecha, string nombres, string apellidos, string direccion, string cedula, string telefono, string celular, string email, string tipo)
         {
-            VendedorID = vendedorID;
-            ContratoID = contratoID;
-            Nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
+            ProductorID = productorID;
+            Fecha = fecha;
+            Nombres = nombres ?? throw new ArgumentNullException(nameof(nombres));
             Apellidos = apellidos ?? throw new ArgumentNullException(nameof(apellidos));
             Direccion = direccion ?? throw new ArgumentNullException(nameof(direccion));
             Cedula = cedula ?? throw new ArgumentNullException(nameof(cedula));
             Telefono = telefono ?? throw new ArgumentNullException(nameof(telefono));
             Celular = celular ?? throw new ArgumentNullException(nameof(celular));
             Email = email ?? throw new ArgumentNullException(nameof(email));
+            Tipo = tipo ?? throw new ArgumentNullException(nameof(tipo));
         }
 
-        public Vendedores()
+        public Productores()
         {
 
         }

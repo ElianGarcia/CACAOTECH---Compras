@@ -14,14 +14,14 @@ using System.Windows.Forms;
 
 namespace CacaoTech.UI.Registros
 {
-    public partial class rDeposito : Form
+    public partial class rRecepciones : Form
     {
-        GenericaBLL<Vendedores> genericaVendedorBLL;
+        GenericaBLL<Productores> genericaVendedorBLL;
         GenericaBLL<Cacao> genericaCacaoBLL;
         public List<DepositosDetalle> depositosDetalles { get; set; }
-        public rDeposito()
+        public rRecepciones()
         {
-            genericaVendedorBLL = new GenericaBLL<Vendedores>();
+            genericaVendedorBLL = new GenericaBLL<Productores>();
             genericaCacaoBLL = new GenericaBLL<Cacao>();
             InitializeComponent();
             LlenarCombos();
@@ -49,7 +49,7 @@ namespace CacaoTech.UI.Registros
         private void LlenaCampos(Depositos deposito)
         {
             IDnumericUpDown.Value = deposito.DepositoID;
-            VendedorescomboBox.Text = deposito.Vendedor.Nombre;
+            VendedorescomboBox.Text = deposito.Vendedor.Nombres;
             TipoCacaocomboBox.Text = string.Empty;
             FechadateTimePicker.Value = deposito.Fecha;
             CantidadtextBox.Text = string.Empty;
@@ -69,7 +69,7 @@ namespace CacaoTech.UI.Registros
 
             //Llenando combobox de vendedores
             VendedorescomboBox.DataSource = null;
-            List<Vendedores> lista = genericaVendedorBLL.GetList(p => true);
+            List<Productores> lista = genericaVendedorBLL.GetList(p => true);
             VendedorescomboBox.DataSource = lista;
             VendedorescomboBox.DisplayMember = "Nombre";
             VendedorescomboBox.ValueMember = "VendedorID";
@@ -109,13 +109,13 @@ namespace CacaoTech.UI.Registros
             cacao = db.Cacao.Find(TipoCacaocomboBox.SelectedIndex + 1);
             decimal importe = cacao.Precio * Convert.ToDecimal(CantidadtextBox.Text);
 
-            this.depositosDetalles.Add(
+            /*this.depositosDetalles.Add(
                 new DepositosDetalle(
                     cacao.Tipo,
                     cacao.Precio,
                     Convert.ToDecimal(CantidadtextBox.Text),
                     importe)
-                );
+                );*/
 
             cargarGrid();
             TipoCacaocomboBox.Focus();
@@ -278,7 +278,7 @@ namespace CacaoTech.UI.Registros
 
         private void RegistrarVendedorbutton_Click(object sender, EventArgs e)
         {
-            rVendedor registroVendedor = new rVendedor();
+            rProductores registroVendedor = new rProductores();
             registroVendedor.ShowDialog();
             LlenarCombos();
         }

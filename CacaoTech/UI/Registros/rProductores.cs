@@ -14,12 +14,12 @@ using System.Windows.Forms;
 
 namespace CacaoTech.UI.Registros
 {
-    public partial class rVendedor : Form
+    public partial class rProductores : Form
     {
-        GenericaBLL<Vendedores> genericaBLL;
-        public rVendedor()
+        GenericaBLL<Productores> genericaBLL;
+        public rProductores()
         {
-            genericaBLL = new GenericaBLL<Vendedores>();
+            genericaBLL = new GenericaBLL<Productores>();
             InitializeComponent();
         }
 
@@ -37,16 +37,16 @@ namespace CacaoTech.UI.Registros
 
         private bool Existe()
         {
-            Vendedores vendedor = genericaBLL.Buscar((int)IDnumericUpDown.Value);
+            Productores vendedor = genericaBLL.Buscar((int)IDnumericUpDown.Value);
 
             return (vendedor != null);
         }
 
-        private Vendedores LlenaClase()
+        private Productores LlenaClase()
         {
-            Vendedores vendedor = new Vendedores();
-            vendedor.VendedorID = Convert.ToInt32(IDnumericUpDown.Value);
-            vendedor.Nombre = NombretextBox.Text;
+            Productores vendedor = new Productores();
+            vendedor.ProductorID = Convert.ToInt32(IDnumericUpDown.Value);
+            vendedor.Nombres = NombretextBox.Text;
             vendedor.Apellidos = ApellidostextBox.Text;
             vendedor.Email = ApellidostextBox.Text;
             vendedor.Direccion = DirecciontextBox.Text;
@@ -56,10 +56,10 @@ namespace CacaoTech.UI.Registros
             return vendedor;
         }
 
-        private void LlenaCampos(Vendedores vendedor)
+        private void LlenaCampos(Productores vendedor)
         {
-            IDnumericUpDown.Value = vendedor.VendedorID;
-            NombretextBox.Text = vendedor.Nombre;
+            IDnumericUpDown.Value = vendedor.ProductorID;
+            NombretextBox.Text = vendedor.Nombres;
             ApellidostextBox.Text = vendedor.Apellidos;
             EmailtextBox.Text = vendedor.Email;
             DirecciontextBox.Text = vendedor.Direccion;
@@ -160,7 +160,7 @@ namespace CacaoTech.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Vendedores vendedor = new Vendedores();
+            Productores vendedor = new Productores();
             bool realizado = false;
 
             if (!Validar())
@@ -215,7 +215,7 @@ namespace CacaoTech.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
-            Vendedores vendedor = new Vendedores();
+            Productores vendedor = new Productores();
             int.TryParse(IDnumericUpDown.Text, out id);
 
             Limpiar();

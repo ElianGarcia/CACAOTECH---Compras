@@ -21,8 +21,8 @@ namespace CacaoTech.UI.Consultas
 
         private void btConsulta_Click(object sender, EventArgs e)
         {
-            var listado = new List<Vendedores>();
-            GenericaBLL<Vendedores> genericaBLL = new GenericaBLL<Vendedores>();
+            var listado = new List<Productores>();
+            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
 
             if (tbCriterio.Text.Trim().Length > 0)
             {
@@ -34,11 +34,11 @@ namespace CacaoTech.UI.Consultas
 
                     case 1:
                         int id = Convert.ToInt32(tbCriterio.Text);
-                        listado = genericaBLL.GetList(vendedor => vendedor.VendedorID == id);
+                        listado = genericaBLL.GetList(vendedor => vendedor.ProductorID == id);
                         break;
 
                     case 2:
-                        listado = genericaBLL.GetList(vendedor => vendedor.Nombre.Contains(tbCriterio.Text));
+                        listado = genericaBLL.GetList(vendedor => vendedor.Nombres.Contains(tbCriterio.Text));
                         break;
                     case 3:
                         listado = genericaBLL.GetList(vendedor => vendedor.Cedula.Contains(tbCriterio.Text));

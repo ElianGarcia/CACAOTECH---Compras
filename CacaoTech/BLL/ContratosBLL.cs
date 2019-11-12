@@ -12,7 +12,7 @@ namespace CacaoTech.BLL
 {
     public class ContratosBLL
     {
-        public static bool Guardar(Contratos contrato)
+        public static bool Guardar(Prestamos contrato)
         {
             bool realizado = false;
             Contexto db = new Contexto();
@@ -33,19 +33,14 @@ namespace CacaoTech.BLL
             return realizado;
         }
 
-        public static bool Modificar(Contratos contrato)
+        public static bool Modificar(Prestamos contrato)
         {
             bool realizado = false;
             Contexto db = new Contexto();
 
             try
             {
-                var Anterior = db.Contrato.Find(contrato.ContratoID);
-                foreach(var item in Anterior.ContratosDetalle)
-                {
-                    if (!contrato.ContratosDetalle.Exists(d => d.ContratosDetalleID == item.ContratosDetalleID))
-                        db.Entry(item).State = EntityState.Deleted;
-                }
+                var Anterior = db.Contrato.Find(contrato.PrestamoID);
                 db.Entry(contrato).State = EntityState.Modified;
                 realizado = (db.SaveChanges() > 0);
             }
@@ -83,15 +78,14 @@ namespace CacaoTech.BLL
             return realizado;
         }
 
-        public static Contratos Buscar(int ID)
+        public static Prestamos Buscar(int ID)
         {
-            Contratos contrato = new Contratos();
+            Prestamos contrato = new Prestamos();
             Contexto db = new Contexto();
 
             try
             {
                 contrato = db.Contrato.Find(ID);
-                contrato.ContratosDetalle.Count();
             }
             catch (Exception)
             {
@@ -104,9 +98,9 @@ namespace CacaoTech.BLL
             return contrato;
         }
 
-        public static List<Contratos> GetList(Expression<Func<Contratos, bool>> contratos)
+        public static List<Prestamos> GetList(Expression<Func<Prestamos, bool>> contratos)
         {
-            List<Contratos> lista = new List<Contratos>();
+            List<Prestamos> lista = new List<Prestamos>();
             Contexto db = new Contexto();
 
             try

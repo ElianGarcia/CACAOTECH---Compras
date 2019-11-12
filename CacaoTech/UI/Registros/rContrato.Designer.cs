@@ -116,7 +116,6 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(497, 102);
             this.dataGridView.TabIndex = 0;
-            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // Quitarbutton
             // 
@@ -204,7 +203,6 @@
             this.AgregarTipobutton.TabIndex = 33;
             this.AgregarTipobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarTipobutton.UseVisualStyleBackColor = false;
-            this.AgregarTipobutton.Click += new System.EventHandler(this.AgregarDepositobutton_Click);
             // 
             // IDnumericUpDown
             // 

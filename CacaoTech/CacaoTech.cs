@@ -24,7 +24,7 @@ namespace CacaoTech
 
         private void vendedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rVendedor registroVendedores = new rVendedor();
+            rProductores registroVendedores = new rProductores();
             registroVendedores.ShowDialog();
         }
 
@@ -42,7 +42,7 @@ namespace CacaoTech
 
         private void depositoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rDeposito registroDeposito = new rDeposito();
+            rRecepciones registroDeposito = new rRecepciones();
             registroDeposito.ShowDialog();
         }
 

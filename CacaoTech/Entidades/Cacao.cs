@@ -14,6 +14,7 @@ namespace CacaoTech.Entidades
         public int CacaoID { get; set; }
         public string Tipo { get; set; }
         public decimal Precio { get; set; }
+        public decimal Existencia { get; set; }
 
         public Cacao()
         {

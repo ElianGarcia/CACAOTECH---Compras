@@ -1,6 +1,6 @@
 ﻿namespace CacaoTech.UI.Registros
 {
-    partial class rVendedor
+    partial class rProductores
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rVendedor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rProductores));
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
