@@ -46,6 +46,8 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -236,12 +238,33 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "Interes:";
             // 
-            // rContrato
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(116, 144);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(366, 25);
+            this.textBox1.TabIndex = 49;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(5, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 19);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Tiempo (meses):";
+            // 
+            // rPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(523, 269);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RegistrarProductorbutton);
@@ -258,7 +281,7 @@
             this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "rContrato";
+            this.Name = "rPrestamos";
             this.Text = "Nuevo Prestamo";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
@@ -285,5 +308,7 @@
         private System.Windows.Forms.Button RegistrarProductorbutton;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

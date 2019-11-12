@@ -12,7 +12,22 @@ namespace CacaoTech.Entidades
     {
         [Key]
         public int PagoID { get; set; }
-        public DateTime Fecha { get; set; }
+        public int ProductorID { get; set; }
+        [ForeignKey("ProductorID")]
+        public virtual Productores productores { get; set; }
         public virtual List<PagosDetalle> PagosDetalle { get; set; }
+
+        public Pagos(int pagoID, int productorID, Productores productores, List<PagosDetalle> pagosDetalle)
+        {
+            PagoID = pagoID;
+            ProductorID = productorID;
+            this.productores = productores ?? throw new ArgumentNullException(nameof(productores));
+            PagosDetalle = pagosDetalle ?? throw new ArgumentNullException(nameof(pagosDetalle));
+        }
+
+        public Pagos()
+        {
+
+        }
     }
 }
