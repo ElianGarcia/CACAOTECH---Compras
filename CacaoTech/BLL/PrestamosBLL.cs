@@ -10,16 +10,16 @@ using System.Linq.Expressions;
 
 namespace CacaoTech.BLL
 {
-    public class ContratosBLL
+    public class PrestamosBLL
     {
-        public static bool Guardar(Prestamos contrato)
+        public static bool Guardar(Prestamos prestamo)
         {
             bool realizado = false;
             Contexto db = new Contexto();
 
             try
             {
-                if (db.Contrato.Add(contrato) != null)
+                if (db.Prestamo.Add(prestamo) != null)
                     realizado = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -33,15 +33,15 @@ namespace CacaoTech.BLL
             return realizado;
         }
 
-        public static bool Modificar(Prestamos contrato)
+        public static bool Modificar(Prestamos prestamo)
         {
             bool realizado = false;
             Contexto db = new Contexto();
 
             try
             {
-                var Anterior = db.Contrato.Find(contrato.PrestamoID);
-                db.Entry(contrato).State = EntityState.Modified;
+                var Anterior = db.Prestamo.Find(prestamo.PrestamoID);
+                db.Entry(prestamo).State = EntityState.Modified;
                 realizado = (db.SaveChanges() > 0);
             }
             catch (Exception)
@@ -62,7 +62,7 @@ namespace CacaoTech.BLL
 
             try
             {
-                var Eliminar = db.Contrato.Find(ID);
+                var Eliminar = db.Prestamo.Find(ID);
                 db.Entry(Eliminar).State = EntityState.Deleted;
 
                 realizado = (db.SaveChanges() > 0);
@@ -80,12 +80,12 @@ namespace CacaoTech.BLL
 
         public static Prestamos Buscar(int ID)
         {
-            Prestamos contrato = new Prestamos();
+            Prestamos prestamo = new Prestamos();
             Contexto db = new Contexto();
 
             try
             {
-                contrato = db.Contrato.Find(ID);
+                prestamo = db.Prestamo.Find(ID);
             }
             catch (Exception)
             {
@@ -95,17 +95,17 @@ namespace CacaoTech.BLL
             {
                 db.Dispose();
             }
-            return contrato;
+            return prestamo;
         }
 
-        public static List<Prestamos> GetList(Expression<Func<Prestamos, bool>> contratos)
+        public static List<Prestamos> GetList(Expression<Func<Prestamos, bool>> prestamo)
         {
             List<Prestamos> lista = new List<Prestamos>();
             Contexto db = new Contexto();
 
             try
             {
-                lista = db.Contrato.Where(contratos).ToList();
+                lista = db.Prestamo.Where(prestamo).ToList();
             }
             catch (Exception)
             {

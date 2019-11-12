@@ -36,7 +36,7 @@ namespace CacaoTech
 
         private void contratoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rContrato registroContrato = new rContrato();
+            rPrestamos registroContrato = new rPrestamos();
             registroContrato.ShowDialog();
         }
 

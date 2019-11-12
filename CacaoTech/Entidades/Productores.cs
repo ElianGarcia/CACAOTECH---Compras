@@ -20,9 +20,10 @@ namespace CacaoTech.Entidades
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public string Email { get; set; }
-        public string Tipo { get; set; }
+        public bool Tipo { get; set; }
+        public decimal Balance { get; set; }
 
-        public Productores(int productorID, DateTime fecha, string nombres, string apellidos, string direccion, string cedula, string telefono, string celular, string email, string tipo)
+        public Productores(int productorID, DateTime fecha, string nombres, string apellidos, string direccion, string cedula, string telefono, string celular, string email, bool tipo)
         {
             ProductorID = productorID;
             Fecha = fecha;
@@ -33,7 +34,7 @@ namespace CacaoTech.Entidades
             Telefono = telefono ?? throw new ArgumentNullException(nameof(telefono));
             Celular = celular ?? throw new ArgumentNullException(nameof(celular));
             Email = email ?? throw new ArgumentNullException(nameof(email));
-            Tipo = tipo ?? throw new ArgumentNullException(nameof(tipo));
+            Tipo = tipo;
         }
 
         public Productores()

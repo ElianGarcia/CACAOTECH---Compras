@@ -16,15 +16,13 @@ namespace CacaoTech.Entidades
         [ForeignKey("ProductorID")]
         public virtual Productores Productor { get; set; }
         public decimal Monto { get; set; }
-        public decimal Balance { get; set; }
 
-        public Prestamos(int prestamoID, int productorID, Productores productor, decimal monto, decimal balance)
+        public Prestamos(int prestamoID, int productorID, Productores productor, decimal monto)
         {
             PrestamoID = prestamoID;
             ProductorID = productorID;
             Productor = productor ?? throw new ArgumentNullException(nameof(productor));
             Monto = monto;
-            Balance = balance;
         }
 
         public Prestamos()

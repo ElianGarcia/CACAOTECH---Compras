@@ -14,34 +14,24 @@ using System.Windows.Forms;
 
 namespace CacaoTech.UI.Registros
 {
-    public partial class rContrato : Form
+    public partial class rPrestamos : Form
     {
-        GenericaBLL<Productores> genericaVendedorBLL;
-        GenericaBLL<Cacao> genericaCacaoBLL;
-        public rContrato()
+        GenericaBLL<Productores> genericaProductores;
+        public rPrestamos()
         {
-            genericaVendedorBLL = new GenericaBLL<Productores>();
-            genericaCacaoBLL = new GenericaBLL<Cacao>();
+            genericaProductores = new GenericaBLL<Productores>();
             InitializeComponent();
             LlenarCombos();
         }
 
         public void LlenarCombos()
         {
-            //Llenando combobox de tipos de cacao
-            TipoCacaocomboBox.DataSource = null;
-            List<Cacao> lista1 = genericaCacaoBLL.GetList(p => true);
-            TipoCacaocomboBox.DataSource = lista1;
-            TipoCacaocomboBox.DisplayMember = "Tipo";
-            TipoCacaocomboBox.ValueMember = "CacaoID";
-
-
             //Llenando combobox de vendedores
-            VendedorescomboBox.DataSource = null;
-            List<Productores> lista = genericaVendedorBLL.GetList(p => true);
-            VendedorescomboBox.DataSource = lista;
-            VendedorescomboBox.DisplayMember = "Nombre";
-            VendedorescomboBox.ValueMember = "VendedorID";
+            ProductorescomboBox.DataSource = null;
+            List<Productores> lista = genericaProductores.GetList(p => true);
+            ProductorescomboBox.DataSource = lista;
+            ProductorescomboBox.DisplayMember = "Nombres";
+            ProductorescomboBox.ValueMember = "ProductorID";
         }
 
         private Decimal ToDecimal(string valor)
@@ -55,30 +45,28 @@ namespace CacaoTech.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
-            Prestamos contrato = new Prestamos();
+            Prestamos prestamo = new Prestamos();
 
             int.TryParse(IDnumericUpDown.Text, out id);
 
             Limpiar();
 
-            contrato = ContratosBLL.Buscar(id);
+            prestamo = PrestamosBLL.Buscar(id);
 
-            if (contrato != null)
+            if (prestamo != null)
             {
-                LlenaCampos(contrato);
+                LlenaCampos(prestamo);
             }
             else
             {
-                MessageBox.Show("Contrato no encontrado");
+                MessageBox.Show("Prestamo no encontrado");
             }
         }
 
-        private void LlenaCampos(Prestamos contrato)
+        private void LlenaCampos(Prestamos prestamo)
         {
-            IDnumericUpDown.Value = contrato.PrestamoID;
-            //VendedorescomboBox.SelectedIndex = contrato.VendedorID;
-            FechaIniciodateTimePicker.Value = contrato.FechaInicio;
-            FechaFindateTimePicker.Value = contrato.FechaFin;
+            IDnumericUpDown.Value = prestamo.PrestamoID;
+            ProductorescomboBox.SelectedIndex = prestamo.ProductorID;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -89,11 +77,8 @@ namespace CacaoTech.UI.Registros
         private void Limpiar()
         {
             IDnumericUpDown.Value = 0;
-            VendedorescomboBox.Text = string.Empty;
-            TipoCacaocomboBox.Text = string.Empty;
+            ProductorescomboBox.Text = string.Empty;
             FechaIniciodateTimePicker.Value = DateTime.Now;
-            FechaFindateTimePicker.Value = DateTime.Now;
-            CantidadtextBox.Text = string.Empty;
             errorProvider.Clear();
             CargarGrid();
         }
@@ -102,7 +87,6 @@ namespace CacaoTech.UI.Registros
         {
             DataGridViewCheckBoxColumn columna = new DataGridViewCheckBoxColumn();
 
-            dataGridView.DataSource = null;
             //dataGridView.DataSource = this.depositosDetalles;
         }
 
@@ -118,7 +102,7 @@ namespace CacaoTech.UI.Registros
 
 
             if (IDnumericUpDown.Value == 0)
-                realizado = ContratosBLL.Guardar(contrato);
+                realizado = PrestamosBLL.Guardar(contrato);
             else
             {
                 if (!Existe())
@@ -126,7 +110,7 @@ namespace CacaoTech.UI.Registros
                     MessageBox.Show("No se puede modificar un contrato inexistente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                realizado = ContratosBLL.Modificar(contrato);
+                realizado = PrestamosBLL.Modificar(contrato);
             }
 
             if (realizado)
@@ -150,20 +134,18 @@ namespace CacaoTech.UI.Registros
 
         private Prestamos LlenaClase()
         {
-            Prestamos contrato = new Prestamos();
-            contrato.PrestamoID = ToInt(IDnumericUpDown.Value.ToString());
-            //contrato.VendedorID = VendedorescomboBox.SelectedIndex;
-            contrato.FechaInicio = FechaIniciodateTimePicker.Value;
-            contrato.FechaFin = FechaFindateTimePicker.Value;
+            Prestamos prestamo = new Prestamos();
+            prestamo.PrestamoID = ToInt(IDnumericUpDown.Value.ToString());
+            prestamo.ProductorID = ProductorescomboBox.SelectedIndex;
 
-            return contrato;
+            return prestamo;
         }
 
         private bool Existe()
         {
-            Prestamos contrato = ContratosBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
+            Prestamos prestamo = PrestamosBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
 
-            return (contrato != null);
+            return (prestamo != null);
         }
 
         private bool Validar()
@@ -187,17 +169,16 @@ namespace CacaoTech.UI.Registros
 
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
-            Contexto db = new Contexto();
 
             Limpiar();
 
-            if (ContratosBLL.Eliminar(id))
+            if (PrestamosBLL.Eliminar(id))
             {
                 MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un deposito inexistente");
+                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un prestamo inexistente");
             }
         }
 
@@ -223,8 +204,8 @@ namespace CacaoTech.UI.Registros
 
         private void RegistrarVendedorbutton_Click(object sender, EventArgs e)
         {
-            rProductores registroVendedor = new rProductores();
-            registroVendedor.ShowDialog();
+            rProductores registroProductor = new rProductores();
+            registroProductor.ShowDialog();
             LlenarCombos();
         }
     }

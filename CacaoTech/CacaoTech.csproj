@@ -59,7 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ContratosBLL.cs" />
+    <Compile Include="BLL\PrestamosBLL.cs" />
     <Compile Include="BLL\DepositosBLL.cs" />
     <Compile Include="BLL\GenericaBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
@@ -90,11 +90,11 @@
     <Compile Include="UI\Registros\rCacao.Designer.cs">
       <DependentUpon>rCacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rContrato.cs">
+    <Compile Include="UI\Registros\rPrestamos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\rContrato.Designer.cs">
-      <DependentUpon>rContrato.cs</DependentUpon>
+    <Compile Include="UI\Registros\rPrestamos.Designer.cs">
+      <DependentUpon>rPrestamos.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rRecepciones.cs">
       <SubType>Form</SubType>
@@ -133,8 +133,8 @@
     <EmbeddedResource Include="UI\Registros\rCacao.resx">
       <DependentUpon>rCacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\rContrato.resx">
-      <DependentUpon>rContrato.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rPrestamos.resx">
+      <DependentUpon>rPrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rRecepciones.resx">
       <DependentUpon>rRecepciones.cs</DependentUpon>
