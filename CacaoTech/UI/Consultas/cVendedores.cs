@@ -45,7 +45,7 @@ namespace CacaoTech.UI.Consultas
                         break;
                 }
 
-                //listado = listado.Where(c => c.Fecha.CompareTo(DesdeDateTimePicker.Value) && c.Fecha.Date <= HastaDateTimePicker.Value.Date).ToList();
+                //listado = listado.Where(c => c.Fecha. >= DesdeDateTimePicker.Value.Date && c.Fecha <= HastaDateTimePicker.Value.Date).ToList();
             }
             else
             {

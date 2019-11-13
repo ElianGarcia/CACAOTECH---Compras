@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rPrestamos));
-            this.PreciotextBox = new System.Windows.Forms.TextBox();
+            this.MontotextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.FechaIniciodateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.ProductorescomboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,23 +44,25 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.textBox = new System.Windows.Forms.TextBox();
+            this.InterestextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TiempotextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.BalancetextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // PreciotextBox
+            // MontotextBox
             // 
-            this.PreciotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.PreciotextBox.Location = new System.Drawing.Point(116, 82);
-            this.PreciotextBox.Name = "PreciotextBox";
-            this.PreciotextBox.Size = new System.Drawing.Size(366, 25);
-            this.PreciotextBox.TabIndex = 38;
-            this.PreciotextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.PreciotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
+            this.MontotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.MontotextBox.Location = new System.Drawing.Point(129, 82);
+            this.MontotextBox.Name = "MontotextBox";
+            this.MontotextBox.Size = new System.Drawing.Size(353, 25);
+            this.MontotextBox.TabIndex = 38;
+            this.MontotextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.MontotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
             // 
             // label6
             // 
@@ -75,9 +77,9 @@
             // IDnumericUpDown
             // 
             this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.IDnumericUpDown.Location = new System.Drawing.Point(116, 14);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(129, 14);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(88, 25);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(93, 25);
             this.IDnumericUpDown.TabIndex = 24;
             // 
             // label1
@@ -95,16 +97,16 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
-            // FechaIniciodateTimePicker
+            // FechadateTimePicker
             // 
-            this.FechaIniciodateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.FechaIniciodateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechaIniciodateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.FechaIniciodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(352, 14);
-            this.FechaIniciodateTimePicker.Name = "FechaIniciodateTimePicker";
-            this.FechaIniciodateTimePicker.Size = new System.Drawing.Size(130, 25);
-            this.FechaIniciodateTimePicker.TabIndex = 42;
+            this.FechadateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(352, 14);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(130, 25);
+            this.FechadateTimePicker.TabIndex = 42;
             // 
             // label7
             // 
@@ -121,9 +123,9 @@
             this.ProductorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.ProductorescomboBox.FormattingEnabled = true;
-            this.ProductorescomboBox.Location = new System.Drawing.Point(116, 51);
+            this.ProductorescomboBox.Location = new System.Drawing.Point(129, 51);
             this.ProductorescomboBox.Name = "ProductorescomboBox";
-            this.ProductorescomboBox.Size = new System.Drawing.Size(315, 25);
+            this.ProductorescomboBox.Size = new System.Drawing.Size(302, 25);
             this.ProductorescomboBox.TabIndex = 44;
             // 
             // label3
@@ -160,7 +162,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(371, 193);
+            this.Eliminarbutton.Location = new System.Drawing.Point(371, 215);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(111, 60);
             this.Eliminarbutton.TabIndex = 36;
@@ -177,7 +179,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(192, 193);
+            this.Guardarbutton.Location = new System.Drawing.Point(192, 215);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(111, 60);
             this.Guardarbutton.TabIndex = 35;
@@ -194,7 +196,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(10, 193);
+            this.Nuevobutton.Location = new System.Drawing.Point(10, 215);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(111, 60);
             this.Nuevobutton.TabIndex = 34;
@@ -211,7 +213,7 @@
             this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(214, 4);
+            this.Buscarbutton.Location = new System.Drawing.Point(228, 4);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(46, 35);
             this.Buscarbutton.TabIndex = 25;
@@ -219,61 +221,86 @@
             this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // textBox
+            // InterestextBox
             // 
-            this.textBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox.Location = new System.Drawing.Point(116, 113);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(366, 25);
-            this.textBox.TabIndex = 47;
-            this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.InterestextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.InterestextBox.Location = new System.Drawing.Point(129, 140);
+            this.InterestextBox.Name = "InterestextBox";
+            this.InterestextBox.ReadOnly = true;
+            this.InterestextBox.Size = new System.Drawing.Size(353, 25);
+            this.InterestextBox.TabIndex = 47;
+            this.InterestextBox.Text = "0.15 ";
+            this.InterestextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(5, 116);
+            this.label2.Location = new System.Drawing.Point(5, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.TabIndex = 46;
             this.label2.Text = "Interes:";
             // 
-            // textBox1
+            // TiempotextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(116, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(366, 25);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TiempotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.TiempotextBox.Location = new System.Drawing.Point(129, 169);
+            this.TiempotextBox.Name = "TiempotextBox";
+            this.TiempotextBox.Size = new System.Drawing.Size(353, 25);
+            this.TiempotextBox.TabIndex = 49;
+            this.TiempotextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TiempotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TiempotextBox_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(5, 147);
+            this.label4.Location = new System.Drawing.Point(5, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 19);
             this.label4.TabIndex = 48;
             this.label4.Text = "Tiempo (meses):";
+            // 
+            // BalancetextBox
+            // 
+            this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.BalancetextBox.Location = new System.Drawing.Point(129, 111);
+            this.BalancetextBox.Name = "BalancetextBox";
+            this.BalancetextBox.ReadOnly = true;
+            this.BalancetextBox.Size = new System.Drawing.Size(353, 25);
+            this.BalancetextBox.TabIndex = 51;
+            this.BalancetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(5, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 19);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Balance:";
             // 
             // rPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(523, 269);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(523, 285);
+            this.Controls.Add(this.BalancetextBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.TiempotextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.InterestextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RegistrarProductorbutton);
             this.Controls.Add(this.ProductorescomboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.FechaIniciodateTimePicker);
+            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Eliminarbutton);
-            this.Controls.Add(this.PreciotextBox);
+            this.Controls.Add(this.MontotextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -292,7 +319,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox PreciotextBox;
+        private System.Windows.Forms.TextBox MontotextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
@@ -303,12 +330,14 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.ComboBox ProductorescomboBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker FechaIniciodateTimePicker;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button RegistrarProductorbutton;
-        private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.TextBox InterestextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TiempotextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox BalancetextBox;
+        private System.Windows.Forms.Label label5;
     }
 }

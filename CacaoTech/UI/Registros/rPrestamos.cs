@@ -34,14 +34,6 @@ namespace CacaoTech.UI.Registros
             ProductorescomboBox.ValueMember = "ProductorID";
         }
 
-        private Decimal ToDecimal(string valor)
-        {
-            decimal resultado = 0;
-            decimal.TryParse(valor, out resultado);
-
-            return resultado;
-        }
-
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
@@ -67,6 +59,11 @@ namespace CacaoTech.UI.Registros
         {
             IDnumericUpDown.Value = prestamo.PrestamoID;
             ProductorescomboBox.SelectedIndex = prestamo.ProductorID;
+            FechadateTimePicker.Value = prestamo.Fecha;
+            MontotextBox.Text = prestamo.Monto.ToString();
+            BalancetextBox.Text = prestamo.Balance.ToString();
+            InterestextBox.Text = prestamo.Interes.ToString();
+            TiempotextBox.Text = prestamo.Tiempo.ToString();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -78,16 +75,13 @@ namespace CacaoTech.UI.Registros
         {
             IDnumericUpDown.Value = 0;
             ProductorescomboBox.Text = string.Empty;
-            FechaIniciodateTimePicker.Value = DateTime.Now;
+            FechadateTimePicker.Value = DateTime.Now;
+            MontotextBox.Text = string.Empty;
+            BalancetextBox.Text = string.Empty;
+            InterestextBox.Text = string.Empty;
+            TiempotextBox.Text = string.Empty;
+
             errorProvider.Clear();
-            CargarGrid();
-        }
-
-        private void CargarGrid()
-        {
-            DataGridViewCheckBoxColumn columna = new DataGridViewCheckBoxColumn();
-
-            //dataGridView.DataSource = this.depositosDetalles;
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -132,11 +126,24 @@ namespace CacaoTech.UI.Registros
             return resultado;
         }
 
+        private Decimal ToDecimal(string valor)
+        {
+            decimal resultado = 0;
+            decimal.TryParse(valor, out resultado);
+
+            return resultado;
+        }
+
         private Prestamos LlenaClase()
         {
             Prestamos prestamo = new Prestamos();
             prestamo.PrestamoID = ToInt(IDnumericUpDown.Value.ToString());
             prestamo.ProductorID = ProductorescomboBox.SelectedIndex;
+            prestamo.Fecha = FechadateTimePicker.Value;
+            prestamo.Monto = ToDecimal(MontotextBox.Text);
+            prestamo.Balance = ToDecimal(BalancetextBox.Text);
+            prestamo.Interes = ToDecimal(InterestextBox.Text);
+            prestamo.Tiempo = ToInt(TiempotextBox.Text);
 
             return prestamo;
         }
@@ -157,6 +164,36 @@ namespace CacaoTech.UI.Registros
             {
                 errorProvider.SetError(IDnumericUpDown, obligatorio);
                 IDnumericUpDown.Focus();
+                validado = false;
+            }
+            if (string.IsNullOrWhiteSpace(MontotextBox.Text))
+            {
+                errorProvider.SetError(MontotextBox, obligatorio);
+                MontotextBox.Focus();
+                validado = false;
+            }
+            if (ToInt(MontotextBox.Text) < 1)
+            {
+                errorProvider.SetError(MontotextBox, "El monto debe ser mayor a 0");
+                MontotextBox.Focus();
+                validado = false;
+            }
+            if (string.IsNullOrWhiteSpace(TiempotextBox.Text))
+            {
+                errorProvider.SetError(TiempotextBox, obligatorio);
+                TiempotextBox.Focus();
+                validado = false;
+            }
+            if (ToInt(TiempotextBox.Text) < 1)
+            {
+                errorProvider.SetError(TiempotextBox, "El tiempo debe ser mayor a un mes");
+                TiempotextBox.Focus();
+                validado = false;
+            }
+            if (string.IsNullOrWhiteSpace(FechadateTimePicker.Value.ToString()))
+            {
+                errorProvider.SetError(FechadateTimePicker, obligatorio);
+                FechadateTimePicker.Focus();
                 validado = false;
             }
 
@@ -192,11 +229,9 @@ namespace CacaoTech.UI.Registros
                 e.Handled = true;
         }
 
-        private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void TiempotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
-
-            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cultureInfo.NumberFormat.NumberDecimalSeparator)
+            if (char.IsNumber(e.KeyChar))
                 e.Handled = false;
             else
                 e.Handled = true;
