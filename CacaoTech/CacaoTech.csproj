@@ -192,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts.sql" />
+    <None Include="Resources\Icono-Principal.PNG" />
     <None Include="Resources\Add_User_Male_32.png" />
     <None Include="Resources\Add_User_Male_16.png" />
   </ItemGroup>

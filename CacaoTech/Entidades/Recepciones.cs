@@ -10,6 +10,7 @@ namespace CacaoTech.Entidades
 {
     public class Recepciones
     {
+        [Key]
         public int RecepcionID { get; set; }
         public DateTime Fecha { get; set; }
         public int ProductorID { get; set; }
