@@ -40,9 +40,9 @@ namespace CacaoTech.UI.Registros
 
         private bool Existe()
         {
-            Productores vendedor = genericaBLL.Buscar((int)IDnumericUpDown.Value);
+            Productores productor = genericaBLL.Buscar((int)IDnumericUpDown.Value);
 
-            return (vendedor != null);
+            return (productor != null);
         }
 
         private Productores LlenaClase()
@@ -77,18 +77,19 @@ namespace CacaoTech.UI.Registros
             return resultado;
         }
 
-        private void LlenaCampos(Productores vendedor)
+        private void LlenaCampos(Productores productor)
         {
-            IDnumericUpDown.Value = vendedor.ProductorID;
-            NombretextBox.Text = vendedor.Nombres;
-            ApellidostextBox.Text = vendedor.Apellidos;
-            EmailtextBox.Text = vendedor.Email;
-            DirecciontextBox.Text = vendedor.Direccion;
-            TelefonomaskedTextBox.Text = vendedor.Telefono;
-            CelularmaskedTextBox.Text = vendedor.Celular;
-            BalancetextBox.Text = vendedor.Balance.ToString();
+            IDnumericUpDown.Value = productor.ProductorID;
+            NombretextBox.Text = productor.Nombres;
+            ApellidostextBox.Text = productor.Apellidos;
+            EmailtextBox.Text = productor.Email;
+            DirecciontextBox.Text = productor.Direccion;
+            TelefonomaskedTextBox.Text = productor.Telefono;
+            CelularmaskedTextBox.Text = productor.Celular;
+            CedulamaskedTextBox.Text = productor.Cedula;
+            BalancetextBox.Text = productor.Balance.ToString();
 
-            if (vendedor.Tipo)
+            if (productor.Tipo)
             {
                 AmbulanteradioButton.Checked = true;
 
@@ -163,19 +164,19 @@ namespace CacaoTech.UI.Registros
                 EmailtextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")) && (CedulamaskedTextBox.MaskFull == false))
+            if (string.IsNullOrWhiteSpace(CedulamaskedTextBox.Text.Replace("-", "")) || (CedulamaskedTextBox.MaskFull == false))
             {
                 errorProvider.SetError(CedulamaskedTextBox, obligatorio);
                 CedulamaskedTextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")) && (CelularmaskedTextBox.MaskFull == false))
+            if (string.IsNullOrWhiteSpace(CelularmaskedTextBox.Text.Replace("-", "")) || (CelularmaskedTextBox.MaskFull == false))
             {
                 errorProvider.SetError(CelularmaskedTextBox, obligatorio);
                 CelularmaskedTextBox.Focus();
                 realizado = false;
             }
-            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")) && (TelefonomaskedTextBox.MaskFull == false))
+            if (string.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text.Replace("-", "")) || (TelefonomaskedTextBox.MaskFull == false))
             {
                 errorProvider.SetError(TelefonomaskedTextBox, obligatorio);
                 TelefonomaskedTextBox.Focus();
