@@ -50,8 +50,6 @@
             this.RegistrarProductoresbutton = new System.Windows.Forms.Button();
             this.ProductorescomboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.BalancetextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +107,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(390, 325);
+            this.Eliminarbutton.Location = new System.Drawing.Point(390, 246);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
             this.Eliminarbutton.TabIndex = 16;
@@ -126,7 +124,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(205, 325);
+            this.Guardarbutton.Location = new System.Drawing.Point(200, 246);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
             this.Guardarbutton.TabIndex = 15;
@@ -143,7 +141,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(16, 325);
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 246);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
             this.Nuevobutton.TabIndex = 14;
@@ -259,6 +257,7 @@
             this.RegistrarProductoresbutton.TabIndex = 57;
             this.RegistrarProductoresbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RegistrarProductoresbutton.UseVisualStyleBackColor = false;
+            this.RegistrarProductoresbutton.Click += new System.EventHandler(this.RegistrarProductorbutton_Click);
             // 
             // ProductorescomboBox
             // 
@@ -280,33 +279,12 @@
             this.label3.TabIndex = 55;
             this.label3.Text = "Vendedor:";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(13, 160);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 19);
-            this.label8.TabIndex = 58;
-            this.label8.Text = "Balance:";
-            // 
-            // BalancetextBox
-            // 
-            this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.BalancetextBox.Location = new System.Drawing.Point(120, 157);
-            this.BalancetextBox.Name = "BalancetextBox";
-            this.BalancetextBox.ReadOnly = true;
-            this.BalancetextBox.Size = new System.Drawing.Size(179, 25);
-            this.BalancetextBox.TabIndex = 59;
-            // 
             // rRecepciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(550, 397);
-            this.Controls.Add(this.BalancetextBox);
-            this.Controls.Add(this.label8);
+            this.ClientSize = new System.Drawing.Size(546, 322);
             this.Controls.Add(this.RegistrarProductoresbutton);
             this.Controls.Add(this.ProductorescomboBox);
             this.Controls.Add(this.label3);
@@ -357,8 +335,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox TipoCacaocomboBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox BalancetextBox;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button RegistrarProductoresbutton;
         private System.Windows.Forms.ComboBox ProductorescomboBox;
         private System.Windows.Forms.Label label3;
