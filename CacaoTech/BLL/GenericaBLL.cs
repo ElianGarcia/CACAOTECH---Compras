@@ -109,5 +109,10 @@ namespace CacaoTech.BLL
 
             return realizado;
         }
+
+        public decimal CalcularImporte(decimal precio, decimal cantidad)
+        {
+            return (precio * cantidad);
+        }
     }
 }

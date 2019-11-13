@@ -69,21 +69,21 @@ namespace CacaoTech.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
-            Recepciones deposito = new Recepciones();
+            Recepciones recepcion = new Recepciones();
 
             int.TryParse(IDnumericUpDown.Text, out id);
 
             Limpiar();
 
-            deposito = genericaRecepcionBLL.Buscar(id);
+            recepcion = genericaRecepcionBLL.Buscar(id);
 
-            if (deposito != null)
+            if (recepcion != null)
             {
-                LlenaCampos(deposito);
+                LlenaCampos(recepcion);
             }
             else
             {
-                MessageBox.Show("Deposito no encontrado");
+                MessageBox.Show("Recepcion no encontrado");
             }
         }
 
@@ -128,7 +128,7 @@ namespace CacaoTech.UI.Registros
             if (realizado)
             {
                 Limpiar();
-                MessageBox.Show("GUARDADO EXITOSAMENTE", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("GUARDADA EXITOSAMENTE", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -211,7 +211,7 @@ namespace CacaoTech.UI.Registros
             decimal cantidad = ToDecimal(CantidadtextBox.Text);
             decimal precio = ToDecimal(PreciotextBox.Text);
 
-            ImportetextBox.Text = Convert.ToString(precio * Convert.ToDecimal(cantidad));
+            ImportetextBox.Text = genericaRecepcionBLL.CalcularImporte(precio, cantidad).ToString();
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)

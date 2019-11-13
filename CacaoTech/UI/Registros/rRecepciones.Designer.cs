@@ -253,7 +253,7 @@
             this.RegistrarProductoresbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.RegistrarProductoresbutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RegistrarProductoresbutton.Image = global::CacaoTech.Properties.Resources.Add_User_Male_32;
-            this.RegistrarProductoresbutton.Location = new System.Drawing.Point(463, 124);
+            this.RegistrarProductoresbutton.Location = new System.Drawing.Point(463, 120);
             this.RegistrarProductoresbutton.Name = "RegistrarProductoresbutton";
             this.RegistrarProductoresbutton.Size = new System.Drawing.Size(45, 35);
             this.RegistrarProductoresbutton.TabIndex = 57;
@@ -265,7 +265,7 @@
             this.ProductorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.ProductorescomboBox.FormattingEnabled = true;
-            this.ProductorescomboBox.Location = new System.Drawing.Point(120, 130);
+            this.ProductorescomboBox.Location = new System.Drawing.Point(120, 126);
             this.ProductorescomboBox.Name = "ProductorescomboBox";
             this.ProductorescomboBox.Size = new System.Drawing.Size(337, 25);
             this.ProductorescomboBox.TabIndex = 56;
@@ -274,7 +274,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(13, 130);
+            this.label3.Location = new System.Drawing.Point(13, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 55;
@@ -284,7 +284,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(13, 174);
+            this.label8.Location = new System.Drawing.Point(13, 160);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 19);
             this.label8.TabIndex = 58;
@@ -293,7 +293,7 @@
             // BalancetextBox
             // 
             this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.BalancetextBox.Location = new System.Drawing.Point(120, 171);
+            this.BalancetextBox.Location = new System.Drawing.Point(120, 157);
             this.BalancetextBox.Name = "BalancetextBox";
             this.BalancetextBox.ReadOnly = true;
             this.BalancetextBox.Size = new System.Drawing.Size(179, 25);
