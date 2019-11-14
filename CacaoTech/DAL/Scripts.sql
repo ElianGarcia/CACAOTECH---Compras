@@ -1,3 +1,5 @@
+create database CacaoDB
+
 use CacaoDB
 
 if not exists (Select 1 from Cacaos)

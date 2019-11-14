@@ -16,14 +16,14 @@ namespace CacaoTech.UI.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crVendedores : ReportClass {
+    public class crProductores : ReportClass {
         
-        public crVendedores() {
+        public crProductores() {
         }
         
         public override string ResourceName {
             get {
-                return "crVendedores.rpt";
+                return "crProductores.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CacaoTech.UI.Reportes {
         
         public override string FullResourceName {
             get {
-                return "CacaoTech.UI.Reportes.crVendedores.rpt";
+                return "CacaoTech.UI.Reportes.crProductores.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace CacaoTech.UI.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrVendedores : Component, ICachedReport {
+    public class CachedcrProductores : Component, ICachedReport {
         
-        public CachedcrVendedores() {
+        public CachedcrProductores() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace CacaoTech.UI.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crVendedores rpt = new crVendedores();
+            crProductores rpt = new crProductores();
             rpt.Site = this.Site;
             return rpt;
         }

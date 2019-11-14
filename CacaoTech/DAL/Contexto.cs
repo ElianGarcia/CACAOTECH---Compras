@@ -14,5 +14,13 @@ namespace CacaoTech.DAL
         public Contexto() : base("ConStr")
         {
         }
+
+        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Prestamos>()
+                .HasOptional<Productores>(b => b.Productor)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+        }*/
     }
 }

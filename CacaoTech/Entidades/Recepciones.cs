@@ -25,7 +25,7 @@ namespace CacaoTech.Entidades
         {
             RecepcionID = recepcionID;
             Fecha = fecha;
-            CacaoID = cacaoID;
+            //CacaoID = cacaoID;
             Cacao = cacao ?? throw new ArgumentNullException(nameof(cacao));
             Cantidad = cantidad;
         }
