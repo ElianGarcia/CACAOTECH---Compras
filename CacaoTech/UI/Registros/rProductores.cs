@@ -55,6 +55,7 @@ namespace CacaoTech.UI.Registros
             productor.Direccion = DirecciontextBox.Text;
             productor.Telefono = TelefonomaskedTextBox.Text;
             productor.Celular = CelularmaskedTextBox.Text;
+            productor.Cedula = CedulamaskedTextBox.Text;
             productor.Balance = ToDecimal(BalancetextBox.Text);
 
             if(AmbulanteradioButton.Checked)

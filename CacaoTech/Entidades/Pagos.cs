@@ -16,8 +16,6 @@ namespace CacaoTech.Entidades
         [ForeignKey("ProductorID")]
         public virtual Productores productores { get; set; }
         public int PrestamoID { get; set; }
-        [ForeignKey("PrestamoID")]
-        public virtual Prestamos Prestamo { get; set; }
         public virtual List<PagosDetalle> PagosDetalle { get; set; }
 
         public Pagos(int pagoID, int productorID, Productores productores, List<PagosDetalle> pagosDetalle)

@@ -15,18 +15,17 @@ namespace CacaoTech.Entidades
         public DateTime Fecha { get; set; }
         public int ProductorID { get; set; }
         [ForeignKey("ProductorID")]
-        public virtual Productores Productor { get; set; }
+        public virtual Productores productor { get; set; }
         public int CacaoID { get; set; }
         [ForeignKey("CacaoID")]
-        public virtual Cacao Cacao { get; set; }
+        public virtual Cacao cacao { get; set; }
         public decimal Cantidad { get; set; }
 
-        public Recepciones(int recepcionID, DateTime fecha, int cacaoID, Cacao cacao, decimal cantidad)
+        public Recepciones(int recepcionID, DateTime fecha, int cacaoID, decimal cantidad)
         {
             RecepcionID = recepcionID;
             Fecha = fecha;
-            //CacaoID = cacaoID;
-            Cacao = cacao ?? throw new ArgumentNullException(nameof(cacao));
+            CacaoID = cacaoID;
             Cantidad = cantidad;
         }
 

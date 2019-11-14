@@ -174,7 +174,7 @@ namespace CacaoTech.UI.Registros
                 MontotextBox.Focus();
                 validado = false;
             }
-            if (ToInt(MontotextBox.Text) < 1)
+            if (ToDecimal(MontotextBox.Text) < 1)
             {
                 errorProvider.SetError(MontotextBox, "El monto debe ser mayor a 0");
                 MontotextBox.Focus();
