@@ -42,7 +42,7 @@ namespace CacaoTech.UI.Registros
         private void LlenaCampos(Recepciones recepcion)
         {
             IDnumericUpDown.Value = recepcion.RecepcionID;
-            ProductorescomboBox.Text = recepcion.Productor.Nombres;
+            //ProductorescomboBox.Text = recepcion.Productor.Nombres;
             TipoCacaocomboBox.Text = string.Empty;
             FechadateTimePicker.Value = recepcion.Fecha;
             CantidadtextBox.Text = string.Empty;

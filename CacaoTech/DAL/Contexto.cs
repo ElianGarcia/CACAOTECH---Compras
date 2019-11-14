@@ -15,12 +15,12 @@ namespace CacaoTech.DAL
         {
         }
 
-        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Prestamos>()
                 .HasOptional<Productores>(b => b.Productor)
                 .WithMany()
                 .WillCascadeOnDelete(false);
-        }*/
+        }
     }
 }
