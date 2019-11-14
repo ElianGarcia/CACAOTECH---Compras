@@ -51,7 +51,7 @@ namespace CacaoTech.UI.Registros
             productor.ProductorID = Convert.ToInt32(IDnumericUpDown.Value);
             productor.Nombres = NombretextBox.Text;
             productor.Apellidos = ApellidostextBox.Text;
-            productor.Email = ApellidostextBox.Text;
+            productor.Email = EmailtextBox.Text;
             productor.Direccion = DirecciontextBox.Text;
             productor.Telefono = TelefonomaskedTextBox.Text;
             productor.Celular = CelularmaskedTextBox.Text;

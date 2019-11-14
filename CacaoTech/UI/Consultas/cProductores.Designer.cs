@@ -1,6 +1,6 @@
 ﻿namespace CacaoTech.UI.Consultas
 {
-    partial class cVendedores
+    partial class cProductores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cVendedores));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cProductores));
             this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbFiltrar = new System.Windows.Forms.ComboBox();
-            this.tbCriterio = new System.Windows.Forms.TextBox();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
+            this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.btConsulta = new System.Windows.Forms.Button();
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Imrimirbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
             this.ConsultaDataGridView.ReadOnly = true;
             this.ConsultaDataGridView.RowTemplate.Height = 24;
-            this.ConsultaDataGridView.Size = new System.Drawing.Size(620, 326);
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(620, 331);
             this.ConsultaDataGridView.TabIndex = 0;
             // 
             // label1
@@ -79,32 +80,34 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Criterio";
             // 
-            // cbFiltrar
+            // FiltroComboBox
             // 
-            this.cbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFiltrar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.cbFiltrar.FormattingEnabled = true;
-            this.cbFiltrar.Items.AddRange(new object[] {
+            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FiltroComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
             "ID",
-            "Nombre",
-            "Cedula"});
-            this.cbFiltrar.Location = new System.Drawing.Point(190, 26);
-            this.cbFiltrar.Margin = new System.Windows.Forms.Padding(2);
-            this.cbFiltrar.Name = "cbFiltrar";
-            this.cbFiltrar.Size = new System.Drawing.Size(92, 25);
-            this.cbFiltrar.TabIndex = 3;
+            "Nombres",
+            "Telefono",
+            "Cedula",
+            "Direccion"});
+            this.FiltroComboBox.Location = new System.Drawing.Point(190, 26);
+            this.FiltroComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(92, 25);
+            this.FiltroComboBox.TabIndex = 3;
             // 
-            // tbCriterio
+            // CriterioTextBox
             // 
-            this.tbCriterio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CriterioTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCriterio.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.tbCriterio.Location = new System.Drawing.Point(286, 26);
-            this.tbCriterio.Margin = new System.Windows.Forms.Padding(2);
-            this.tbCriterio.Name = "tbCriterio";
-            this.tbCriterio.Size = new System.Drawing.Size(222, 25);
-            this.tbCriterio.TabIndex = 4;
+            this.CriterioTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.CriterioTextBox.Location = new System.Drawing.Point(286, 26);
+            this.CriterioTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CriterioTextBox.Name = "CriterioTextBox";
+            this.CriterioTextBox.Size = new System.Drawing.Size(222, 25);
+            this.CriterioTextBox.TabIndex = 4;
             // 
             // btConsulta
             // 
@@ -123,7 +126,7 @@
             this.btConsulta.Text = "Consultar";
             this.btConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btConsulta.UseVisualStyleBackColor = false;
-            this.btConsulta.Click += new System.EventHandler(this.btConsulta_Click);
+            this.btConsulta.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // DesdeDateTimePicker
             // 
@@ -170,26 +173,46 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Desde";
             // 
-            // cVendedores
+            // Imrimirbutton
+            // 
+            this.Imrimirbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Imrimirbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Imrimirbutton.FlatAppearance.BorderSize = 2;
+            this.Imrimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Imrimirbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Imrimirbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
+            this.Imrimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imrimirbutton.Location = new System.Drawing.Point(252, 391);
+            this.Imrimirbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.Imrimirbutton.Name = "Imrimirbutton";
+            this.Imrimirbutton.Size = new System.Drawing.Size(108, 36);
+            this.Imrimirbutton.TabIndex = 10;
+            this.Imrimirbutton.Text = "Imprimir";
+            this.Imrimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Imrimirbutton.UseVisualStyleBackColor = false;
+            this.Imrimirbutton.Click += new System.EventHandler(this.buttonImprimir_Click);
+            // 
+            // cProductores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(640, 391);
+            this.ClientSize = new System.Drawing.Size(640, 436);
+            this.Controls.Add(this.Imrimirbutton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.HastaDateTimePicker);
             this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.btConsulta);
-            this.Controls.Add(this.tbCriterio);
-            this.Controls.Add(this.cbFiltrar);
+            this.Controls.Add(this.CriterioTextBox);
+            this.Controls.Add(this.FiltroComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ConsultaDataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "cVendedores";
+            this.Name = "cProductores";
             this.Text = "Consulta de Vendedores";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -202,12 +225,13 @@
         private System.Windows.Forms.DataGridView ConsultaDataGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbFiltrar;
-        private System.Windows.Forms.TextBox tbCriterio;
+        private System.Windows.Forms.ComboBox FiltroComboBox;
+        private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Button btConsulta;
         private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
         private System.Windows.Forms.DateTimePicker HastaDateTimePicker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Imrimirbutton;
     }
 }

@@ -41,12 +41,14 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.OData.Edm, Version=7.6.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.OData.Edm.7.6.1\lib\portable-net45+win8+wpa81\Microsoft.OData.Edm.dll</HintPath>
     </Reference>
@@ -55,6 +57,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,11 +88,11 @@
     <Compile Include="Entidades\Productores.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\Consultas\cVendedores.cs">
+    <Compile Include="UI\Consultas\cProductores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Consultas\cVendedores.Designer.cs">
-      <DependentUpon>cVendedores.cs</DependentUpon>
+    <Compile Include="UI\Consultas\cProductores.Designer.cs">
+      <DependentUpon>cProductores.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rCacao.cs">
       <SubType>Form</SubType>
@@ -120,6 +124,12 @@
     <Compile Include="UI\Registros\rProductores.Designer.cs">
       <DependentUpon>rProductores.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ProductoresReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ProductoresReportViewer.Designer.cs">
+      <DependentUpon>ProductoresReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\crProductores.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,8 +149,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\Consultas\cVendedores.resx">
-      <DependentUpon>cVendedores.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Consultas\cProductores.resx">
+      <DependentUpon>cProductores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCacao.resx">
       <DependentUpon>rCacao.cs</DependentUpon>
@@ -156,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rProductores.resx">
       <DependentUpon>rProductores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ProductoresReportViewer.resx">
+      <DependentUpon>ProductoresReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\crProductores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

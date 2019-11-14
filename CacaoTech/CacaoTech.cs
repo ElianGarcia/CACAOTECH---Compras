@@ -41,7 +41,7 @@ namespace CacaoTech
 
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cVendedores consultaVendedores = new cVendedores();
+            cProductores consultaVendedores = new cProductores();
             consultaVendedores.ShowDialog();
         }
 
