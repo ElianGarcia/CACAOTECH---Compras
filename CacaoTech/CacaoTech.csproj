@@ -62,7 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\PrestamosBLL.cs" />
+    <Compile Include="BLL\PagosBLL.cs" />
     <Compile Include="BLL\GenericaBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="DAL\Contexto.cs" />

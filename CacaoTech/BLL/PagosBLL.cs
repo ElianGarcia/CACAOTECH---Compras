@@ -10,16 +10,16 @@ using System.Linq.Expressions;
 
 namespace CacaoTech.BLL
 {
-    public class PrestamosBLL
+    public class PagosBLL
     {
-        public static bool Guardar(Prestamos prestamo)
+        public static bool Guardar(Pagos pagos)
         {
             bool realizado = false;
             Contexto db = new Contexto();
 
             try
             {
-                if (db.Prestamo.Add(prestamo) != null)
+                if (db.Pago.Add(pagos) != null)
                     realizado = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -33,15 +33,15 @@ namespace CacaoTech.BLL
             return realizado;
         }
 
-        public static bool Modificar(Prestamos prestamo)
+        public static bool Modificar(Pagos pago)
         {
             bool realizado = false;
             Contexto db = new Contexto();
 
             try
             {
-                var Anterior = db.Prestamo.Find(prestamo.PrestamoID);
-                db.Entry(prestamo).State = EntityState.Modified;
+                var Anterior = db.Pago.Find(pago.PagoID);
+                db.Entry(pago).State = EntityState.Modified;
                 realizado = (db.SaveChanges() > 0);
             }
             catch (Exception)
@@ -62,7 +62,7 @@ namespace CacaoTech.BLL
 
             try
             {
-                var Eliminar = db.Prestamo.Find(ID);
+                var Eliminar = db.Pago.Find(ID);
                 db.Entry(Eliminar).State = EntityState.Deleted;
 
                 realizado = (db.SaveChanges() > 0);
@@ -78,14 +78,14 @@ namespace CacaoTech.BLL
             return realizado;
         }
 
-        public static Prestamos Buscar(int ID)
+        public static Pagos Buscar(int ID)
         {
-            Prestamos prestamo = new Prestamos();
+            Pagos pago = new Pagos();
             Contexto db = new Contexto();
 
             try
             {
-                prestamo = db.Prestamo.Find(ID);
+                pago = db.Pago.Find(ID);
             }
             catch (Exception)
             {
@@ -95,17 +95,17 @@ namespace CacaoTech.BLL
             {
                 db.Dispose();
             }
-            return prestamo;
+            return pago;
         }
 
-        public static List<Prestamos> GetList(Expression<Func<Prestamos, bool>> prestamo)
+        public static List<Pagos> GetList(Expression<Func<Pagos, bool>> pago)
         {
-            List<Prestamos> lista = new List<Prestamos>();
+            List<Pagos> lista = new List<Pagos>();
             Contexto db = new Contexto();
 
             try
             {
-                lista = db.Prestamo.Where(prestamo).ToList();
+                lista = db.Pago.Where(pago).ToList();
             }
             catch (Exception)
             {

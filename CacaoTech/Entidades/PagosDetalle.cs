@@ -13,13 +13,13 @@ namespace CacaoTech.Entidades
         [Key]
         public int PagosDetalleID { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal Cantidad { get; set; }
+        public decimal Monto { get; set; }
 
-        public PagosDetalle(int pagosDetalleID, DateTime fecha, decimal cantidad)
+        public PagosDetalle(int pagosDetalleID, DateTime fecha, decimal monto)
         {
             PagosDetalleID = pagosDetalleID;
             Fecha = fecha;
-            Cantidad = cantidad;
+            Monto = monto;
         }
 
         public PagosDetalle()

@@ -1,8 +1,12 @@
-﻿using System;
+﻿using CacaoTech.BLL;
+using CacaoTech.DAL;
+using CacaoTech.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,44 +16,49 @@ namespace CacaoTech.UI.Registros
 {
     public partial class rPagos : Form
     {
+        GenericaBLL<Productores> genericaProductorBLL;
+        public List<PagosDetalle> pagosDetalles { get; set; }
+
         public rPagos()
         {
+            genericaProductorBLL = new GenericaBLL<Productores>();
             InitializeComponent();
+            this.pagosDetalles = new List<PagosDetalle>();
+            CargarGrid();
         }
 
-        public Recepciones LlenaClase()
+        private void CargarGrid()
         {
-            Recepciones recepcion = new Recepciones();
-            recepcion.RecepcionID = Convert.ToInt32(IDnumericUpDown.Value);
-            recepcion.Fecha = FechadateTimePicker.Value;
-            recepcion.ProductorID = ProductorescomboBox.SelectedIndex;
-            recepcion.Cantidad = ToDecimal(CantidadtextBox.Text);
-
-            return recepcion;
+            dataGridView.DataSource = null;
+            dataGridView.DataSource = pagosDetalles;
         }
 
-        private void LlenaCampos(Recepciones recepcion)
+        public Pagos LlenaClase()
         {
-            IDnumericUpDown.Value = recepcion.RecepcionID;
-            ProductorescomboBox.Text = recepcion.Productor.Nombres;
-            TipoCacaocomboBox.Text = string.Empty;
-            FechadateTimePicker.Value = recepcion.Fecha;
-            CantidadtextBox.Text = string.Empty;
+            Pagos pago = new Pagos();
+            pago.PagoID = ToInt(IDnumericUpDown.Value.ToString());
+            pago.ProductorID = ProductorescomboBox.SelectedIndex;
+            pago.PagosDetalle = this.pagosDetalles;
+
+            Productores productor = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
+
+
+            return pago;
+        }
+
+        private void LlenaCampos(Pagos pago)
+        {
+            IDnumericUpDown.Value = pago.PagoID;
+            ProductorescomboBox.Text = pago.productores.Nombres;
+            FechadateTimePicker.Value = DateTime.Now;
+            BalancetextBox.Text = pago.productores.Balance.ToString();
         }
 
         public void LlenarCombos()
         {
-            //Llenando combobox de tipos de cacao
-            TipoCacaocomboBox.DataSource = null;
-            List<Cacao> lista1 = genericaCacaoBLL.GetList(p => true);
-            TipoCacaocomboBox.DataSource = lista1;
-            TipoCacaocomboBox.DisplayMember = "Tipo";
-            TipoCacaocomboBox.ValueMember = "CacaoID";
-
-
-            //Llenando combobox de vendedores
+            //Llenando combobox de productores
             ProductorescomboBox.DataSource = null;
-            List<Productores> lista = genericaVendedorBLL.GetList(p => true);
+            List<Productores> lista = genericaProductorBLL.GetList(p => true);
             ProductorescomboBox.DataSource = lista;
             ProductorescomboBox.DisplayMember = "Nombres";
             ProductorescomboBox.ValueMember = "ProductorID";
@@ -58,21 +67,21 @@ namespace CacaoTech.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
-            Recepciones recepcion = new Recepciones();
+            Pagos pago = new Pagos();
 
             int.TryParse(IDnumericUpDown.Text, out id);
 
             Limpiar();
 
-            recepcion = genericaRecepcionBLL.Buscar(id);
+            pago = PagosBLL.Buscar(id);
 
-            if (recepcion != null)
+            if (pago != null)
             {
-                LlenaCampos(recepcion);
+                LlenaCampos(pago);
             }
             else
             {
-                MessageBox.Show("Recepcion no encontrado");
+                MessageBox.Show("Pago no encontrado");
             }
         }
 
@@ -85,7 +94,8 @@ namespace CacaoTech.UI.Registros
         {
             IDnumericUpDown.Value = 0;
             ProductorescomboBox.Text = string.Empty;
-            TipoCacaocomboBox.Text = string.Empty;
+            MontotextBox.Text = string.Empty;
+            BalancetextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
             errorProvider.Clear();
@@ -93,14 +103,43 @@ namespace CacaoTech.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            Pagos pago = new Pagos();
+            bool realizado = false;
 
+            if (!Validar())
+                return;
+
+            pago = LlenaClase();
+
+
+            if (IDnumericUpDown.Value == 0)
+                realizado = PagosBLL.Guardar(pago);
+            else
+            {
+                if (!Existe())
+                {
+                    MessageBox.Show("NO SE PUEDE MODIFICAR UN PAGO INEXISTENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                realizado = PagosBLL.Modificar(pago);
+            }
+
+            if (realizado)
+            {
+                Limpiar();
+                MessageBox.Show("GUARDADO EXITOSAMENTE", "GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("NO SE PUDO GUARDAR", "NO GUARDADO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool Existe()
         {
-            Recepciones recepcion = genericaRecepcionBLL.Buscar((int)IDnumericUpDown.Value);
+            Pagos pago = PagosBLL.Buscar((int)IDnumericUpDown.Value);
 
-            return (recepcion != null);
+            return (pago != null);
         }
 
         private bool Validar()
@@ -114,13 +153,34 @@ namespace CacaoTech.UI.Registros
                 IDnumericUpDown.Focus();
                 validado = false;
             }
+            if (this.pagosDetalles.Count == 0)
+            {
+                errorProvider.SetError(dataGridView, obligatorio);
+                CantidadtextBox.Focus();
+                validado = false;
+            }
 
             return validado;
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
 
+            int id;
+            int.TryParse(IDnumericUpDown.Text, out id);
+            Contexto db = new Contexto();
+
+            Limpiar();
+
+            if (PagosBLL.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un pago inexistente");
+            }
         }
 
         private void rDeposito_Load(object sender, EventArgs e)
@@ -128,19 +188,27 @@ namespace CacaoTech.UI.Registros
             LlenarCombos();
         }
 
-        private void TipoCacaocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ProductorescomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Cacao> Lista = new List<Cacao>();
-            Cacao cacao = new Cacao();
-            decimal precio;
+            List<Productores> Lista = new List<Productores>();
+            Productores productor = new Productores();
+            decimal balance;
 
-            int opcion = Convert.ToInt32(TipoCacaocomboBox.SelectedIndex);
-            cacao = genericaCacaoBLL.Buscar(opcion);
-            if (cacao != null)
+            int opcion = ToInt(ProductorescomboBox.SelectedIndex.ToString());
+            productor = genericaProductorBLL.Buscar(opcion);
+            if (productor != null)
             {
-                precio = cacao.Precio;
-                PreciotextBox.Text = cacao.Precio.ToString();
+                balance = productor.Balance;
+                BalancetextBox.Text = balance.ToString();
             }
+        }
+
+        private int ToInt(string valor)
+        {
+            int resultado = 0;
+            int.TryParse(valor, out resultado);
+
+            return resultado;
         }
 
         private Decimal ToDecimal(string valor)
@@ -149,14 +217,6 @@ namespace CacaoTech.UI.Registros
             decimal.TryParse(valor, out resultado);
 
             return resultado;
-        }
-
-        private void CantidadtextBox_TextChanged(object sender, EventArgs e)
-        {
-            decimal cantidad = ToDecimal(CantidadtextBox.Text);
-            decimal precio = ToDecimal(PreciotextBox.Text);
-
-            ImportetextBox.Text = genericaRecepcionBLL.CalcularImporte(precio, cantidad).ToString();
         }
 
         private void CantidadtextBox_KeyPress(object sender, KeyPressEventArgs e)

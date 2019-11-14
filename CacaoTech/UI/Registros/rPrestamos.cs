@@ -17,9 +17,11 @@ namespace CacaoTech.UI.Registros
     public partial class rPrestamos : Form
     {
         GenericaBLL<Productores> genericaProductores;
+        GenericaBLL<Prestamos> genericaPrestamos;
         public rPrestamos()
         {
             genericaProductores = new GenericaBLL<Productores>();
+            genericaPrestamos = new GenericaBLL<Prestamos>();
             InitializeComponent();
             LlenarCombos();
         }
@@ -43,7 +45,7 @@ namespace CacaoTech.UI.Registros
 
             Limpiar();
 
-            prestamo = PrestamosBLL.Buscar(id);
+            prestamo = genericaPrestamos.Buscar(id);
 
             if (prestamo != null)
             {
@@ -96,7 +98,7 @@ namespace CacaoTech.UI.Registros
 
 
             if (IDnumericUpDown.Value == 0)
-                realizado = PrestamosBLL.Guardar(contrato);
+                realizado = genericaPrestamos.Guardar(contrato);
             else
             {
                 if (!Existe())
@@ -104,7 +106,7 @@ namespace CacaoTech.UI.Registros
                     MessageBox.Show("No se puede modificar un contrato inexistente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                realizado = PrestamosBLL.Modificar(contrato);
+                realizado = genericaPrestamos.Modificar(contrato);
             }
 
             if (realizado)
@@ -150,7 +152,7 @@ namespace CacaoTech.UI.Registros
 
         private bool Existe()
         {
-            Prestamos prestamo = PrestamosBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
+            Prestamos prestamo = genericaPrestamos.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
 
             return (prestamo != null);
         }
@@ -209,7 +211,7 @@ namespace CacaoTech.UI.Registros
 
             Limpiar();
 
-            if (PrestamosBLL.Eliminar(id))
+            if (PagosBLL.Eliminar(id))
             {
                 MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
