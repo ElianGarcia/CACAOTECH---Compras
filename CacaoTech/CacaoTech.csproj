@@ -124,10 +124,7 @@
     <Compile Include="UI\Registros\rProductores.Designer.cs">
       <DependentUpon>rProductores.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Reportes\ListadoCacao1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ListadoCacao.rpt</DependentUpon>
+    <Compile Include="UI\Reportes\ListadoCacao.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Reportes\ProductoresReportViewer.cs">
