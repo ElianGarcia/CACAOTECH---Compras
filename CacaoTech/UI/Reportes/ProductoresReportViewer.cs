@@ -22,7 +22,7 @@ namespace CacaoTech.UI.Reportes
 
         private void cProductores_Load(object sender, EventArgs e)
         {
-            crProductores productoresCrystalReport = new crProductores();
+            ListProductores productoresCrystalReport = new ListProductores();
             productoresCrystalReport.SetDataSource(ListaProductores);
 
             ProductoresReportViewer.ReportSource = productoresCrystalReport;
