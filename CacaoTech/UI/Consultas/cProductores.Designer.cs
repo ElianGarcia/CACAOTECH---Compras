@@ -55,7 +55,7 @@
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
             this.ConsultaDataGridView.ReadOnly = true;
             this.ConsultaDataGridView.RowTemplate.Height = 24;
-            this.ConsultaDataGridView.Size = new System.Drawing.Size(620, 331);
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(620, 320);
             this.ConsultaDataGridView.TabIndex = 0;
             // 
             // label1
