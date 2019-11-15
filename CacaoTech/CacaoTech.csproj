@@ -124,16 +124,22 @@
     <Compile Include="UI\Registros\rProductores.Designer.cs">
       <DependentUpon>rProductores.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ListadoCacao.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoCacao.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\ProductoresReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Reportes\ProductoresReportViewer.Designer.cs">
       <DependentUpon>ProductoresReportViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Reportes\crProductores.cs">
+    <Compile Include="UI\Reportes\ListProductores.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crProductores.rpt</DependentUpon>
+      <DependentUpon>ListProductores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="CacaoTech.resx">
@@ -167,12 +173,16 @@
     <EmbeddedResource Include="UI\Registros\rProductores.resx">
       <DependentUpon>rProductores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadoCacao.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoCacao.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ProductoresReportViewer.resx">
       <DependentUpon>ProductoresReportViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Reportes\crProductores.rpt">
+    <EmbeddedResource Include="UI\Reportes\ListProductores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crProductores.cs</LastGenOutput>
+      <LastGenOutput>ListProductores.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
