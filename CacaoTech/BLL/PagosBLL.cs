@@ -17,9 +17,19 @@ namespace CacaoTech.BLL
             bool realizado = false;
             Contexto db = new Contexto();
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+            GenericaBLL<Pagos> genericaPagosBLL = new GenericaBLL<Pagos>();
 
+            //Listado de pagos del productor
+            List<Pagos> pagosDetalles = genericaPagosBLL.GetList(g => g.ProductorID == pagos.ProductorID);
+            
+
+            //Afectando el Balance de la tabla de Productores
             Productores p = genericaBLL.Buscar(pagos.ProductorID);
-            p.Balance = 
+            //p.Balance -= ;
+
+            //Afectando el Balance de la tabla de Prestamos
+            Prestamos p1 = PrestamosBLL.Buscar(pagos.PrestamoID);
+            //p1.Balance -= 
 
             try
             {

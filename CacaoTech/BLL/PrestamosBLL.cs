@@ -2,7 +2,9 @@
 using CacaoTech.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,8 +17,8 @@ namespace CacaoTech.BLL
             bool realizado = false;
             Contexto db = new Contexto();
 
+            //Afectando el Balance de la tabla de Productores
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-
             Productores p = genericaBLL.Buscar(prestamo.ProductorID);
             p.Balance += prestamo.Total;
             genericaBLL.Modificar(p);
@@ -37,20 +39,15 @@ namespace CacaoTech.BLL
             return realizado;
         }
 
-        public static bool Modificar(Pagos pago)
+        public static bool Modificar(Prestamos prestamo)
         {
             bool realizado = false;
             Contexto db = new Contexto();
 
             try
             {
-                var Anterior = PagosBLL.Buscar(pago.PagoID);
-                foreach (var item in Anterior.PagosDetalle)
-                {
-                    if (!pago.PagosDetalle.Exists(d => d.PagosDetalleID == item.PagosDetalleID))
-                        db.Entry(item).State = EntityState.Deleted;
-                }
-                db.Entry(pago).State = EntityState.Modified;
+                db.Entry(prestamo).State = EntityState.Modified;
+                var Anterior = PrestamosBLL.Buscar(prestamo.PrestamoID);
                 realizado = (db.SaveChanges() > 0);
             }
             catch (Exception)
@@ -71,7 +68,7 @@ namespace CacaoTech.BLL
 
             try
             {
-                var Eliminar = db.Pago.Find(ID);
+                var Eliminar = db.Prestamo.Find(ID);
                 db.Entry(Eliminar).State = EntityState.Deleted;
 
                 realizado = (db.SaveChanges() > 0);
@@ -87,18 +84,14 @@ namespace CacaoTech.BLL
             return realizado;
         }
 
-        public static Pagos Buscar(int ID)
+        public static Prestamos Buscar(int ID)
         {
-            Pagos pago = new Pagos();
+            Prestamos prestamos = new Prestamos();
             Contexto db = new Contexto();
 
             try
             {
-                pago = db.Pago.Find(ID);
-                if (pago != null)
-                {
-                    pago.PagosDetalle.Count();
-                }
+                prestamos = db.Prestamo.Find(ID);
             }
             catch (Exception)
             {
@@ -108,17 +101,17 @@ namespace CacaoTech.BLL
             {
                 db.Dispose();
             }
-            return pago;
+            return prestamos;
         }
 
-        public static List<Pagos> GetList(Expression<Func<Pagos, bool>> pago)
+        public static List<Prestamos> GetList(Expression<Func<Prestamos, bool>> prestamo)
         {
-            List<Pagos> lista = new List<Pagos>();
+            List<Prestamos> lista = new List<Prestamos>();
             Contexto db = new Contexto();
 
             try
             {
-                lista = db.Pago.Where(pago).ToList();
+                lista = db.Prestamo.Where(prestamo).ToList();
             }
             catch (Exception)
             {

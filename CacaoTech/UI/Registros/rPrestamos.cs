@@ -17,11 +17,9 @@ namespace CacaoTech.UI.Registros
     public partial class rPrestamos : Form
     {
         GenericaBLL<Productores> genericaProductores;
-        GenericaBLL<Prestamos> genericaPrestamos;
         public rPrestamos()
         {
             genericaProductores = new GenericaBLL<Productores>();
-            genericaPrestamos = new GenericaBLL<Prestamos>();
             InitializeComponent();
             LlenarCombos();
         }
@@ -45,7 +43,7 @@ namespace CacaoTech.UI.Registros
 
             Limpiar();
 
-            prestamo = genericaPrestamos.Buscar(id);
+            prestamo = PrestamosBLL.Buscar(id);
 
             if (prestamo != null)
             {
@@ -99,7 +97,7 @@ namespace CacaoTech.UI.Registros
 
 
             if (IDnumericUpDown.Value == 0)
-                realizado = genericaPrestamos.Guardar(contrato);
+                realizado = PrestamosBLL.Guardar(contrato);
             else
             {
                 if (!Existe())
@@ -107,7 +105,7 @@ namespace CacaoTech.UI.Registros
                     MessageBox.Show("No se puede modificar un contrato inexistente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                realizado = genericaPrestamos.Modificar(contrato);
+                realizado = PrestamosBLL.Modificar(contrato);
             }
 
             if (realizado)
@@ -154,7 +152,7 @@ namespace CacaoTech.UI.Registros
 
         private bool Existe()
         {
-            Prestamos prestamo = genericaPrestamos.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
+            Prestamos prestamo = PrestamosBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
 
             return (prestamo != null);
         }
