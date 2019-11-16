@@ -17,22 +17,25 @@ namespace CacaoTech.BLL
             bool realizado = false;
             Contexto db = new Contexto();
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            GenericaBLL<Pagos> genericaPagosBLL = new GenericaBLL<Pagos>();
-
-            //Listado de pagos del productor
-            List<Pagos> pagosDetalles = genericaPagosBLL.GetList(g => g.ProductorID == pagos.ProductorID);
-            
-
-            //Afectando el Balance de la tabla de Productores
-            Productores p = genericaBLL.Buscar(pagos.ProductorID);
-            //p.Balance -= ;
-
-            //Afectando el Balance de la tabla de Prestamos
-            Prestamos p1 = PrestamosBLL.Buscar(pagos.PrestamoID);
-            //p1.Balance -= 
 
             try
             {
+                foreach(var item in pagos.PagosDetalle)
+                {
+                    //Afectando el Balance de la tabla de Productores
+                    var productor = genericaBLL.Buscar(pagos.ProductorID);
+                    if(productor != null)
+                    {
+                        productor.Balance -= item.Monto;
+                    }
+                       
+                    //Afectando el Balance de la tabla de Prestamos
+                    var prestamo = PrestamosBLL.Buscar(pagos.PrestamoID);
+                    if (prestamo != null)
+                    {
+                        prestamo.Balance -= item.Monto;
+                    }
+                }
                 if (db.Pago.Add(pagos) != null)
                     realizado = db.SaveChanges() > 0;
             }

@@ -64,6 +64,7 @@
             this.MontotextBox.Size = new System.Drawing.Size(145, 25);
             this.MontotextBox.TabIndex = 38;
             this.MontotextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.MontotextBox.TextChanged += new System.EventHandler(this.MontotextBox_TextChanged);
             this.MontotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
             // 
             // label6
@@ -252,6 +253,7 @@
             this.TiempotextBox.Size = new System.Drawing.Size(147, 25);
             this.TiempotextBox.TabIndex = 49;
             this.TiempotextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TiempotextBox.TextChanged += new System.EventHandler(this.TiempotextBox_TextChanged);
             this.TiempotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TiempotextBox_KeyPress);
             // 
             // label4

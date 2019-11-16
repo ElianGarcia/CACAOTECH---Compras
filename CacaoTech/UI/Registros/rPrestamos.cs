@@ -28,7 +28,7 @@ namespace CacaoTech.UI.Registros
         {
             //Llenando combobox de vendedores
             ProductorescomboBox.DataSource = null;
-            List<Productores> lista = genericaProductores.GetList(p => p.Balance > 0);
+            List<Productores> lista = genericaProductores.GetList(p => p.Tipo == false);
             ProductorescomboBox.DataSource = lista;
             ProductorescomboBox.DisplayMember = "Nombres";
             ProductorescomboBox.ValueMember = "ProductorID";
@@ -244,6 +244,23 @@ namespace CacaoTech.UI.Registros
             rProductores registroProductor = new rProductores();
             registroProductor.ShowDialog();
             LlenarCombos();
+        }
+
+        private void MontotextBox_TextChanged(object sender, EventArgs e)
+        {
+            string s = MontotextBox.Text;
+            BalancetextBox.Text = s;
+        }
+
+        private void TiempotextBox_TextChanged(object sender, EventArgs e)
+        {
+            if(MontotextBox.Text != null && TiempotextBox.Text != null)
+            {
+                decimal intereses = ToDecimal(MontotextBox.Text) * ToDecimal(InterestextBox.Text) * ToInt(TiempotextBox.Text);
+                decimal montoTotal = ToDecimal(MontotextBox.Text) + intereses;
+
+                TotaltextBox.Text = montoTotal.ToString();
+            }
         }
     }
 }
