@@ -60,7 +60,7 @@ namespace CacaoTech.UI.Registros
         private void LlenaCampos(Prestamos prestamo)
         {
             IDnumericUpDown.Value = prestamo.PrestamoID;
-            ProductorescomboBox.SelectedIndex = prestamo.Productor.ProductorID;
+            ProductorescomboBox.SelectedValue = prestamo.ProductorID;
             FechadateTimePicker.Value = prestamo.Fecha;
             MontotextBox.Text = prestamo.Monto.ToString();
             BalancetextBox.Text = prestamo.Balance.ToString();
@@ -140,7 +140,7 @@ namespace CacaoTech.UI.Registros
         {
             Prestamos prestamo = new Prestamos();
             prestamo.PrestamoID = ToInt(IDnumericUpDown.Value.ToString());
-            prestamo.Productor.ProductorID = ProductorescomboBox.SelectedIndex;
+            prestamo.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
             prestamo.Fecha = FechadateTimePicker.Value;
             prestamo.Monto = ToDecimal(MontotextBox.Text);
             prestamo.Balance = ToDecimal(BalancetextBox.Text);
