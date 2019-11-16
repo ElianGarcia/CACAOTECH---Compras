@@ -30,7 +30,7 @@ namespace CacaoTech.UI.Registros
         {
             //Llenando combobox de vendedores
             ProductorescomboBox.DataSource = null;
-            List<Productores> lista = genericaProductores.GetList(p => true);
+            List<Productores> lista = genericaProductores.GetList(p => p.Balance > 0);
             ProductorescomboBox.DataSource = lista;
             ProductorescomboBox.DisplayMember = "Nombres";
             ProductorescomboBox.ValueMember = "ProductorID";
@@ -66,6 +66,7 @@ namespace CacaoTech.UI.Registros
             BalancetextBox.Text = prestamo.Balance.ToString();
             InterestextBox.Text = prestamo.Interes.ToString();
             TiempotextBox.Text = prestamo.Tiempo.ToString();
+            TotaltextBox.Text = prestamo.Total.ToString();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace CacaoTech.UI.Registros
             BalancetextBox.Text = string.Empty;
             InterestextBox.Text = string.Empty;
             TiempotextBox.Text = string.Empty;
-
+            TotaltextBox.Text = string.Empty;
             errorProvider.Clear();
         }
 
@@ -146,6 +147,7 @@ namespace CacaoTech.UI.Registros
             prestamo.Balance = ToDecimal(BalancetextBox.Text);
             prestamo.Interes = ToDecimal(InterestextBox.Text);
             prestamo.Tiempo = ToInt(TiempotextBox.Text);
+            prestamo.Total = ToDecimal(TotaltextBox.Text);
 
             return prestamo;
         }

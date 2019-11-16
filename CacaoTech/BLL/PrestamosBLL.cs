@@ -5,25 +5,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
-using System.Linq.Expressions;
 
 namespace CacaoTech.BLL
 {
-    public class PagosBLL
+    public class PrestamosBLL
     {
-        public static bool Guardar(Pagos pagos)
+        public static bool Guardar(Prestamos prestamo)
         {
             bool realizado = false;
             Contexto db = new Contexto();
+
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
 
-            Productores p = genericaBLL.Buscar(pagos.ProductorID);
-            p.Balance = 
+            Productores p = genericaBLL.Buscar(prestamo.ProductorID);
+            p.Balance += prestamo.Total;
+            genericaBLL.Modificar(p);
 
             try
             {
-                if (db.Pago.Add(pagos) != null)
+                if (db.Prestamo.Add(prestamo) != null)
                     realizado = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -95,7 +95,7 @@ namespace CacaoTech.BLL
             try
             {
                 pago = db.Pago.Find(ID);
-                if(pago != null)
+                if (pago != null)
                 {
                     pago.PagosDetalle.Count();
                 }

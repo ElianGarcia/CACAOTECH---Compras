@@ -25,6 +25,7 @@ namespace CacaoTech.UI.Registros
             InitializeComponent();
             this.pagosDetalles = new List<PagosDetalle>();
             CargarGrid();
+            LlenarCombos();
         }
 
         private void CargarGrid()
@@ -186,6 +187,7 @@ namespace CacaoTech.UI.Registros
         private void rDeposito_Load(object sender, EventArgs e)
         {
             LlenarCombos();
+            CargarGrid();
         }
 
         private void ProductorescomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -194,7 +196,7 @@ namespace CacaoTech.UI.Registros
             Productores productor = new Productores();
             decimal balance;
 
-            int opcion = ToInt(ProductorescomboBox.SelectedIndex.ToString());
+            int opcion = ToInt(ProductorescomboBox.SelectedValue.ToString());
             productor = genericaProductorBLL.Buscar(opcion);
             if (productor != null)
             {
@@ -234,6 +236,28 @@ namespace CacaoTech.UI.Registros
             rProductores registroProductor = new rProductores();
             registroProductor.ShowDialog();
             LlenarCombos();
+        }
+
+        private void AgregarPagobutton_Click(object sender, EventArgs e)
+        {
+            Contexto db = new Contexto();
+
+            if (dataGridView.DataSource != null)
+            {
+                this.pagosDetalles = (List<PagosDetalle>)dataGridView.DataSource;
+            }
+            
+            this.pagosDetalles.Add(
+                new PagosDetalle(
+                    pagosDetalleID: 0,
+                    fecha: FechadateTimePicker.Value,
+                    monto: ToDecimal(CantidadtextBox.Text)
+                    )
+                );
+
+            CargarGrid();
+            ProductorescomboBox.SelectedIndex = 0;
+            CantidadtextBox.Clear();
         }
     }
 }

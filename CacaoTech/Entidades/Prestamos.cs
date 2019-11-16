@@ -20,8 +20,9 @@ namespace CacaoTech.Entidades
         public decimal Monto { get; set; }
         public decimal Balance { get; set; }
         public decimal Interes { get; set; }
+        public decimal Total { get; set; }
 
-        public Prestamos(int prestamoID, DateTime fecha, int productorID, Productores productor, int tiempo, decimal monto, decimal balance, decimal interes)
+        public Prestamos(int prestamoID, DateTime fecha, int productorID, Productores productor, int tiempo, decimal monto, decimal balance, decimal interes, decimal total)
         {
             PrestamoID = prestamoID;
             Fecha = fecha;
@@ -31,6 +32,7 @@ namespace CacaoTech.Entidades
             Monto = monto;
             Balance = balance;
             Interes = interes;
+            Total = total;
         }
 
         public Prestamos()

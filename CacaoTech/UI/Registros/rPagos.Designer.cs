@@ -86,6 +86,7 @@
             this.AgregarPagobutton.TabIndex = 25;
             this.AgregarPagobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarPagobutton.UseVisualStyleBackColor = false;
+            this.AgregarPagobutton.Click += new System.EventHandler(this.AgregarPagobutton_Click);
             // 
             // CantidadtextBox
             // 

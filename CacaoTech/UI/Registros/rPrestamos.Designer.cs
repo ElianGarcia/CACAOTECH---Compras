@@ -50,6 +50,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.BalancetextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.TotaltextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +59,9 @@
             // MontotextBox
             // 
             this.MontotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.MontotextBox.Location = new System.Drawing.Point(129, 82);
+            this.MontotextBox.Location = new System.Drawing.Point(104, 82);
             this.MontotextBox.Name = "MontotextBox";
-            this.MontotextBox.Size = new System.Drawing.Size(353, 25);
+            this.MontotextBox.Size = new System.Drawing.Size(145, 25);
             this.MontotextBox.TabIndex = 38;
             this.MontotextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MontotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreciotextBox_KeyPress);
@@ -77,9 +79,9 @@
             // IDnumericUpDown
             // 
             this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.IDnumericUpDown.Location = new System.Drawing.Point(129, 14);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(104, 14);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(93, 25);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(103, 25);
             this.IDnumericUpDown.TabIndex = 24;
             // 
             // label1
@@ -123,9 +125,9 @@
             this.ProductorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.ProductorescomboBox.FormattingEnabled = true;
-            this.ProductorescomboBox.Location = new System.Drawing.Point(129, 51);
+            this.ProductorescomboBox.Location = new System.Drawing.Point(104, 51);
             this.ProductorescomboBox.Name = "ProductorescomboBox";
-            this.ProductorescomboBox.Size = new System.Drawing.Size(302, 25);
+            this.ProductorescomboBox.Size = new System.Drawing.Size(327, 25);
             this.ProductorescomboBox.TabIndex = 44;
             // 
             // label3
@@ -162,7 +164,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(371, 215);
+            this.Eliminarbutton.Location = new System.Drawing.Point(371, 184);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(111, 60);
             this.Eliminarbutton.TabIndex = 36;
@@ -179,7 +181,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(192, 215);
+            this.Guardarbutton.Location = new System.Drawing.Point(192, 184);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(111, 60);
             this.Guardarbutton.TabIndex = 35;
@@ -196,7 +198,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(10, 215);
+            this.Nuevobutton.Location = new System.Drawing.Point(10, 184);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(111, 60);
             this.Nuevobutton.TabIndex = 34;
@@ -213,7 +215,7 @@
             this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(228, 4);
+            this.Buscarbutton.Location = new System.Drawing.Point(224, 7);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(46, 35);
             this.Buscarbutton.TabIndex = 25;
@@ -224,10 +226,10 @@
             // InterestextBox
             // 
             this.InterestextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.InterestextBox.Location = new System.Drawing.Point(129, 140);
+            this.InterestextBox.Location = new System.Drawing.Point(104, 111);
             this.InterestextBox.Name = "InterestextBox";
             this.InterestextBox.ReadOnly = true;
-            this.InterestextBox.Size = new System.Drawing.Size(353, 25);
+            this.InterestextBox.Size = new System.Drawing.Size(92, 25);
             this.InterestextBox.TabIndex = 47;
             this.InterestextBox.Text = "0.15 ";
             this.InterestextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -236,7 +238,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(5, 144);
+            this.label2.Location = new System.Drawing.Point(5, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.TabIndex = 46;
@@ -245,9 +247,9 @@
             // TiempotextBox
             // 
             this.TiempotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.TiempotextBox.Location = new System.Drawing.Point(129, 169);
+            this.TiempotextBox.Location = new System.Drawing.Point(335, 112);
             this.TiempotextBox.Name = "TiempotextBox";
-            this.TiempotextBox.Size = new System.Drawing.Size(353, 25);
+            this.TiempotextBox.Size = new System.Drawing.Size(147, 25);
             this.TiempotextBox.TabIndex = 49;
             this.TiempotextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TiempotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TiempotextBox_KeyPress);
@@ -256,7 +258,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(5, 175);
+            this.label4.Location = new System.Drawing.Point(213, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 19);
             this.label4.TabIndex = 48;
@@ -265,10 +267,10 @@
             // BalancetextBox
             // 
             this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.BalancetextBox.Location = new System.Drawing.Point(129, 111);
+            this.BalancetextBox.Location = new System.Drawing.Point(335, 82);
             this.BalancetextBox.Name = "BalancetextBox";
             this.BalancetextBox.ReadOnly = true;
-            this.BalancetextBox.Size = new System.Drawing.Size(353, 25);
+            this.BalancetextBox.Size = new System.Drawing.Size(147, 25);
             this.BalancetextBox.TabIndex = 51;
             this.BalancetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -276,18 +278,40 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(5, 113);
+            this.label5.Location = new System.Drawing.Point(255, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 19);
             this.label5.TabIndex = 50;
             this.label5.Text = "Balance:";
+            // 
+            // TotaltextBox
+            // 
+            this.TotaltextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.TotaltextBox.Location = new System.Drawing.Point(104, 142);
+            this.TotaltextBox.Name = "TotaltextBox";
+            this.TotaltextBox.ReadOnly = true;
+            this.TotaltextBox.Size = new System.Drawing.Size(378, 25);
+            this.TotaltextBox.TabIndex = 53;
+            this.TotaltextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(6, 145);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 19);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Total a pagar:";
             // 
             // rPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(523, 285);
+            this.ClientSize = new System.Drawing.Size(523, 253);
+            this.Controls.Add(this.TotaltextBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.BalancetextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TiempotextBox);
@@ -339,5 +363,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox BalancetextBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TotaltextBox;
+        private System.Windows.Forms.Label label8;
     }
 }
