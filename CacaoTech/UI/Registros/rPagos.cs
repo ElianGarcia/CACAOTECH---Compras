@@ -38,7 +38,7 @@ namespace CacaoTech.UI.Registros
         {
             Pagos pago = new Pagos();
             pago.PagoID = ToInt(IDnumericUpDown.Value.ToString());
-            pago.ProductorID = ProductorescomboBox.SelectedIndex;
+            pago.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
             pago.PagosDetalle = this.pagosDetalles;
 
             Productores productor = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));

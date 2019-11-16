@@ -10,34 +10,20 @@ using System.Linq.Expressions;
 
 namespace CacaoTech.BLL
 {
-    public class PagosBLL : GenericaBLL<Pagos>
+    public class PagosBLL
     {
-        public override bool Guardar(Pagos pagos)
+        public static bool Guardar(Pagos pagos)
         {
             bool realizado = false;
-            Contexto db;
-            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
 
             try
             {
-                foreach(var item in pagos.PagosDetalle)
-                {
-                    //Afectando el Balance de la tabla de Productores
-                    var productor = genericaBLL.Buscar(pagos.ProductorID);
-                    if(productor != null)
-                    {
-                        productor.Balance -= item.Monto;
-                    }
-                       
-                    //Afectando el Balance de la tabla de Prestamos
-                    var prestamo = PrestamosBLL.Buscar(pagos.PrestamoID);
-                    if (prestamo != null)
-                    {
-                        prestamo.Balance -= item.Monto;
-                    }
-                }
+                //Afectando el Balance de la tabla de Productores
+                AfectarTablaProductores(pagos);
+                //Afectando el Balance de la tabla de Prestamos
+                AfectarTablaPrestamos(pagos);
 
-                db = new Contexto();
+                Contexto db = new Contexto();
                 if (db.Pago.Add(pagos) != null)
                     realizado = db.SaveChanges() > 0;
                 db.Dispose();
@@ -142,6 +128,40 @@ namespace CacaoTech.BLL
                 db.Dispose();
             }
             return lista;
+        }
+
+        public static void AfectarTablaProductores(Pagos pago)
+        {
+            //Afectando el Balance de la tabla de Productores
+            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+            Contexto db = new Contexto();
+            var productor = genericaBLL.Buscar(pago.ProductorID);
+
+            foreach (var item in pago.PagosDetalle)
+            {
+                if (productor != null)
+                {
+                    productor.Balance -= item.Monto;
+                    db.Entry(productor).State = EntityState.Modified;
+                }
+            }
+        }
+
+        public static void AfectarTablaPrestamos(Pagos pago)
+        {
+            //Afectando el Balance de la tabla de Prestamos
+            GenericaBLL<Prestamos> genericaBLL = new GenericaBLL<Prestamos>();
+            Contexto db = new Contexto();
+            var prestamo = genericaBLL.Buscar(pago.ProductorID);
+
+            foreach (var item in pago.PagosDetalle)
+            {
+                if (prestamo != null)
+                {
+                    prestamo.Balance -= item.Monto;
+                    db.Entry(prestamo).State = EntityState.Modified;
+                }
+            }
         }
     }
 }
