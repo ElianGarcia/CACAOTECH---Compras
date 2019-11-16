@@ -17,11 +17,7 @@ namespace CacaoTech.BLL
             bool realizado = false;
             Contexto db = new Contexto();
 
-            //Afectando el Balance de la tabla de Productores
-            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            Productores p = genericaBLL.Buscar(prestamo.ProductorID);
-            p.Balance += prestamo.Total;
-            genericaBLL.Modificar(p);
+            AfectarTablaProductores(prestamo);
 
             try
             {
@@ -46,6 +42,7 @@ namespace CacaoTech.BLL
 
             try
             {
+                AfectarTablaProductores(prestamo);
                 db.Entry(prestamo).State = EntityState.Modified;
                 var Anterior = PrestamosBLL.Buscar(prestamo.PrestamoID);
                 realizado = (db.SaveChanges() > 0);
@@ -122,6 +119,15 @@ namespace CacaoTech.BLL
                 db.Dispose();
             }
             return lista;
+        }
+
+        public static void AfectarTablaProductores(Prestamos prestamo)
+        {
+            //Afectando el Balance de la tabla de Productores
+            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+            Productores p = genericaBLL.Buscar(prestamo.ProductorID);
+            p.Balance += prestamo.Total;
+            genericaBLL.Modificar(p);
         }
     }
 }

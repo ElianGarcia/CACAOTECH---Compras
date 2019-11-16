@@ -10,12 +10,12 @@ using System.Linq.Expressions;
 
 namespace CacaoTech.BLL
 {
-    public class PagosBLL
+    public class PagosBLL : GenericaBLL<Pagos>
     {
-        public static bool Guardar(Pagos pagos)
+        public override bool Guardar(Pagos pagos)
         {
             bool realizado = false;
-            Contexto db = new Contexto();
+            Contexto db;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
 
             try
@@ -36,17 +36,17 @@ namespace CacaoTech.BLL
                         prestamo.Balance -= item.Monto;
                     }
                 }
+
+                db = new Contexto();
                 if (db.Pago.Add(pagos) != null)
                     realizado = db.SaveChanges() > 0;
+                db.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                db.Dispose();
-            }
+            
             return realizado;
         }
 
