@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoresReportViewer));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -39,17 +40,19 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = "C:\\Users\\ASUS\\source\\repos\\ProyectoFinal\\CacaoTech\\UI\\Reportes\\ListProductores.rpt";
+            this.crystalReportViewer1.ReportSource = "C:\\Users\\ASUS\\source\\repos\\ProyectoFinal\\CacaoTech\\UI\\Reportes\\ListProductores.rp" +
+    "t";
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // cProductores
+            // ProductoresReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "ReporteProductores";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ProductoresReportViewer";
             this.Text = "Reporte Productores";
             this.Load += new System.EventHandler(this.cProductores_Load);
             this.ResumeLayout(false);
