@@ -18,22 +18,25 @@ namespace CacaoTech.BLL
 
             try
             {
-                //Afectando el Balance de la tablas de Productores y Prestamos
                 int id = pagos.ProductorID;
                 GenericaBLL<Productores> genericaProductoresBLL = new GenericaBLL<Productores>();
                 var productor = genericaProductoresBLL.Buscar(id);
+                var Balance = productor.Balance;
+
                 GenericaBLL<Prestamos> genericaPrestamosBLL = new GenericaBLL<Prestamos>();
                 var prestamo = genericaPrestamosBLL.Buscar(id);
 
                 Contexto db = new Contexto();
                 foreach (var item in pagos.PagosDetalle)
                 {
+                    db = new Contexto();
                     if (productor != null)
                     {
-                        productor.Balance -= item.Monto;
+                        Balance -= item.Monto;
                         db.Entry(productor).State = EntityState.Modified;
                     }
 
+                    db = new Contexto();
                     if (prestamo != null)
                     {
                         prestamo.Balance -= item.Monto;
@@ -41,6 +44,7 @@ namespace CacaoTech.BLL
                     }
                 }
 
+                db = new Contexto();
                 if (db.Pago.Add(pagos) != null)
                     realizado = db.SaveChanges() > 0;
                 db.Dispose();
