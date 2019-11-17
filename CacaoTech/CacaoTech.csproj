@@ -125,6 +125,12 @@
     <Compile Include="UI\Registros\rProductores.Designer.cs">
       <DependentUpon>rProductores.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\CacaoReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\CacaoReportViewer.Designer.cs">
+      <DependentUpon>CacaoReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\ListadoCacao.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rProductores.resx">
       <DependentUpon>rProductores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\CacaoReportViewer.resx">
+      <DependentUpon>CacaoReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ListadoCacao.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

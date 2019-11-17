@@ -1,6 +1,6 @@
 ﻿namespace CacaoTech.UI.Reportes
 {
-    partial class ProductoresReportViewer
+    partial class CacaoReportViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -39,19 +39,19 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = "C:\\Users\\ASUS\\source\\repos\\ProyectoFinal\\CacaoTech\\UI\\Reportes\\ListProductores.rpt";
+            this.crystalReportViewer1.ReportSource = "C:\\Users\\ASUS\\source\\repos\\ProyectoFinal\\CacaoTech\\UI\\Reportes\\ListadoCacao.rpt";
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
-            // cProductores
+            // CacaoReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "ReporteProductores";
-            this.Text = "Reporte Productores";
-            this.Load += new System.EventHandler(this.cProductores_Load);
+            this.Name = "CacaoReportViewer";
+            this.Text = "Reporte Cacao";
             this.ResumeLayout(false);
 
         }

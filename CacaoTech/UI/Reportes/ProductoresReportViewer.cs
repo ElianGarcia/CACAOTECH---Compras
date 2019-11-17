@@ -25,7 +25,7 @@ namespace CacaoTech.UI.Reportes
             ListProductores productoresCrystalReport = new ListProductores();
             productoresCrystalReport.SetDataSource(ListaProductores);
 
-            //ProductoresReportViewer.ReportSource = productoresCrystalReport;
+            crystalReportViewer1.ReportSource = productoresCrystalReport;
             productoresCrystalReport.Refresh();
         }
     }
