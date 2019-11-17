@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CacaoTech));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +39,15 @@
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cacaosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cacaosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.recepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recepcionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +115,11 @@
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vendedoresToolStripMenuItem});
+            this.vendedoresToolStripMenuItem,
+            this.prestamosToolStripMenuItem1,
+            this.pagosToolStripMenuItem1,
+            this.cacaosToolStripMenuItem1,
+            this.recepcionesToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -113,15 +127,83 @@
             // vendedoresToolStripMenuItem
             // 
             this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
-            this.vendedoresToolStripMenuItem.Text = "Vendedores";
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.vendedoresToolStripMenuItem.Text = "Productores";
             this.vendedoresToolStripMenuItem.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productoresToolStripMenuItem,
+            this.prestamosToolStripMenuItem,
+            this.cacaosToolStripMenuItem,
+            this.pagosToolStripMenuItem,
+            this.recepcionesToolStripMenuItem1});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // productoresToolStripMenuItem
+            // 
+            this.productoresToolStripMenuItem.Name = "productoresToolStripMenuItem";
+            this.productoresToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.productoresToolStripMenuItem.Text = "Productores";
+            this.productoresToolStripMenuItem.Click += new System.EventHandler(this.productoresToolStripMenuItem_Click);
+            // 
+            // prestamosToolStripMenuItem
+            // 
+            this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.prestamosToolStripMenuItem.Text = "Prestamos";
+            this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
+            // 
+            // cacaosToolStripMenuItem
+            // 
+            this.cacaosToolStripMenuItem.Name = "cacaosToolStripMenuItem";
+            this.cacaosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.cacaosToolStripMenuItem.Text = "Cacaos";
+            this.cacaosToolStripMenuItem.Click += new System.EventHandler(this.cacaosToolStripMenuItem_Click);
+            // 
+            // pagosToolStripMenuItem
+            // 
+            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pagosToolStripMenuItem.Text = "Pagos";
+            this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
+            // 
+            // prestamosToolStripMenuItem1
+            // 
+            this.prestamosToolStripMenuItem1.Name = "prestamosToolStripMenuItem1";
+            this.prestamosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.prestamosToolStripMenuItem1.Text = "Prestamos";
+            this.prestamosToolStripMenuItem1.Click += new System.EventHandler(this.prestamosToolStripMenuItem1_Click);
+            // 
+            // pagosToolStripMenuItem1
+            // 
+            this.pagosToolStripMenuItem1.Name = "pagosToolStripMenuItem1";
+            this.pagosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.pagosToolStripMenuItem1.Text = "Pagos";
+            this.pagosToolStripMenuItem1.Click += new System.EventHandler(this.pagosToolStripMenuItem1_Click);
+            // 
+            // cacaosToolStripMenuItem1
+            // 
+            this.cacaosToolStripMenuItem1.Name = "cacaosToolStripMenuItem1";
+            this.cacaosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.cacaosToolStripMenuItem1.Text = "Cacaos";
+            this.cacaosToolStripMenuItem1.Click += new System.EventHandler(this.cacaosToolStripMenuItem1_Click);
+            // 
+            // recepcionesToolStripMenuItem
+            // 
+            this.recepcionesToolStripMenuItem.Name = "recepcionesToolStripMenuItem";
+            this.recepcionesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.recepcionesToolStripMenuItem.Text = "Recepciones";
+            this.recepcionesToolStripMenuItem.Click += new System.EventHandler(this.recepcionesToolStripMenuItem_Click);
+            // 
+            // recepcionesToolStripMenuItem1
+            // 
+            this.recepcionesToolStripMenuItem1.Name = "recepcionesToolStripMenuItem1";
+            this.recepcionesToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.recepcionesToolStripMenuItem1.Text = "Recepciones";
             // 
             // CacaoTech
             // 
@@ -133,6 +215,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CacaoTech";
             this.Text = "CacaoTech";
@@ -155,6 +238,15 @@
         private System.Windows.Forms.ToolStripMenuItem depositoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recepcionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cacaosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cacaosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem recepcionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recepcionesToolStripMenuItem1;
     }
 }
 
