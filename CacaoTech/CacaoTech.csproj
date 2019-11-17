@@ -113,6 +113,12 @@
     <Compile Include="UI\Consultas\cProductores.Designer.cs">
       <DependentUpon>cProductores.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cRecepciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cRecepciones.Designer.cs">
+      <DependentUpon>cRecepciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rCacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cProductores.resx">
       <DependentUpon>cProductores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cRecepciones.resx">
+      <DependentUpon>cRecepciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCacao.resx">
       <DependentUpon>rCacao.cs</DependentUpon>
