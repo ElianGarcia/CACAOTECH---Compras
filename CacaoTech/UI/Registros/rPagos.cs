@@ -40,19 +40,20 @@ namespace CacaoTech.UI.Registros
             pago.PagoID = ToInt(IDnumericUpDown.Value.ToString());
             pago.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
             pago.PagosDetalle = this.pagosDetalles;
-
             Productores productor = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
-
 
             return pago;
         }
 
         private void LlenaCampos(Pagos pago)
         {
+            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+            Productores productor = genericaBLL.Buscar(pago.ProductorID);
+
             IDnumericUpDown.Value = pago.PagoID;
-            ProductorescomboBox.Text = pago.productores.Nombres;
+            ProductorescomboBox.SelectedIndex = pago.ProductorID;
             FechadateTimePicker.Value = DateTime.Now;
-            BalancetextBox.Text = pago.productores.Balance.ToString();
+            BalancetextBox.Text = productor.Balance.ToString();
             dataGridView.DataSource = pago.PagosDetalle;
         }
 
