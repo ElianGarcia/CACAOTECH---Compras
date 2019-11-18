@@ -90,11 +90,12 @@ namespace CacaoTech
 
         private void cacaosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<Prestamos> listado = PrestamosBLL.GetList(p => true);
+            GenericaBLL<Cacao> genericaBLL = new GenericaBLL<Cacao>();
+            List<Cacao> listado = genericaBLL.GetList(p => true);
 
             if (listado.Count > 0)
             {
-                PrestamosReportViewer reportViewer = new PrestamosReportViewer(listado);
+                CacaoReportViewer reportViewer = new CacaoReportViewer(listado);
                 reportViewer.ShowDialog();
             }
             else

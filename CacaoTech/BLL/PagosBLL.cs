@@ -12,19 +12,36 @@ namespace CacaoTech.BLL
 {
     public class PagosBLL
     {
+
+        public static void afectarPrestamos(Pagos pago)
+        {
+            GenericaBLL<Prestamos> genericaPrestamosBLL = new GenericaBLL<Prestamos>();
+            var prestamo = genericaPrestamosBLL.Buscar(pago.ProductorID);
+            Contexto db = new Contexto();
+            bool realizado = false;
+
+            foreach (var item in pago.PagosDetalle)
+            {
+                if (prestamo != null)
+                {
+                    prestamo.Balance -= item.Monto;
+                    db.Entry(prestamo).State = EntityState.Modified;
+                    realizado = db.SaveChanges() > 0;
+                }
+            }
+
+            db.Dispose();
+        }
         public static bool Guardar(Pagos pagos)
         {
             bool realizado = false;
 
             try
             {
-                int id = pagos.ProductorID;
+                afectarPrestamos(pagos);
+
                 GenericaBLL<Productores> genericaProductoresBLL = new GenericaBLL<Productores>();
-                var productor = genericaProductoresBLL.Buscar(id);
-
-                GenericaBLL<Prestamos> genericaPrestamosBLL = new GenericaBLL<Prestamos>();
-                var prestamo = genericaPrestamosBLL.Buscar(id);
-
+                var productor = genericaProductoresBLL.Buscar(pagos.ProductorID);
                 Contexto db = new Contexto();
                 foreach (var item in pagos.PagosDetalle)
                 {
@@ -33,14 +50,6 @@ namespace CacaoTech.BLL
                     {
                         productor.Balance -= item.Monto;
                         db.Entry(productor).State = EntityState.Modified;
-                        realizado = db.SaveChanges() > 0;
-                    }
-
-                    db = new Contexto();
-                    if (prestamo != null)
-                    {
-                        prestamo.Balance -= item.Monto;
-                        db.Entry(prestamo).State = EntityState.Modified;
                         realizado = db.SaveChanges() > 0;
                     }
                 }

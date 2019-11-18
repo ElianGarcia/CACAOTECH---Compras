@@ -49,8 +49,6 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.MontotextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
@@ -64,7 +62,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.dataGridView);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(12, 146);
+            this.groupBox1.Location = new System.Drawing.Point(12, 117);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(464, 198);
             this.groupBox1.TabIndex = 13;
@@ -157,7 +155,6 @@
             // 
             this.FechadateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechadateTimePicker.Enabled = false;
             this.FechadateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechadateTimePicker.Location = new System.Drawing.Point(348, 18);
@@ -217,7 +214,7 @@
             // BalancetextBox
             // 
             this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.BalancetextBox.Location = new System.Drawing.Point(100, 115);
+            this.BalancetextBox.Location = new System.Drawing.Point(100, 86);
             this.BalancetextBox.Name = "BalancetextBox";
             this.BalancetextBox.ReadOnly = true;
             this.BalancetextBox.Size = new System.Drawing.Size(376, 25);
@@ -227,7 +224,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(15, 118);
+            this.label1.Location = new System.Drawing.Point(15, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 19);
             this.label1.TabIndex = 74;
@@ -242,7 +239,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(376, 353);
+            this.Eliminarbutton.Location = new System.Drawing.Point(376, 324);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(100, 62);
             this.Eliminarbutton.TabIndex = 78;
@@ -259,7 +256,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(194, 353);
+            this.Guardarbutton.Location = new System.Drawing.Point(194, 324);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(100, 62);
             this.Guardarbutton.TabIndex = 77;
@@ -276,7 +273,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(12, 353);
+            this.Nuevobutton.Location = new System.Drawing.Point(12, 324);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(100, 62);
             this.Nuevobutton.TabIndex = 76;
@@ -285,33 +282,12 @@
             this.Nuevobutton.UseVisualStyleBackColor = false;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // MontotextBox
-            // 
-            this.MontotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.MontotextBox.Location = new System.Drawing.Point(100, 85);
-            this.MontotextBox.Name = "MontotextBox";
-            this.MontotextBox.ReadOnly = true;
-            this.MontotextBox.Size = new System.Drawing.Size(376, 25);
-            this.MontotextBox.TabIndex = 80;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(15, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 19);
-            this.label2.TabIndex = 79;
-            this.label2.Text = "Monto:";
-            // 
             // rPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(508, 423);
-            this.Controls.Add(this.MontotextBox);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(508, 397);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -360,7 +336,5 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.TextBox MontotextBox;
-        private System.Windows.Forms.Label label2;
     }
 }

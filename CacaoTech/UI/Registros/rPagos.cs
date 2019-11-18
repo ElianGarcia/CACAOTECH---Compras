@@ -40,7 +40,7 @@ namespace CacaoTech.UI.Registros
             pago.PagoID = ToInt(IDnumericUpDown.Value.ToString());
             pago.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
             pago.PagosDetalle = this.pagosDetalles;
-            Productores productor = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
+            pago.productores = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
 
             return pago;
         }
@@ -97,7 +97,6 @@ namespace CacaoTech.UI.Registros
         {
             IDnumericUpDown.Value = 0;
             ProductorescomboBox.Text = string.Empty;
-            MontotextBox.Text = string.Empty;
             BalancetextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
@@ -172,7 +171,6 @@ namespace CacaoTech.UI.Registros
 
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
-            Contexto db = new Contexto();
 
             Limpiar();
 
@@ -194,7 +192,6 @@ namespace CacaoTech.UI.Registros
 
         private void ProductorescomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Productores> Lista = new List<Productores>();
             Productores productor = new Productores();
             decimal balance;
 
@@ -242,7 +239,8 @@ namespace CacaoTech.UI.Registros
 
         private void AgregarPagobutton_Click(object sender, EventArgs e)
         {
-            Contexto db = new Contexto();
+            if (!ValidarCantidad())
+                return;
 
             if (dataGridView.DataSource != null)
             {
@@ -258,8 +256,22 @@ namespace CacaoTech.UI.Registros
                 );
 
             CargarGrid();
-            ProductorescomboBox.SelectedIndex = 0;
             CantidadtextBox.Clear();
+        }
+
+        private bool ValidarCantidad()
+        {
+            bool validado = true;
+            string obligatorio = "Campo obligatorio";
+
+            if (string.IsNullOrWhiteSpace(CantidadtextBox.Text))
+            {
+                errorProvider.SetError(CantidadtextBox, obligatorio);
+                CantidadtextBox.Focus();
+                validado = false;
+            }
+
+            return validado;
         }
     }
 }
