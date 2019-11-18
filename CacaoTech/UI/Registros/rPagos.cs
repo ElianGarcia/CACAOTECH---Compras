@@ -53,6 +53,7 @@ namespace CacaoTech.UI.Registros
             ProductorescomboBox.Text = pago.productores.Nombres;
             FechadateTimePicker.Value = DateTime.Now;
             BalancetextBox.Text = pago.productores.Balance.ToString();
+            dataGridView.DataSource = pago.PagosDetalle;
         }
 
         public void LlenarCombos()
