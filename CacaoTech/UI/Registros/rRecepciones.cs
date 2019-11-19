@@ -198,6 +198,14 @@ namespace CacaoTech.UI.Registros
             }
         }
 
+        private int ToInt(string valor)
+        {
+            int resultado = 0;
+            int.TryParse(valor, out resultado);
+
+            return resultado;
+        }
+
         private Decimal ToDecimal(string valor)
         {
             decimal resultado = 0;

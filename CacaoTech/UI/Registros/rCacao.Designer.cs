@@ -106,6 +106,7 @@
             this.TipocomboBox.Name = "TipocomboBox";
             this.TipocomboBox.Size = new System.Drawing.Size(228, 25);
             this.TipocomboBox.TabIndex = 10;
+            this.TipocomboBox.SelectedIndexChanged += new System.EventHandler(this.TipocomboBox_SelectedIndexChanged);
             // 
             // Eliminarbutton
             // 

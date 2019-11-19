@@ -188,5 +188,23 @@ namespace CacaoTech.UI.Registros
             else
                 e.Handled = true;
         }
+
+        private int ToInt(string valor)
+        {
+            int resultado = 0;
+            int.TryParse(valor, out resultado);
+
+            return resultado;
+        }
+
+        private void TipocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GenericaBLL<Cacao> genericaCacaoBLL = new GenericaBLL<Cacao>();
+            Cacao cacao = genericaCacaoBLL.Buscar(ToInt(TipocomboBox.SelectedIndex.ToString()));
+            if (cacao != null)
+            {
+                PreciotextBox.Text = cacao.Precio.ToString();
+            }
+        }
     }
 }

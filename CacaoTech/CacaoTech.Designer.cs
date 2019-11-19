@@ -38,15 +38,15 @@
             this.recepcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cacaosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.recepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cacaosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prestamosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cacaosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.recepcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recepcionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -127,9 +127,37 @@
             // vendedoresToolStripMenuItem
             // 
             this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.vendedoresToolStripMenuItem.Text = "Productores";
             this.vendedoresToolStripMenuItem.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
+            // 
+            // prestamosToolStripMenuItem1
+            // 
+            this.prestamosToolStripMenuItem1.Name = "prestamosToolStripMenuItem1";
+            this.prestamosToolStripMenuItem1.Size = new System.Drawing.Size(164, 24);
+            this.prestamosToolStripMenuItem1.Text = "Prestamos";
+            this.prestamosToolStripMenuItem1.Click += new System.EventHandler(this.prestamosToolStripMenuItem1_Click);
+            // 
+            // pagosToolStripMenuItem1
+            // 
+            this.pagosToolStripMenuItem1.Name = "pagosToolStripMenuItem1";
+            this.pagosToolStripMenuItem1.Size = new System.Drawing.Size(164, 24);
+            this.pagosToolStripMenuItem1.Text = "Pagos";
+            this.pagosToolStripMenuItem1.Click += new System.EventHandler(this.pagosToolStripMenuItem1_Click);
+            // 
+            // cacaosToolStripMenuItem1
+            // 
+            this.cacaosToolStripMenuItem1.Name = "cacaosToolStripMenuItem1";
+            this.cacaosToolStripMenuItem1.Size = new System.Drawing.Size(164, 24);
+            this.cacaosToolStripMenuItem1.Text = "Cacaos";
+            this.cacaosToolStripMenuItem1.Click += new System.EventHandler(this.cacaosToolStripMenuItem1_Click);
+            // 
+            // recepcionesToolStripMenuItem
+            // 
+            this.recepcionesToolStripMenuItem.Name = "recepcionesToolStripMenuItem";
+            this.recepcionesToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.recepcionesToolStripMenuItem.Text = "Recepciones";
+            this.recepcionesToolStripMenuItem.Click += new System.EventHandler(this.recepcionesToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -171,39 +199,12 @@
             this.pagosToolStripMenuItem.Text = "Pagos";
             this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
-            // prestamosToolStripMenuItem1
-            // 
-            this.prestamosToolStripMenuItem1.Name = "prestamosToolStripMenuItem1";
-            this.prestamosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.prestamosToolStripMenuItem1.Text = "Prestamos";
-            this.prestamosToolStripMenuItem1.Click += new System.EventHandler(this.prestamosToolStripMenuItem1_Click);
-            // 
-            // pagosToolStripMenuItem1
-            // 
-            this.pagosToolStripMenuItem1.Name = "pagosToolStripMenuItem1";
-            this.pagosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.pagosToolStripMenuItem1.Text = "Pagos";
-            this.pagosToolStripMenuItem1.Click += new System.EventHandler(this.pagosToolStripMenuItem1_Click);
-            // 
-            // cacaosToolStripMenuItem1
-            // 
-            this.cacaosToolStripMenuItem1.Name = "cacaosToolStripMenuItem1";
-            this.cacaosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.cacaosToolStripMenuItem1.Text = "Cacaos";
-            this.cacaosToolStripMenuItem1.Click += new System.EventHandler(this.cacaosToolStripMenuItem1_Click);
-            // 
-            // recepcionesToolStripMenuItem
-            // 
-            this.recepcionesToolStripMenuItem.Name = "recepcionesToolStripMenuItem";
-            this.recepcionesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.recepcionesToolStripMenuItem.Text = "Recepciones";
-            this.recepcionesToolStripMenuItem.Click += new System.EventHandler(this.recepcionesToolStripMenuItem_Click);
-            // 
             // recepcionesToolStripMenuItem1
             // 
             this.recepcionesToolStripMenuItem1.Name = "recepcionesToolStripMenuItem1";
             this.recepcionesToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.recepcionesToolStripMenuItem1.Text = "Recepciones";
+            this.recepcionesToolStripMenuItem1.Click += new System.EventHandler(this.recepcionesToolStripMenuItem1_Click);
             // 
             // CacaoTech
             // 

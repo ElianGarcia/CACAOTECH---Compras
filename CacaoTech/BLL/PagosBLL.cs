@@ -12,7 +12,6 @@ namespace CacaoTech.BLL
 {
     public class PagosBLL
     {
-
         public static void afectarPrestamos(Pagos pago)
         {
             GenericaBLL<Prestamos> genericaPrestamosBLL = new GenericaBLL<Prestamos>();
@@ -20,17 +19,28 @@ namespace CacaoTech.BLL
             Contexto db = new Contexto();
             bool realizado = false;
 
-            foreach (var item in pago.PagosDetalle)
+            try
             {
-                if (prestamo != null)
+                foreach (var item in pago.PagosDetalle)
                 {
-                    prestamo.Balance -= item.Monto;
-                    db.Entry(prestamo).State = EntityState.Modified;
-                    realizado = db.SaveChanges() > 0;
+                    if (prestamo != null)
+                    {
+                        prestamo.Balance -= item.Monto;
+                        db.Entry(prestamo).State = EntityState.Modified;
+                        realizado = db.SaveChanges() > 0;
+                    }
                 }
             }
-
-            db.Dispose();
+            catch (Exception)
+            {
+                throw;
+            }
+            
+            finally
+            {
+                db.Dispose();
+            }
+            
         }
         public static bool Guardar(Pagos pagos)
         {
@@ -38,32 +48,33 @@ namespace CacaoTech.BLL
 
             try
             {
-                afectarPrestamos(pagos);
+                //afectarPrestamos(pagos);
 
                 GenericaBLL<Productores> genericaProductoresBLL = new GenericaBLL<Productores>();
                 var productor = genericaProductoresBLL.Buscar(pagos.ProductorID);
                 Contexto db = new Contexto();
+                
                 foreach (var item in pagos.PagosDetalle)
                 {
-                    db = new Contexto();
                     if (productor != null)
                     {
+                        
                         productor.Balance -= item.Monto;
                         db.Entry(productor).State = EntityState.Modified;
                         realizado = db.SaveChanges() > 0;
                     }
                 }
 
-                db = new Contexto();
                 if (db.Pago.Add(pagos) != null)
                     realizado = db.SaveChanges() > 0;
                 db.Dispose();
             }
             catch (Exception)
             {
+                
                 throw;
             }
-            
+
             return realizado;
         }
 

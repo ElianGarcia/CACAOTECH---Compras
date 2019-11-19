@@ -270,8 +270,20 @@ namespace CacaoTech.UI.Registros
                 CantidadtextBox.Focus();
                 validado = false;
             }
+            if (ToDecimal(CantidadtextBox.Text) > ToDecimal(BalancetextBox.Text))
+            {
+                errorProvider.SetError(CantidadtextBox, "El monto a pagar no ha de ser mayor \n al balance del prestamo");
+                CantidadtextBox.Focus();
+                validado = false;
+            }
 
             return validado;
+        }
+
+        private void CantidadtextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!ValidarCantidad())
+                return;
         }
     }
 }

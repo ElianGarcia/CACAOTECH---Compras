@@ -15,12 +15,12 @@ namespace CacaoTech.DAL
         {
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            /*modelBuilder.Entity<Recepciones>()
-            .HasOptional<Productores>(s => s.productor)
-            .WithMany()
-            .WillCascadeOnDelete(false);*/
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    /*modelBuilder.Entity<Recepciones>()
+        //    .HasOptional<Productores>(s => s.productor)
+        //    .WithMany()
+        //    .WillCascadeOnDelete(false);*/
+        //}
     }
 }

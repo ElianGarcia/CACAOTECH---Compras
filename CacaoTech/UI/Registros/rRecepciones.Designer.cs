@@ -211,6 +211,7 @@
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(129, 25);
             this.CantidadtextBox.TabIndex = 50;
+            this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
             this.CantidadtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadtextBox_KeyPress);
             // 
             // label5
@@ -232,6 +233,7 @@
             this.TipoCacaocomboBox.Name = "TipoCacaocomboBox";
             this.TipoCacaocomboBox.Size = new System.Drawing.Size(179, 25);
             this.TipoCacaocomboBox.TabIndex = 48;
+            this.TipoCacaocomboBox.SelectedIndexChanged += new System.EventHandler(this.TipoCacaocomboBox_SelectedIndexChanged);
             // 
             // label4
             // 

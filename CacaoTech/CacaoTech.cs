@@ -119,6 +119,11 @@ namespace CacaoTech
             }
         }
 
+        private void recepcionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("En Proceso", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         //Consultas
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
