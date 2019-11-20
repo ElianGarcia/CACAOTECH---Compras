@@ -75,7 +75,7 @@ namespace CacaoTech.UI.Registros
 
             Limpiar();
 
-            recepcion = genericaRecepcionBLL.Buscar(id);
+            recepcion = RecepcionesBLL.Buscar(id);
 
             if (recepcion != null)
             {
@@ -114,7 +114,7 @@ namespace CacaoTech.UI.Registros
 
 
             if (IDnumericUpDown.Value == 0)
-                realizado = genericaRecepcionBLL.Guardar(recepcion);
+                realizado = RecepcionesBLL.Guardar(recepcion);
             else
             {
                 if (!Existe())
@@ -122,7 +122,7 @@ namespace CacaoTech.UI.Registros
                     MessageBox.Show("NO SE PUEDE MODIFICAR UNA RECEPCION INEXISTENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                realizado = genericaRecepcionBLL.Modificar(recepcion);
+                realizado = RecepcionesBLL.Modificar(recepcion);
             }
 
             if (realizado)
@@ -138,7 +138,7 @@ namespace CacaoTech.UI.Registros
 
         private bool Existe()
         {
-            Recepciones recepcion = genericaRecepcionBLL.Buscar((int)IDnumericUpDown.Value);
+            Recepciones recepcion = RecepcionesBLL.Buscar((int)IDnumericUpDown.Value);
 
             return (recepcion != null);
         }
@@ -168,7 +168,7 @@ namespace CacaoTech.UI.Registros
 
             Limpiar();
 
-            if (genericaRecepcionBLL.Eliminar(id))
+            if (RecepcionesBLL.Eliminar(id))
             {
                 MessageBox.Show("Eliminada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

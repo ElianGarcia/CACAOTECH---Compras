@@ -15,6 +15,9 @@ namespace CacaoTech.Entidades
         public string Tipo { get; set; }
         public decimal Precio { get; set; }
         public decimal Existencia { get; set; }
+        public int UsuarioID { get; set; }
+        [ForeignKey("UsuarioID")]
+        public virtual Usuarios Usuarios { get; set; }
 
         public Cacao()
         {

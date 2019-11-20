@@ -10,6 +10,7 @@ namespace CacaoTech.DAL
         public DbSet<Prestamos> Prestamo { get; set; }
         public DbSet<Recepciones> Recepcion { get; set; }
         public DbSet<Pagos> Pago { get; set; }
+        public DbSet<Usuarios> Usuario { get; set; }
 
         public Contexto() : base("ConStr")
         {

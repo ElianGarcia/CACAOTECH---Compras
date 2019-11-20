@@ -16,7 +16,7 @@ namespace CacaoTech
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CacaoTech());
+            Application.Run(new Login());
         }
     }
 }

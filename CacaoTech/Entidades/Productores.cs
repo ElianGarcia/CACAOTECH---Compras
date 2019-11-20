@@ -23,6 +23,7 @@ namespace CacaoTech.Entidades
         public string Email { get; set; }
         public bool Tipo { get; set; }
         public decimal Balance { get; set; }
+        public int UsuarioID { get; set; }
 
         public Productores(int productorID, DateTime fecha, string nombres, string apellidos, string direccion, string cedula, string telefono, string celular, string email, bool tipo, decimal balance)
         {

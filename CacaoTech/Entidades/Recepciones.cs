@@ -20,6 +20,7 @@ namespace CacaoTech.Entidades
         [ForeignKey("CacaoID")]
         public virtual Cacao cacao { get; set; }
         public decimal Cantidad { get; set; }
+        public int UsuarioID { get; set; }
 
         public Recepciones(int recepcionID, DateTime fecha, int cacaoID, decimal cantidad)
         {

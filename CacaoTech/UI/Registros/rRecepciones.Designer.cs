@@ -107,7 +107,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(390, 192);
+            this.Eliminarbutton.Location = new System.Drawing.Point(390, 172);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
             this.Eliminarbutton.TabIndex = 16;
@@ -124,7 +124,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(200, 192);
+            this.Guardarbutton.Location = new System.Drawing.Point(200, 172);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
             this.Guardarbutton.TabIndex = 15;
@@ -141,7 +141,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 192);
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 172);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
             this.Nuevobutton.TabIndex = 14;
@@ -169,7 +169,7 @@
             // ImportetextBox
             // 
             this.ImportetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.ImportetextBox.Location = new System.Drawing.Point(380, 90);
+            this.ImportetextBox.Location = new System.Drawing.Point(380, 123);
             this.ImportetextBox.Name = "ImportetextBox";
             this.ImportetextBox.ReadOnly = true;
             this.ImportetextBox.Size = new System.Drawing.Size(128, 25);
@@ -179,7 +179,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(305, 93);
+            this.label7.Location = new System.Drawing.Point(305, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 19);
             this.label7.TabIndex = 53;
@@ -188,7 +188,7 @@
             // PreciotextBox
             // 
             this.PreciotextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.PreciotextBox.Location = new System.Drawing.Point(120, 90);
+            this.PreciotextBox.Location = new System.Drawing.Point(120, 123);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(179, 25);
@@ -198,7 +198,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(13, 93);
+            this.label6.Location = new System.Drawing.Point(13, 126);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 19);
             this.label6.TabIndex = 51;
@@ -207,7 +207,7 @@
             // CantidadtextBox
             // 
             this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.CantidadtextBox.Location = new System.Drawing.Point(379, 55);
+            this.CantidadtextBox.Location = new System.Drawing.Point(379, 88);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(129, 25);
             this.CantidadtextBox.TabIndex = 50;
@@ -218,7 +218,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(305, 58);
+            this.label5.Location = new System.Drawing.Point(305, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 19);
             this.label5.TabIndex = 49;
@@ -229,7 +229,7 @@
             this.TipoCacaocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoCacaocomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.TipoCacaocomboBox.FormattingEnabled = true;
-            this.TipoCacaocomboBox.Location = new System.Drawing.Point(120, 55);
+            this.TipoCacaocomboBox.Location = new System.Drawing.Point(120, 88);
             this.TipoCacaocomboBox.Name = "TipoCacaocomboBox";
             this.TipoCacaocomboBox.Size = new System.Drawing.Size(179, 25);
             this.TipoCacaocomboBox.TabIndex = 48;
@@ -239,7 +239,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(12, 55);
+            this.label4.Location = new System.Drawing.Point(12, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 47;
@@ -253,32 +253,31 @@
             this.RegistrarProductoresbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.RegistrarProductoresbutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RegistrarProductoresbutton.Image = global::CacaoTech.Properties.Resources.Add_User_Male_32;
-            this.RegistrarProductoresbutton.Location = new System.Drawing.Point(463, 120);
+            this.RegistrarProductoresbutton.Location = new System.Drawing.Point(463, 47);
             this.RegistrarProductoresbutton.Name = "RegistrarProductoresbutton";
             this.RegistrarProductoresbutton.Size = new System.Drawing.Size(45, 35);
-            this.RegistrarProductoresbutton.TabIndex = 57;
+            this.RegistrarProductoresbutton.TabIndex = 60;
             this.RegistrarProductoresbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RegistrarProductoresbutton.UseVisualStyleBackColor = false;
-            this.RegistrarProductoresbutton.Click += new System.EventHandler(this.RegistrarProductorbutton_Click);
             // 
             // ProductorescomboBox
             // 
             this.ProductorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.ProductorescomboBox.FormattingEnabled = true;
-            this.ProductorescomboBox.Location = new System.Drawing.Point(120, 126);
+            this.ProductorescomboBox.Location = new System.Drawing.Point(120, 53);
             this.ProductorescomboBox.Name = "ProductorescomboBox";
             this.ProductorescomboBox.Size = new System.Drawing.Size(337, 25);
-            this.ProductorescomboBox.TabIndex = 56;
+            this.ProductorescomboBox.TabIndex = 59;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(13, 126);
+            this.label3.Location = new System.Drawing.Point(13, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 19);
-            this.label3.TabIndex = 55;
+            this.label3.TabIndex = 58;
             this.label3.Text = "Vendedor:";
             // 
             // rRecepciones
@@ -286,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(546, 268);
+            this.ClientSize = new System.Drawing.Size(546, 246);
             this.Controls.Add(this.RegistrarProductoresbutton);
             this.Controls.Add(this.ProductorescomboBox);
             this.Controls.Add(this.label3);
