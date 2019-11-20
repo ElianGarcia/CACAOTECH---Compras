@@ -248,19 +248,27 @@ namespace CacaoTech.UI.Registros
         {
             errorProvider.Clear();
 
-            int id;
-            int.TryParse(IDnumericUpDown.Text, out id);
-
-            Limpiar();
-
-            if (genericaBLL.Eliminar(id))
+            if(ToDecimal(BalancetextBox.Text) > 0)
             {
-                MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Este productor no puede ser eliminado" +
+                    "porque tiene una deuda pendiente", "Denegado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un productor inexistente");
+                int id;
+                int.TryParse(IDnumericUpDown.Text, out id);
+
+                Limpiar();
+
+                if (genericaBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un productor inexistente");
+                }
             }
         }
 

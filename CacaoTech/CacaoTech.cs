@@ -65,6 +65,8 @@ namespace CacaoTech
             registroRecepcion.ShowDialog();
         }
 
+
+
         ////Reportes
         //private void productoresToolStripMenuItem_Click(object sender, EventArgs e)
         //{
@@ -163,6 +165,21 @@ namespace CacaoTech
         {
             cRecepciones consulta = new cRecepciones();
             consulta.ShowDialog();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(ID == 1)
+            {
+                rUsuarios usuarios = new rUsuarios();
+                usuarios.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Debe tener permisos de administrador" +
+                    " para registrar un nuevo usuario", 
+                    "Permiso denegado", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
+            }
         }
     }
 }
