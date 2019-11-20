@@ -17,15 +17,14 @@ namespace CacaoTech.UI.Registros
     public partial class rPagos : Form
     {
         GenericaBLL<Productores> genericaProductorBLL;
-        public List<PagosDetalle> pagosDetalles { get; set; }
+        GenericaBLL<Prestamos> genericaPrestamosBLL;
         int UsuarioID;
 
         public rPagos(int usuarioID)
         {
             genericaProductorBLL = new GenericaBLL<Productores>();
+            genericaPrestamosBLL = new GenericaBLL<Prestamos>();
             InitializeComponent();
-            this.pagosDetalles = new List<PagosDetalle>();
-            CargarGrid();
             LlenarCombos();
             UsuarioID = usuarioID;
             BuscarUsuario(usuarioID);
@@ -38,18 +37,11 @@ namespace CacaoTech.UI.Registros
             Usuariolabel.Text = usuario.Nombres;
         }
 
-        private void CargarGrid()
-        {
-            dataGridView.DataSource = null;
-            dataGridView.DataSource = pagosDetalles;
-        }
-
         public Pagos LlenaClase()
         {
             Pagos pago = new Pagos();
             pago.PagoID = ToInt(IDnumericUpDown.Value.ToString());
             pago.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
-            pago.PagosDetalle = this.pagosDetalles;
             pago.productores = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
             pago.UsuarioID = UsuarioID;
 
@@ -65,7 +57,6 @@ namespace CacaoTech.UI.Registros
             ProductorescomboBox.SelectedIndex = pago.ProductorID;
             FechadateTimePicker.Value = DateTime.Now;
             BalancetextBox.Text = productor.Balance.ToString();
-            dataGridView.DataSource = pago.PagosDetalle;
         }
 
         public void LlenarCombos()
@@ -76,6 +67,13 @@ namespace CacaoTech.UI.Registros
             ProductorescomboBox.DataSource = lista;
             ProductorescomboBox.DisplayMember = "Nombres";
             ProductorescomboBox.ValueMember = "ProductorID";
+
+            //Llenando combobox de prestamos
+            PrestamocomboBox.DataSource = null;
+            List<Prestamos> lista1 = genericaPrestamosBLL.GetList(p => true);
+            PrestamocomboBox.DataSource = lista1;
+            PrestamocomboBox.DisplayMember = "PrestamoID";
+            PrestamocomboBox.ValueMember = "PrestamoID";
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -166,12 +164,6 @@ namespace CacaoTech.UI.Registros
                 IDnumericUpDown.Focus();
                 validado = false;
             }
-            if (this.pagosDetalles.Count == 0)
-            {
-                errorProvider.SetError(dataGridView, obligatorio);
-                CantidadtextBox.Focus();
-                validado = false;
-            }
 
             return validado;
         }
@@ -198,7 +190,6 @@ namespace CacaoTech.UI.Registros
         private void rDeposito_Load(object sender, EventArgs e)
         {
             LlenarCombos();
-            CargarGrid();
         }
 
         private void ProductorescomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -248,53 +239,14 @@ namespace CacaoTech.UI.Registros
             LlenarCombos();
         }
 
-        private void AgregarPagobutton_Click(object sender, EventArgs e)
+        private void CantidadTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (!ValidarCantidad())
-                return;
+            CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
 
-            if (dataGridView.DataSource != null)
-            {
-                this.pagosDetalles = (List<PagosDetalle>)dataGridView.DataSource;
-            }
-            
-            this.pagosDetalles.Add(
-                new PagosDetalle(
-                    pagosDetalleID: 0,
-                    fecha: FechadateTimePicker.Value,
-                    monto: ToDecimal(CantidadtextBox.Text)
-                    )
-                );
-
-            CargarGrid();
-            CantidadtextBox.Clear();
-        }
-
-        private bool ValidarCantidad()
-        {
-            bool validado = true;
-            string obligatorio = "Campo obligatorio";
-
-            if (string.IsNullOrWhiteSpace(CantidadtextBox.Text))
-            {
-                errorProvider.SetError(CantidadtextBox, obligatorio);
-                CantidadtextBox.Focus();
-                validado = false;
-            }
-            if (ToDecimal(CantidadtextBox.Text) > ToDecimal(BalancetextBox.Text))
-            {
-                errorProvider.SetError(CantidadtextBox, "El monto a pagar no ha de ser mayor \n al balance del prestamo");
-                CantidadtextBox.Focus();
-                validado = false;
-            }
-
-            return validado;
-        }
-
-        private void CantidadtextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (!ValidarCantidad())
-                return;
+            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cultureInfo.NumberFormat.NumberDecimalSeparator)
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

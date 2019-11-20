@@ -17,12 +17,15 @@ namespace CacaoTech.UI.Registros
     public partial class rPrestamos : Form
     {
         GenericaBLL<Productores> genericaProductores;
+        public List<PagosDetalle> pagosDetalles { get; set; }
         int UsuarioID;
         public rPrestamos(int usuarioID)
         {
             genericaProductores = new GenericaBLL<Productores>();
             InitializeComponent();
             LlenarCombos();
+            this.pagosDetalles = new List<PagosDetalle>();
+            CargarGrid();
             UsuarioID = usuarioID;
             BuscarUsuario(usuarioID);
         }
@@ -75,6 +78,7 @@ namespace CacaoTech.UI.Registros
             InterestextBox.Text = prestamo.Interes.ToString();
             TiempotextBox.Text = prestamo.Tiempo.ToString();
             TotaltextBox.Text = prestamo.Total.ToString();
+            dataGridView.DataSource = prestamo.PagosDetalle;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -157,6 +161,7 @@ namespace CacaoTech.UI.Registros
             prestamo.Tiempo = ToInt(TiempotextBox.Text);
             prestamo.Total = ToDecimal(TotaltextBox.Text);
             prestamo.UsuarioID = UsuarioID;
+            prestamo.PagosDetalle = this.pagosDetalles;
 
             return prestamo;
         }
@@ -209,8 +214,63 @@ namespace CacaoTech.UI.Registros
                 FechadateTimePicker.Focus();
                 validado = false;
             }
+            if (this.pagosDetalles.Count == 0)
+            {
+                errorProvider.SetError(dataGridView, obligatorio);
+                CantidadtextBox.Focus();
+                validado = false;
+            }
 
             return validado;
+        }
+
+        private bool ValidarCantidad()
+        {
+            bool validado = true;
+            string obligatorio = "Campo obligatorio";
+
+            if (string.IsNullOrWhiteSpace(CantidadtextBox.Text))
+            {
+                errorProvider.SetError(CantidadtextBox, obligatorio);
+                CantidadtextBox.Focus();
+                validado = false;
+            }
+            if (ToDecimal(CantidadtextBox.Text) > ToDecimal(BalancetextBox.Text))
+            {
+                errorProvider.SetError(CantidadtextBox, "El monto a pagar no ha de ser mayor \n al balance del prestamo");
+                CantidadtextBox.Focus();
+                validado = false;
+            }
+
+            return validado;
+        }
+
+        private void CantidadtextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!ValidarCantidad())
+                return;
+        }
+
+        private void AgregarPagobutton_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCantidad())
+                return;
+
+            if (dataGridView.DataSource != null)
+            {
+                this.pagosDetalles = (List<PagosDetalle>)dataGridView.DataSource;
+            }
+
+            this.pagosDetalles.Add(
+                new PagosDetalle(
+                    pagosDetalleID: 0,
+                    fecha: FechadateTimePicker.Value,
+                    monto: ToDecimal(CantidadtextBox.Text)
+                    )
+                );
+
+            CargarGrid();
+            CantidadtextBox.Clear();
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -230,6 +290,12 @@ namespace CacaoTech.UI.Registros
             {
                 errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un prestamo inexistente");
             }
+        }
+
+        private void CargarGrid()
+        {
+            dataGridView.DataSource = null;
+            dataGridView.DataSource = pagosDetalles;
         }
 
         private void PreciotextBox_KeyPress(object sender, KeyPressEventArgs e)
