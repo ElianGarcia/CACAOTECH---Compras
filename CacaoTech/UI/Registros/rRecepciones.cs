@@ -187,13 +187,11 @@ namespace CacaoTech.UI.Registros
         {
             List<Cacao> Lista = new List<Cacao>();
             Cacao cacao = new Cacao();
-            decimal precio;
 
-            int opcion = Convert.ToInt32(TipoCacaocomboBox.SelectedIndex);
+            int opcion = ToInt(TipoCacaocomboBox.SelectedValue.ToString());
             cacao = genericaCacaoBLL.Buscar(opcion);
             if (cacao != null)
             {
-                precio = cacao.Precio;
                 PreciotextBox.Text = cacao.Precio.ToString();
             }
         }

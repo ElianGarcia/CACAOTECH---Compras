@@ -15,7 +15,7 @@ namespace CacaoTech.BLL
         public static void afectarPrestamos(Pagos pago)
         {
             GenericaBLL<Prestamos> genericaPrestamosBLL = new GenericaBLL<Prestamos>();
-            var prestamo = genericaPrestamosBLL.Buscar(pago.ProductorID);
+            var prestamo = genericaPrestamosBLL.Buscar(pago.PrestamoID);
             Contexto db = new Contexto();
             bool realizado = false;
 
@@ -48,7 +48,7 @@ namespace CacaoTech.BLL
 
             try
             {
-                //afectarPrestamos(pagos);
+                afectarPrestamos(pagos);
 
                 GenericaBLL<Productores> genericaProductoresBLL = new GenericaBLL<Productores>();
                 var productor = genericaProductoresBLL.Buscar(pagos.ProductorID);
@@ -58,7 +58,6 @@ namespace CacaoTech.BLL
                 {
                     if (productor != null)
                     {
-                        
                         productor.Balance -= item.Monto;
                         db.Entry(productor).State = EntityState.Modified;
                         realizado = db.SaveChanges() > 0;

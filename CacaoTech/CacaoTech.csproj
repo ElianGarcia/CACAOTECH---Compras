@@ -74,6 +74,7 @@
     <Compile Include="BLL\GenericaBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\PrestamosBLL.cs" />
+    <Compile Include="BLL\RecepcionesBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="CacaoTech.cs">
       <SubType>Form</SubType>
