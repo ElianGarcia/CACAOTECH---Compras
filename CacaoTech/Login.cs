@@ -45,9 +45,12 @@ namespace CacaoTech
 
             Usuarios usuario = genericaBLL.Buscar(id);
 
-            if(usuario.Contraseña == ContraseñatextBox.Text)
+            if (string.IsNullOrWhiteSpace(ContraseñatextBox.Text))
+                return;
+
+            if (usuario.Contraseña == ContraseñatextBox.Text)
             {
-                CacaoTech formPrincipal = new CacaoTech();
+                CacaoTech formPrincipal = new CacaoTech(usuario.UsuarioID);
                 this.Hide();
                 formPrincipal.ShowDialog();
                 this.Close();

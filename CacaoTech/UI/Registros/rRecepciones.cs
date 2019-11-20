@@ -19,13 +19,23 @@ namespace CacaoTech.UI.Registros
         GenericaBLL<Productores> genericaVendedorBLL;
         GenericaBLL<Recepciones> genericaRecepcionBLL;
         GenericaBLL<Cacao> genericaCacaoBLL;
-        public rRecepciones()
+        int UsuarioID;
+        public rRecepciones(int usuarioID)
         {
             genericaVendedorBLL = new GenericaBLL<Productores>();
             genericaCacaoBLL = new GenericaBLL<Cacao>();
             genericaRecepcionBLL = new GenericaBLL<Recepciones>();
             InitializeComponent();
             LlenarCombos();
+            UsuarioID = usuarioID;
+            BuscarUsuario(usuarioID);
+        }
+
+        private void BuscarUsuario(int ID)
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(ID);
+            Usuariolabel.Text = usuario.Nombres;
         }
 
         public Recepciones LlenaClase()
@@ -35,6 +45,7 @@ namespace CacaoTech.UI.Registros
             recepcion.Fecha = FechadateTimePicker.Value;
             recepcion.ProductorID = ProductorescomboBox.SelectedIndex;
             recepcion.Cantidad = ToDecimal(CantidadtextBox.Text);
+            recepcion.UsuarioID = UsuarioID;
 
             return recepcion;
         }
@@ -188,7 +199,7 @@ namespace CacaoTech.UI.Registros
             List<Cacao> Lista = new List<Cacao>();
             Cacao cacao = new Cacao();
 
-            int opcion = ToInt(TipoCacaocomboBox.SelectedValue.ToString());
+            int opcion = ToInt(TipoCacaocomboBox.SelectedIndex.ToString());
             cacao = genericaCacaoBLL.Buscar(opcion);
             if (cacao != null)
             {
@@ -232,7 +243,7 @@ namespace CacaoTech.UI.Registros
 
         private void RegistrarProductorbutton_Click(object sender, EventArgs e)
         {
-            rProductores registroProductor = new rProductores();
+            rProductores registroProductor = new rProductores(UsuarioID);
             registroProductor.ShowDialog();
             LlenarCombos();
         }

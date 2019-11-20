@@ -58,8 +58,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.BalancetextBox = new System.Windows.Forms.TextBox();
+            this.Usuariolabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // FechadateTimePicker
@@ -358,12 +361,32 @@
             this.BalancetextBox.Size = new System.Drawing.Size(140, 25);
             this.BalancetextBox.TabIndex = 43;
             // 
+            // Usuariolabel
+            // 
+            this.Usuariolabel.AutoSize = true;
+            this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.Usuariolabel.Location = new System.Drawing.Point(35, 319);
+            this.Usuariolabel.Name = "Usuariolabel";
+            this.Usuariolabel.Size = new System.Drawing.Size(0, 17);
+            this.Usuariolabel.TabIndex = 57;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CacaoTech.Properties.Resources.Male_User;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 318);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox1.TabIndex = 56;
+            this.pictureBox1.TabStop = false;
+            // 
             // rProductores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(484, 322);
+            this.ClientSize = new System.Drawing.Size(484, 339);
+            this.Controls.Add(this.Usuariolabel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BalancetextBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -397,6 +420,7 @@
             this.Text = "Nuevo Productor";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,5 +456,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton AmbulanteradioButton;
         private System.Windows.Forms.RadioButton FijoradioButton;
+        private System.Windows.Forms.Label Usuariolabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

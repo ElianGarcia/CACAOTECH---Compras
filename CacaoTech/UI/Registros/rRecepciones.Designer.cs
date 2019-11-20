@@ -35,10 +35,6 @@
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.ImportetextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
@@ -47,11 +43,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TipoCacaocomboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.RegistrarProductoresbutton = new System.Windows.Forms.Button();
             this.ProductorescomboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.RegistrarProductoresbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Usuariolabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,73 +101,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Eliminarbutton.FlatAppearance.BorderSize = 2;
-            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
-            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(390, 172);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
-            this.Eliminarbutton.TabIndex = 16;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.UseVisualStyleBackColor = false;
-            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Guardarbutton.FlatAppearance.BorderSize = 2;
-            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
-            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(200, 172);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
-            this.Guardarbutton.TabIndex = 15;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.UseVisualStyleBackColor = false;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Nuevobutton.FlatAppearance.BorderSize = 2;
-            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 172);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
-            this.Nuevobutton.TabIndex = 14;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.UseVisualStyleBackColor = false;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Buscarbutton.FlatAppearance.BorderSize = 2;
-            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(243, 7);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(48, 40);
-            this.Buscarbutton.TabIndex = 5;
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = false;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // ImportetextBox
             // 
@@ -245,21 +181,6 @@
             this.label4.TabIndex = 47;
             this.label4.Text = "Tipo de cacao:";
             // 
-            // RegistrarProductoresbutton
-            // 
-            this.RegistrarProductoresbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.RegistrarProductoresbutton.FlatAppearance.BorderSize = 2;
-            this.RegistrarProductoresbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegistrarProductoresbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.RegistrarProductoresbutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RegistrarProductoresbutton.Image = global::CacaoTech.Properties.Resources.Add_User_Male_32;
-            this.RegistrarProductoresbutton.Location = new System.Drawing.Point(463, 47);
-            this.RegistrarProductoresbutton.Name = "RegistrarProductoresbutton";
-            this.RegistrarProductoresbutton.Size = new System.Drawing.Size(45, 35);
-            this.RegistrarProductoresbutton.TabIndex = 60;
-            this.RegistrarProductoresbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegistrarProductoresbutton.UseVisualStyleBackColor = false;
-            // 
             // ProductorescomboBox
             // 
             this.ProductorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -280,12 +201,114 @@
             this.label3.TabIndex = 58;
             this.label3.Text = "Vendedor:";
             // 
+            // RegistrarProductoresbutton
+            // 
+            this.RegistrarProductoresbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.RegistrarProductoresbutton.FlatAppearance.BorderSize = 2;
+            this.RegistrarProductoresbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegistrarProductoresbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.RegistrarProductoresbutton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.RegistrarProductoresbutton.Image = global::CacaoTech.Properties.Resources.Add_User_Male_32;
+            this.RegistrarProductoresbutton.Location = new System.Drawing.Point(463, 47);
+            this.RegistrarProductoresbutton.Name = "RegistrarProductoresbutton";
+            this.RegistrarProductoresbutton.Size = new System.Drawing.Size(45, 35);
+            this.RegistrarProductoresbutton.TabIndex = 60;
+            this.RegistrarProductoresbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RegistrarProductoresbutton.UseVisualStyleBackColor = false;
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Eliminarbutton.FlatAppearance.BorderSize = 2;
+            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Eliminarbutton.Location = new System.Drawing.Point(390, 172);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(118, 60);
+            this.Eliminarbutton.TabIndex = 16;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Guardarbutton.FlatAppearance.BorderSize = 2;
+            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Guardarbutton.Location = new System.Drawing.Point(200, 172);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(118, 60);
+            this.Guardarbutton.TabIndex = 15;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Nuevobutton.FlatAppearance.BorderSize = 2;
+            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 172);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(118, 60);
+            this.Nuevobutton.TabIndex = 14;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Nuevobutton.UseVisualStyleBackColor = false;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Buscarbutton.FlatAppearance.BorderSize = 2;
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(243, 7);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(48, 40);
+            this.Buscarbutton.TabIndex = 5;
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // Usuariolabel
+            // 
+            this.Usuariolabel.AutoSize = true;
+            this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.Usuariolabel.Location = new System.Drawing.Point(43, 245);
+            this.Usuariolabel.Name = "Usuariolabel";
+            this.Usuariolabel.Size = new System.Drawing.Size(0, 17);
+            this.Usuariolabel.TabIndex = 62;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CacaoTech.Properties.Resources.Male_User;
+            this.pictureBox1.Location = new System.Drawing.Point(17, 244);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
+            // 
             // rRecepciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(546, 246);
+            this.ClientSize = new System.Drawing.Size(546, 265);
+            this.Controls.Add(this.Usuariolabel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.RegistrarProductoresbutton);
             this.Controls.Add(this.ProductorescomboBox);
             this.Controls.Add(this.label3);
@@ -312,6 +335,7 @@
             this.Load += new System.EventHandler(this.rDeposito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +363,7 @@
         private System.Windows.Forms.Button RegistrarProductoresbutton;
         private System.Windows.Forms.ComboBox ProductorescomboBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Usuariolabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

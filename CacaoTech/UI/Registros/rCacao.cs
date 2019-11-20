@@ -17,11 +17,21 @@ namespace CacaoTech.UI.Registros
     public partial class rCacao : Form
     {
         GenericaBLL<Cacao> genericaBLL;
-        public rCacao()
+        int UsuarioID;
+        public rCacao(int usuarioID)
         {
             genericaBLL = new GenericaBLL<Cacao>();
             InitializeComponent();
             LlenarCombo();
+            UsuarioID = usuarioID;
+            BuscarUsuario(usuarioID);
+        }
+
+        private void BuscarUsuario(int ID)
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(ID);
+            Usuariolabel.Text = usuario.Nombres;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -50,6 +60,7 @@ namespace CacaoTech.UI.Registros
             TipocomboBox.DataSource = lista;
             TipocomboBox.DisplayMember = "Tipo";
             TipocomboBox.ValueMember = "CacaoID";
+            TipocomboBox.SelectedValue = 0;
         }
 
         private Cacao LlenaClase()
@@ -58,6 +69,7 @@ namespace CacaoTech.UI.Registros
             cacao.CacaoID = Convert.ToInt32(IDnumericUpDown.Value);
             cacao.Tipo = TipocomboBox.SelectedIndex.ToString();
             cacao.Precio = Convert.ToDecimal(PreciotextBox.Text);
+            cacao.UsuarioID = UsuarioID;
 
             return cacao;
         }

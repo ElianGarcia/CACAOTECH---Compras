@@ -93,9 +93,29 @@ namespace CacaoTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Circled_User_Male_32 {
+            get {
+                object obj = ResourceManager.GetObject("Circled_User_Male_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Principal {
             get {
                 object obj = ResourceManager.GetObject("Icono-Principal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Male_User {
+            get {
+                object obj = ResourceManager.GetObject("Male User", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

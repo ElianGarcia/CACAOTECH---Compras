@@ -17,10 +17,20 @@ namespace CacaoTech.UI.Registros
     public partial class rProductores : Form
     {
         GenericaBLL<Productores> genericaBLL;
-        public rProductores()
+        int UsuarioID;
+        public rProductores(int usuarioID)
         {
             genericaBLL = new GenericaBLL<Productores>();
             InitializeComponent();
+            UsuarioID = usuarioID;
+            BuscarUsuario(usuarioID);
+        }
+
+        private void BuscarUsuario(int ID)
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(ID);
+            Usuariolabel.Text = usuario.Nombres;
         }
 
         private void Limpiar()
@@ -57,6 +67,7 @@ namespace CacaoTech.UI.Registros
             productor.Celular = CelularmaskedTextBox.Text;
             productor.Cedula = CedulamaskedTextBox.Text;
             productor.Balance = ToDecimal(BalancetextBox.Text);
+            productor.UsuarioID = UsuarioID;
 
             if(AmbulanteradioButton.Checked)
             {

@@ -49,10 +49,13 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Usuariolabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -201,7 +204,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(15, 18);
+            this.label11.Location = new System.Drawing.Point(15, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 19);
             this.label11.TabIndex = 58;
@@ -283,12 +286,32 @@
             this.Nuevobutton.UseVisualStyleBackColor = false;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
+            // Usuariolabel
+            // 
+            this.Usuariolabel.AutoSize = true;
+            this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.Usuariolabel.Location = new System.Drawing.Point(41, 395);
+            this.Usuariolabel.Name = "Usuariolabel";
+            this.Usuariolabel.Size = new System.Drawing.Size(0, 17);
+            this.Usuariolabel.TabIndex = 80;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CacaoTech.Properties.Resources.Male_User;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 394);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
             // rPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(508, 397);
+            this.ClientSize = new System.Drawing.Size(508, 418);
+            this.Controls.Add(this.Usuariolabel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -311,6 +334,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +361,7 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
+        private System.Windows.Forms.Label Usuariolabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

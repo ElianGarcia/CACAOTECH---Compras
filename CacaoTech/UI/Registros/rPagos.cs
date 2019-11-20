@@ -18,14 +18,24 @@ namespace CacaoTech.UI.Registros
     {
         GenericaBLL<Productores> genericaProductorBLL;
         public List<PagosDetalle> pagosDetalles { get; set; }
+        int UsuarioID;
 
-        public rPagos()
+        public rPagos(int usuarioID)
         {
             genericaProductorBLL = new GenericaBLL<Productores>();
             InitializeComponent();
             this.pagosDetalles = new List<PagosDetalle>();
             CargarGrid();
             LlenarCombos();
+            UsuarioID = usuarioID;
+            BuscarUsuario(usuarioID);
+        }
+
+        private void BuscarUsuario(int ID)
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(ID);
+            Usuariolabel.Text = usuario.Nombres;
         }
 
         private void CargarGrid()
@@ -41,6 +51,7 @@ namespace CacaoTech.UI.Registros
             pago.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
             pago.PagosDetalle = this.pagosDetalles;
             pago.productores = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
+            pago.UsuarioID = UsuarioID;
 
             return pago;
         }
@@ -232,7 +243,7 @@ namespace CacaoTech.UI.Registros
 
         private void RegistrarProductorbutton_Click(object sender, EventArgs e)
         {
-            rProductores registroProductor = new rProductores();
+            rProductores registroProductor = new rProductores(UsuarioID);
             registroProductor.ShowDialog();
             LlenarCombos();
         }

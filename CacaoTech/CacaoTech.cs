@@ -19,105 +19,115 @@ namespace CacaoTech
 {
     public partial class CacaoTech : Form
     {
-        public CacaoTech()
+        int ID;
+        public CacaoTech(int usuarioID)
         {
             InitializeComponent();
+            BuscarUsuario(usuarioID);
+            ID = usuarioID;
+        }
+
+        private void BuscarUsuario(int ID)
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(ID);
+            Usuariolabel.Text = usuario.Nombres;
         }
 
         //Registros
         private void productorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProductores registroProductor = new rProductores();
+            rProductores registroProductor = new rProductores(ID);
             registroProductor.ShowDialog();
         }
 
         private void cacaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCacao registroCacao = new rCacao();
+            rCacao registroCacao = new rCacao(ID);
             registroCacao.ShowDialog();
         }
 
         private void prestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rPrestamos registroPrestamo = new rPrestamos();
+            rPrestamos registroPrestamo = new rPrestamos(ID);
             registroPrestamo.ShowDialog();
         }
 
         private void pagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rPagos pagos = new rPagos();
+            rPagos pagos = new rPagos(ID);
             pagos.ShowDialog();
         }
 
         private void recepcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rRecepciones registroRecepcion = new rRecepciones();
+            rRecepciones registroRecepcion = new rRecepciones(ID);
             registroRecepcion.ShowDialog();
         }
 
-        //Reportes
-        private void productoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> listado = genericaBLL.GetList(p => true);
+        ////Reportes
+        //private void productoresToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+        //    List<Productores> listado = genericaBLL.GetList(p => true);
 
-            if (listado.Count > 0)
-            {
-                ProductoresReportViewer reportViewer = new ProductoresReportViewer(listado);
-                reportViewer.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No se han encontrado datos", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+        //    if (listado.Count > 0)
+        //    {
+        //        ProductoresReportViewer reportViewer = new ProductoresReportViewer(listado);
+        //        reportViewer.ShowDialog();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("No se han encontrado datos", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
 
-        private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GenericaBLL<Prestamos> genericaBLL = new GenericaBLL<Prestamos>();
-            List<Prestamos> listado = genericaBLL.GetList(p => true);
+        //private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    GenericaBLL<Prestamos> genericaBLL = new GenericaBLL<Prestamos>();
+        //    List<Prestamos> listado = genericaBLL.GetList(p => true);
 
-            if (listado.Count > 0)
-            {
-                PrestamosReportViewer reportViewer = new PrestamosReportViewer(listado);
-                reportViewer.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No se han encontrado datos", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+        //    if (listado.Count > 0)
+        //    {
+        //        PrestamosReportViewer reportViewer = new PrestamosReportViewer(listado);
+        //        reportViewer.ShowDialog();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("No se han encontrado datos", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
 
-        private void cacaosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GenericaBLL<Cacao> genericaBLL = new GenericaBLL<Cacao>();
-            List<Cacao> listado = genericaBLL.GetList(p => true);
+        //private void cacaosToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    GenericaBLL<Cacao> genericaBLL = new GenericaBLL<Cacao>();
+        //    List<Cacao> listado = genericaBLL.GetList(p => true);
 
-            if (listado.Count > 0)
-            {
-                CacaoReportViewer reportViewer = new CacaoReportViewer(listado);
-                reportViewer.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No se han encontrado datos", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+        //    if (listado.Count > 0)
+        //    {
+        //        CacaoReportViewer reportViewer = new CacaoReportViewer(listado);
+        //        reportViewer.ShowDialog();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("No se han encontrado datos", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
 
-        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            List<Pagos> listado = PagosBLL.GetList(p => true);
+        //private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    List<Pagos> listado = PagosBLL.GetList(p => true);
 
-            if (listado.Count > 0)
-            {
-                PagosReportViewer reportViewer = new PagosReportViewer(listado);
-                reportViewer.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No se han encontrado datos", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+        //    if (listado.Count > 0)
+        //    {
+        //        PagosReportViewer reportViewer = new PagosReportViewer(listado);
+        //        reportViewer.ShowDialog();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("No se han encontrado datos", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
 
         private void recepcionesToolStripMenuItem1_Click(object sender, EventArgs e)
         {

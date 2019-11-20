@@ -17,11 +17,21 @@ namespace CacaoTech.UI.Registros
     public partial class rPrestamos : Form
     {
         GenericaBLL<Productores> genericaProductores;
-        public rPrestamos()
+        int UsuarioID;
+        public rPrestamos(int usuarioID)
         {
             genericaProductores = new GenericaBLL<Productores>();
             InitializeComponent();
             LlenarCombos();
+            UsuarioID = usuarioID;
+            BuscarUsuario(usuarioID);
+        }
+
+        private void BuscarUsuario(int ID)
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(ID);
+            Usuariolabel.Text = usuario.Nombres;
         }
 
         public void LlenarCombos()
@@ -146,6 +156,7 @@ namespace CacaoTech.UI.Registros
             prestamo.Interes = ToDecimal(InterestextBox.Text);
             prestamo.Tiempo = ToInt(TiempotextBox.Text);
             prestamo.Total = ToDecimal(TotaltextBox.Text);
+            prestamo.UsuarioID = UsuarioID;
 
             return prestamo;
         }
@@ -241,7 +252,7 @@ namespace CacaoTech.UI.Registros
 
         private void RegistrarVendedorbutton_Click(object sender, EventArgs e)
         {
-            rProductores registroProductor = new rProductores();
+            rProductores registroProductor = new rProductores(UsuarioID);
             registroProductor.ShowDialog();
             LlenarCombos();
         }
