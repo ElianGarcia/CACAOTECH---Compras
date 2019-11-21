@@ -41,20 +41,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BalancetextBox = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.RegistrarProductoresbutton = new System.Windows.Forms.Button();
             this.ProductorComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Usuariolabel = new System.Windows.Forms.Label();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Usuariolabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.RegistrarProductoresbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
@@ -129,7 +130,7 @@
             this.AgregarPagobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AgregarPagobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.AgregarPagobutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AgregarPagobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
+            this.AgregarPagobutton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarPagobutton.Image")));
             this.AgregarPagobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AgregarPagobutton.Location = new System.Drawing.Point(413, 21);
             this.AgregarPagobutton.Name = "AgregarPagobutton";
@@ -187,22 +188,6 @@
             this.dataGridView.Size = new System.Drawing.Size(451, 130);
             this.dataGridView.TabIndex = 0;
             // 
-            // RegistrarProductoresbutton
-            // 
-            this.RegistrarProductoresbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.RegistrarProductoresbutton.FlatAppearance.BorderSize = 2;
-            this.RegistrarProductoresbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegistrarProductoresbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.RegistrarProductoresbutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RegistrarProductoresbutton.Image = global::CacaoTech.Properties.Resources.Add_User_Male_32;
-            this.RegistrarProductoresbutton.Location = new System.Drawing.Point(431, 47);
-            this.RegistrarProductoresbutton.Name = "RegistrarProductoresbutton";
-            this.RegistrarProductoresbutton.Size = new System.Drawing.Size(45, 35);
-            this.RegistrarProductoresbutton.TabIndex = 73;
-            this.RegistrarProductoresbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegistrarProductoresbutton.UseVisualStyleBackColor = false;
-            this.RegistrarProductoresbutton.Click += new System.EventHandler(this.RegistrarProductorbutton_Click);
-            // 
             // ProductorComboBox
             // 
             this.ProductorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -234,22 +219,6 @@
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(128, 25);
             this.FechadateTimePicker.TabIndex = 62;
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.Buscarbutton.FlatAppearance.BorderSize = 2;
-            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(200, 12);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(45, 35);
-            this.Buscarbutton.TabIndex = 61;
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = false;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // IDnumericUpDown
             // 
@@ -284,6 +253,40 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // Usuariolabel
+            // 
+            this.Usuariolabel.AutoSize = true;
+            this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.Usuariolabel.Location = new System.Drawing.Point(41, 407);
+            this.Usuariolabel.Name = "Usuariolabel";
+            this.Usuariolabel.Size = new System.Drawing.Size(0, 17);
+            this.Usuariolabel.TabIndex = 80;
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Imprimirbutton.FlatAppearance.BorderSize = 2;
+            this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Imprimirbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Imprimirbutton.Location = new System.Drawing.Point(262, 336);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(100, 62);
+            this.Imprimirbutton.TabIndex = 81;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Imprimirbutton.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 406);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
@@ -291,7 +294,7 @@
             this.Eliminarbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
             this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
+            this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.Location = new System.Drawing.Point(376, 336);
             this.Eliminarbutton.Name = "Eliminarbutton";
@@ -308,9 +311,9 @@
             this.Guardarbutton.FlatAppearance.BorderSize = 2;
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
+            this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(194, 336);
+            this.Guardarbutton.Location = new System.Drawing.Point(145, 336);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(100, 62);
             this.Guardarbutton.TabIndex = 77;
@@ -325,7 +328,7 @@
             this.Nuevobutton.FlatAppearance.BorderSize = 2;
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
+            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.Location = new System.Drawing.Point(12, 336);
             this.Nuevobutton.Name = "Nuevobutton";
@@ -336,23 +339,37 @@
             this.Nuevobutton.UseVisualStyleBackColor = false;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // Usuariolabel
+            // RegistrarProductoresbutton
             // 
-            this.Usuariolabel.AutoSize = true;
-            this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.Usuariolabel.Location = new System.Drawing.Point(41, 407);
-            this.Usuariolabel.Name = "Usuariolabel";
-            this.Usuariolabel.Size = new System.Drawing.Size(0, 17);
-            this.Usuariolabel.TabIndex = 80;
+            this.RegistrarProductoresbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.RegistrarProductoresbutton.FlatAppearance.BorderSize = 2;
+            this.RegistrarProductoresbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegistrarProductoresbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.RegistrarProductoresbutton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.RegistrarProductoresbutton.Image = ((System.Drawing.Image)(resources.GetObject("RegistrarProductoresbutton.Image")));
+            this.RegistrarProductoresbutton.Location = new System.Drawing.Point(431, 47);
+            this.RegistrarProductoresbutton.Name = "RegistrarProductoresbutton";
+            this.RegistrarProductoresbutton.Size = new System.Drawing.Size(45, 35);
+            this.RegistrarProductoresbutton.TabIndex = 73;
+            this.RegistrarProductoresbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RegistrarProductoresbutton.UseVisualStyleBackColor = false;
+            this.RegistrarProductoresbutton.Click += new System.EventHandler(this.RegistrarProductorbutton_Click);
             // 
-            // pictureBox1
+            // Buscarbutton
             // 
-            this.pictureBox1.Image = global::CacaoTech.Properties.Resources.Male_User;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 406);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
+            this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Buscarbutton.FlatAppearance.BorderSize = 2;
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(200, 12);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(45, 35);
+            this.Buscarbutton.TabIndex = 61;
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // rPagos
             // 
@@ -360,6 +377,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(508, 430);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Usuariolabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);
@@ -416,5 +434,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TotaltextBox;
+        private System.Windows.Forms.Button Imprimirbutton;
     }
 }

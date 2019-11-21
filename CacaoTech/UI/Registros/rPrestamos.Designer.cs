@@ -240,7 +240,7 @@
             this.RegistrarProductorbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegistrarProductorbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.RegistrarProductorbutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RegistrarProductorbutton.Image = global::CacaoTech.Properties.Resources.Add_User_Male_32;
+            this.RegistrarProductorbutton.Image = ((System.Drawing.Image)(resources.GetObject("RegistrarProductorbutton.Image")));
             this.RegistrarProductorbutton.Location = new System.Drawing.Point(437, 45);
             this.RegistrarProductorbutton.Name = "RegistrarProductorbutton";
             this.RegistrarProductorbutton.Size = new System.Drawing.Size(45, 35);
@@ -255,7 +255,7 @@
             this.Eliminarbutton.FlatAppearance.BorderSize = 2;
             this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
+            this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.Location = new System.Drawing.Point(372, 384);
             this.Eliminarbutton.Name = "Eliminarbutton";
@@ -272,7 +272,7 @@
             this.Guardarbutton.FlatAppearance.BorderSize = 2;
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
+            this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.Location = new System.Drawing.Point(193, 384);
             this.Guardarbutton.Name = "Guardarbutton";
@@ -289,7 +289,7 @@
             this.Nuevobutton.FlatAppearance.BorderSize = 2;
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
+            this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.Location = new System.Drawing.Point(11, 384);
             this.Nuevobutton.Name = "Nuevobutton";
@@ -306,7 +306,7 @@
             this.Buscarbutton.FlatAppearance.BorderSize = 2;
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
+            this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(224, 7);
             this.Buscarbutton.Name = "Buscarbutton";
@@ -327,7 +327,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CacaoTech.Properties.Resources.Male_User;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(10, 452);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 19);
@@ -355,7 +355,7 @@
             this.AgregarPagobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AgregarPagobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.AgregarPagobutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AgregarPagobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
+            this.AgregarPagobutton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarPagobutton.Image")));
             this.AgregarPagobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AgregarPagobutton.Location = new System.Drawing.Point(417, 18);
             this.AgregarPagobutton.Name = "AgregarPagobutton";

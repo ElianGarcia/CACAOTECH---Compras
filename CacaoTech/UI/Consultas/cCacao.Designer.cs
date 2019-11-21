@@ -158,7 +158,6 @@
             this.Imrimirbutton.FlatAppearance.BorderSize = 2;
             this.Imrimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Imrimirbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Imrimirbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.Imrimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imrimirbutton.Location = new System.Drawing.Point(252, 391);
             this.Imrimirbutton.Margin = new System.Windows.Forms.Padding(2);
@@ -177,7 +176,6 @@
             this.btConsulta.FlatAppearance.BorderSize = 2;
             this.btConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btConsulta.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btConsulta.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.btConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btConsulta.Location = new System.Drawing.Point(512, 15);
             this.btConsulta.Margin = new System.Windows.Forms.Padding(2);
