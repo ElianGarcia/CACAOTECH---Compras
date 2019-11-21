@@ -45,7 +45,6 @@ namespace CacaoTech.UI.Registros
 
         private void CargarGrid()
         {
-            
             dataGridView.DataSource = null;
             dataGridView.DataSource = pagosDetalles;
             dataGridView.Columns[0].Visible = false;
@@ -321,7 +320,11 @@ namespace CacaoTech.UI.Registros
 
         private void PrestamoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Prestamos prestamo = genericaPrestamosBLL.Buscar(ToInt(PrestamoComboBox.SelectedValue.ToString()));
+            if (prestamo != null)
+            {
+                BalancetextBox.Text = prestamo.Balance.ToString();
+            }
         }
     }
 }
