@@ -24,8 +24,9 @@ namespace CacaoTech.Entidades
         public int UsuarioID { get; set; }
         [ForeignKey("UsuarioID")]
         public virtual Usuarios Usuarios { get; set; }
+        public virtual List<PagosDetalle> PagosDetalle { get; set; }
 
-        public Prestamos(int prestamoID, DateTime fecha, int productorID, Productores productor, int tiempo, decimal monto, decimal balance, decimal interes, decimal total)
+        public Prestamos(int prestamoID, DateTime fecha, int productorID, Productores productor, int tiempo, decimal monto, decimal balance, decimal interes, decimal total, int usuarioID, Usuarios usuarios, List<PagosDetalle> pagosDetalle)
         {
             PrestamoID = prestamoID;
             Fecha = fecha;
@@ -36,6 +37,9 @@ namespace CacaoTech.Entidades
             Balance = balance;
             Interes = interes;
             Total = total;
+            UsuarioID = usuarioID;
+            Usuarios = usuarios ?? throw new ArgumentNullException(nameof(usuarios));
+            PagosDetalle = pagosDetalle ?? throw new ArgumentNullException(nameof(pagosDetalle));
         }
 
         public Prestamos()
