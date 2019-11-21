@@ -158,12 +158,12 @@
             this.Imrimirbutton.FlatAppearance.BorderSize = 2;
             this.Imrimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Imrimirbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Imrimirbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
+            this.Imrimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imrimirbutton.Image")));
             this.Imrimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imrimirbutton.Location = new System.Drawing.Point(252, 391);
+            this.Imrimirbutton.Location = new System.Drawing.Point(252, 381);
             this.Imrimirbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Imrimirbutton.Name = "Imrimirbutton";
-            this.Imrimirbutton.Size = new System.Drawing.Size(108, 36);
+            this.Imrimirbutton.Size = new System.Drawing.Size(108, 48);
             this.Imrimirbutton.TabIndex = 10;
             this.Imrimirbutton.Text = "Imprimir";
             this.Imrimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -177,7 +177,7 @@
             this.btConsulta.FlatAppearance.BorderSize = 2;
             this.btConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btConsulta.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btConsulta.Image = global::CacaoTech.Properties.Resources.Search_32;
+            this.btConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btConsulta.Image")));
             this.btConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btConsulta.Location = new System.Drawing.Point(512, 15);
             this.btConsulta.Margin = new System.Windows.Forms.Padding(2);

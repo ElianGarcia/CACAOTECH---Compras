@@ -157,12 +157,12 @@
             this.Imprimirbutton.FlatAppearance.BorderSize = 2;
             this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Imprimirbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Imprimirbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
+            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(252, 391);
+            this.Imprimirbutton.Location = new System.Drawing.Point(252, 381);
             this.Imprimirbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(108, 36);
+            this.Imprimirbutton.Size = new System.Drawing.Size(108, 48);
             this.Imprimirbutton.TabIndex = 10;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -176,7 +176,7 @@
             this.btConsulta.FlatAppearance.BorderSize = 2;
             this.btConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btConsulta.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btConsulta.Image = global::CacaoTech.Properties.Resources.Search_32;
+            this.btConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btConsulta.Image")));
             this.btConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btConsulta.Location = new System.Drawing.Point(512, 15);
             this.btConsulta.Margin = new System.Windows.Forms.Padding(2);

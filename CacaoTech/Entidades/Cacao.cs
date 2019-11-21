@@ -24,11 +24,12 @@ namespace CacaoTech.Entidades
 
         }
 
-        public Cacao(int cacaoID, string tipo, decimal precio)
+        public Cacao(int cacaoID, string tipo, decimal precio, int usuario)
         {
             CacaoID = cacaoID;
             Tipo = tipo ?? throw new ArgumentNullException(nameof(tipo));
             Precio = precio;
+            UsuarioID = usuario;
         }
     }
 }

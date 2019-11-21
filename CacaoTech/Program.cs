@@ -1,4 +1,5 @@
 ﻿using CacaoTech.BLL;
+using CacaoTech.DAL;
 using CacaoTech.Entidades;
 using System;
 using System.Collections.Generic;
@@ -24,26 +25,30 @@ namespace CacaoTech
 
         static void DatabaseData()
         {
+            Contexto db = new Contexto();
+            
             GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
-            List<Usuarios> usuario = genericaBLL.GetList(d => true);
+            Usuarios usuario = genericaBLL.Buscar(1);
             if(usuario == null)
             {
                 Usuarios usuario1 = new Usuarios(0, "Administrador", "9e5d50a8bd1bfc52f4161fc0aefbf4817446096c", true);
-                genericaBLL.Guardar(usuario1);
+                db.Usuario.Add(usuario1);
+                db.SaveChanges();
             }
 
             GenericaBLL<Cacao> genericaBLL1 = new GenericaBLL<Cacao>();
-            List<Cacao> cacaos = genericaBLL1.GetList(d => true);
+            Cacao cacaos = genericaBLL1.Buscar(1);
             if (cacaos == null)
             {
-                Cacao cacao1 = new Cacao(0, "HISPANIOLA ORGANICO", Convert.ToDecimal(6030.36));
-                genericaBLL1.Guardar(cacao1);
-                Cacao cacao2 = new Cacao(0, "HISPANIOLA CONVENCIONAL", Convert.ToDecimal(5630.36));
-                genericaBLL1.Guardar(cacao2);
-                Cacao cacao3 = new Cacao(0, "SANCHEZ ORGANICO", Convert.ToDecimal(6250.36));
-                genericaBLL1.Guardar(cacao3);
-                Cacao cacao4 = new Cacao(0, "SANCHEZ CONVENCIONAL", Convert.ToDecimal(5820.36));
-                genericaBLL1.Guardar(cacao4);
+                Cacao cacao1 = new Cacao(0, "HISPANIOLA ORGANICO", Convert.ToDecimal(6030.36), 1);
+                db.Cacao.Add(cacao1);
+                Cacao cacao2 = new Cacao(0, "HISPANIOLA CONVENCIONAL", Convert.ToDecimal(5630.36), 1);
+                db.Cacao.Add(cacao2);
+                Cacao cacao3 = new Cacao(0, "SANCHEZ ORGANICO", Convert.ToDecimal(6250.36), 1);
+                db.Cacao.Add(cacao3);
+                Cacao cacao4 = new Cacao(0, "SANCHEZ CONVENCIONAL", Convert.ToDecimal(5820.36), 1);
+                db.Cacao.Add(cacao4);
+                db.SaveChanges();
             }
         }
     }
