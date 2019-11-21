@@ -377,6 +377,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rPagos";
             this.Text = "Registro de pagos";
+            this.Load += new System.EventHandler(this.rDeposito_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

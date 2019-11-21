@@ -112,6 +112,14 @@ namespace CacaoTech.UI.Registros
             }
         }
 
+        private bool isAdministrador()
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(UsuarioID);
+
+            return usuario.Nivel;
+        }
+
         private Boolean EmailValido(String email)
         {
             String expresion;
@@ -349,28 +357,35 @@ namespace CacaoTech.UI.Registros
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
-            if()
-            if(ToDecimal(BalancetextBox.Text) > 0)
+            if (isAdministrador())
             {
-                MessageBox.Show("Este productor no puede ser eliminado" +
-                    "porque tiene una deuda pendiente", "Denegado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                int id;
-                int.TryParse(IDnumericUpDown.Text, out id);
-
-                Limpiar();
-
-                if (genericaBLL.Eliminar(id))
+                if (ToDecimal(BalancetextBox.Text) > 0)
                 {
-                    MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("Este productor no puede ser eliminado" +
+                        "porque tiene una deuda pendiente", "Denegado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un productor inexistente");
+                    int id;
+                    int.TryParse(IDnumericUpDown.Text, out id);
+
+                    Limpiar();
+
+                    if (genericaBLL.Eliminar(id))
+                    {
+                        MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un productor inexistente");
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Debe tener permisos de administrador" +
+                                        "para realizar esta acción", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

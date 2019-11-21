@@ -39,7 +39,7 @@ namespace CacaoTech.UI.Registros
 
         public void LlenarCombos()
         {
-            //Llenando combobox de vendedores
+            //Llenando combobox de productores
             ProductorescomboBox.DataSource = null;
             List<Productores> lista = genericaProductores.GetList(p => p.Tipo == false);
             ProductorescomboBox.DataSource = lista;
@@ -64,7 +64,7 @@ namespace CacaoTech.UI.Registros
             }
             else
             {
-                MessageBox.Show("Prestamo no encontrado");
+                MessageBox.Show("Préstamo no encontrado");
             }
         }
 
@@ -116,7 +116,7 @@ namespace CacaoTech.UI.Registros
             {
                 if (!Existe())
                 {
-                    MessageBox.Show("No se puede modificar un contrato inexistente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede modificar un préstamo inexistente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 realizado = PrestamosBLL.Modificar(contrato);
@@ -237,7 +237,7 @@ namespace CacaoTech.UI.Registros
             }
             if (ToDecimal(CantidadtextBox.Text) > ToDecimal(BalancetextBox.Text))
             {
-                errorProvider.SetError(CantidadtextBox, "El monto a pagar no ha de ser mayor \n al balance del prestamo");
+                errorProvider.SetError(CantidadtextBox, "El monto a pagar no ha de ser mayor \n al balance del préstamo");
                 CantidadtextBox.Focus();
                 validado = false;
             }
@@ -251,44 +251,30 @@ namespace CacaoTech.UI.Registros
                 return;
         }
 
-        private void AgregarPagobutton_Click(object sender, EventArgs e)
-        {
-            if (!ValidarCantidad())
-                return;
-
-            if (dataGridView.DataSource != null)
-            {
-                this.pagosDetalles = (List<PagosDetalle>)dataGridView.DataSource;
-            }
-
-            this.pagosDetalles.Add(
-                new PagosDetalle(
-                    pagosDetalleID: 0,
-                    fecha: FechadateTimePicker.Value,
-                    monto: ToDecimal(CantidadtextBox.Text)
-                    )
-                );
-
-            CargarGrid();
-            CantidadtextBox.Clear();
-        }
-
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            errorProvider.Clear();
-
-            int id;
-            int.TryParse(IDnumericUpDown.Text, out id);
-
-            Limpiar();
-
-            if (PagosBLL.Eliminar(id))
+            if (isAdministrador())
             {
-                MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                errorProvider.Clear();
+
+                int id;
+                int.TryParse(IDnumericUpDown.Text, out id);
+
+                Limpiar();
+
+                if (PagosBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un préstamo inexistente");
+                }
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un prestamo inexistente");
+                MessageBox.Show("Debe tener permisos de administrador" +
+                                        "para realizar ésta acción", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -338,6 +324,14 @@ namespace CacaoTech.UI.Registros
 
                 TotaltextBox.Text = montoTotal.ToString();
             }
+        }
+
+        private bool isAdministrador()
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(UsuarioID);
+
+            return usuario.Nivel;
         }
     }
 }

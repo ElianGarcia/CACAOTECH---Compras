@@ -10,6 +10,8 @@ namespace CacaoTech.Entidades
 {
     public class Pagos
     {
+        internal List<PagosDetalle> PagosDetalle;
+
         [Key]
         public int PagoID { get; set; }
         public int ProductorID { get; set; }

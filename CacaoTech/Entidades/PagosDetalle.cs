@@ -32,10 +32,11 @@ namespace CacaoTech.Entidades
 
         }
 
-        public PagosDetalle(int PagosDetalleID, DateTime fecha, decimal monto)
+        public PagosDetalle(int pagosDetalleID, DateTime fecha, decimal monto)
         {
-            this.PagosDetalleID = PagosDetalleID;
+            this.PagosDetalleID = pagosDetalleID;
             Fecha = fecha;
+            Pagado = monto;
         }
     }
 }

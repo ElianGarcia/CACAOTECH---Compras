@@ -177,14 +177,23 @@ namespace CacaoTech
             consulta.ShowDialog();
         }
 
+        private bool isAdministrador()
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(ID);
+
+            return usuario.Nivel;
+        }
+
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(ID == 1)
+            if(isAdministrador())
             {
-                rUsuarios usuarios = new rUsuarios();
+                rUsuarios usuarios = new rUsuarios(ID);
                 usuarios.MdiParent = this;
                 usuarios.ShowDialog();
-            } else
+            } 
+            else
             {
                 MessageBox.Show("Debe tener permisos de administrador" +
                     " para registrar un nuevo usuario", 

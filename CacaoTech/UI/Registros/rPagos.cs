@@ -18,7 +18,7 @@ namespace CacaoTech.UI.Registros
     {
         GenericaBLL<Productores> genericaProductorBLL;
         GenericaBLL<Prestamos> genericaPrestamosBLL;
-        public List<PagosDetalle> pagosDetalles { get; set; }
+        public List<PagosDetalle> PagosDetalles { get; set; }
         decimal Total;
 
         int UsuarioID;
@@ -28,7 +28,7 @@ namespace CacaoTech.UI.Registros
             genericaProductorBLL = new GenericaBLL<Productores>();
             genericaPrestamosBLL = new GenericaBLL<Prestamos>();
             InitializeComponent();
-            this.pagosDetalles = new List<PagosDetalle>();
+            this.PagosDetalles = new List<PagosDetalle>();
             CargarGrid();
             LlenarCombos();
             UsuarioID = usuarioID;
@@ -46,7 +46,7 @@ namespace CacaoTech.UI.Registros
         private void CargarGrid()
         {
             dataGridView.DataSource = null;
-            dataGridView.DataSource = pagosDetalles;
+            dataGridView.DataSource = PagosDetalles;
             dataGridView.Columns[0].Visible = false;
             dataGridView.Columns[2].Visible = false;
         }
@@ -56,7 +56,7 @@ namespace CacaoTech.UI.Registros
             Pagos pago = new Pagos();
             pago.PagoID = ToInt(IDnumericUpDown.Value.ToString());
             pago.ProductorID = ToInt(ProductorComboBox.SelectedValue.ToString());
-            pago.PagosDetalle = this.pagosDetalles;
+            pago.PagosDetalle = this.PagosDetalles;
             pago.productores = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
             pago.UsuarioID = UsuarioID;
 
@@ -129,6 +129,7 @@ namespace CacaoTech.UI.Registros
             BalancetextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
+            
             errorProvider.Clear();
         }
 
@@ -184,7 +185,7 @@ namespace CacaoTech.UI.Registros
                 IDnumericUpDown.Focus();
                 validado = false;
             }
-            if (this.pagosDetalles.Count == 0)
+            if (this.PagosDetalles.Count == 0)
             {
                 errorProvider.SetError(dataGridView, obligatorio);
                 CantidadtextBox.Focus();
@@ -194,22 +195,38 @@ namespace CacaoTech.UI.Registros
             return validado;
         }
 
+        private bool isAdministrador()
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(UsuarioID);
+
+            return usuario.Nivel;
+        }
+
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            errorProvider.Clear();
-
-            int id;
-            int.TryParse(IDnumericUpDown.Text, out id);
-
-            Limpiar();
-
-            if (PagosBLL.Eliminar(id))
+            if (isAdministrador())
             {
-                MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                errorProvider.Clear();
+
+                int id;
+                int.TryParse(IDnumericUpDown.Text, out id);
+
+                Limpiar();
+
+                if (PagosBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un pago inexistente");
+                }
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un pago inexistente");
+                MessageBox.Show("Debe tener permisos de administrador" +
+                                        "para realizar ésta acción", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -274,10 +291,10 @@ namespace CacaoTech.UI.Registros
 
             if (dataGridView.DataSource != null)
             {
-                this.pagosDetalles = (List<PagosDetalle>)dataGridView.DataSource;
+                this.PagosDetalles = (List<PagosDetalle>)dataGridView.DataSource;
             }
             
-            this.pagosDetalles.Add(
+            this.PagosDetalles.Add(
                 new PagosDetalle(
                     prestamoID: ToInt(PrestamoComboBox.SelectedValue.ToString()),
                     fecha: FechadateTimePicker.Value,

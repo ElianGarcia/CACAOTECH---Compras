@@ -112,6 +112,14 @@ namespace CacaoTech.UI.Registros
             return realizado;
         }
 
+        private bool isAdministrador()
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(UsuarioID);
+
+            return usuario.Nivel;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Cacao cacao = new Cacao();
@@ -150,19 +158,27 @@ namespace CacaoTech.UI.Registros
         {
             errorProvider.Clear();
 
-            int id;
-            int.TryParse(IDnumericUpDown.Text, out id);
-
-            Limpiar();
-
-            if (genericaBLL.Eliminar(id))
+            if (isAdministrador())
             {
-                MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int id;
+                int.TryParse(IDnumericUpDown.Text, out id);
 
+                Limpiar();
+
+                //if (genericaBLL.Eliminar(id))
+                //{
+                //    MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //}
+                //else
+                //{
+                    errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un tipo de cacao");
+                //}
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un cacao inexistente");
+                MessageBox.Show("Debe tener permisos de administrador" +
+                                        "para realizar ésta acción", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

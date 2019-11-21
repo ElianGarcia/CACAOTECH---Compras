@@ -357,7 +357,7 @@
             this.AgregarPagobutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AgregarPagobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
             this.AgregarPagobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarPagobutton.Location = new System.Drawing.Point(413, 18);
+            this.AgregarPagobutton.Location = new System.Drawing.Point(417, 18);
             this.AgregarPagobutton.Name = "AgregarPagobutton";
             this.AgregarPagobutton.Size = new System.Drawing.Size(45, 35);
             this.AgregarPagobutton.TabIndex = 25;
@@ -369,7 +369,7 @@
             this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.CantidadtextBox.Location = new System.Drawing.Point(88, 24);
             this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(319, 25);
+            this.CantidadtextBox.Size = new System.Drawing.Size(323, 25);
             this.CantidadtextBox.TabIndex = 24;
             // 
             // label9
@@ -386,7 +386,7 @@
             // 
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(5, 59);
+            this.dataGridView.Location = new System.Drawing.Point(9, 59);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(453, 130);
             this.dataGridView.TabIndex = 0;
@@ -396,7 +396,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(523, 478);
+            this.ClientSize = new System.Drawing.Size(515, 478);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Usuariolabel);
             this.Controls.Add(this.pictureBox1);

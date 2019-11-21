@@ -169,23 +169,39 @@ namespace CacaoTech.UI.Registros
             return validado;
         }
 
+        private bool isAdministrador()
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(UsuarioID);
+
+            return usuario.Nivel;
+        }
+
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
 
-            int id;
-            int.TryParse(IDnumericUpDown.Text, out id);
-            Contexto db = new Contexto();
-
-            Limpiar();
-
-            if (RecepcionesBLL.Eliminar(id))
+            if (isAdministrador())
             {
-                MessageBox.Show("Eliminada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int id;
+                int.TryParse(IDnumericUpDown.Text, out id);
+                Contexto db = new Contexto();
+
+                Limpiar();
+
+                if (RecepcionesBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    errorProvider.SetError(IDnumericUpDown, "No se puede eliminar una recepcion inexistente");
+                }
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar una recepcion inexistente");
+                MessageBox.Show("Debe tener permisos de administrador" +
+                                        "para realizar ésta acción", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -197,7 +213,7 @@ namespace CacaoTech.UI.Registros
         private void TipoCacaocomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Cacao> Lista = new List<Cacao>();
-            Cacao cacao = new Cacao();
+            Cacao cacao;
 
             int opcion = ToInt(TipoCacaocomboBox.SelectedIndex.ToString());
             cacao = genericaCacaoBLL.Buscar(opcion);
@@ -209,7 +225,7 @@ namespace CacaoTech.UI.Registros
 
         private int ToInt(string valor)
         {
-            int resultado = 0;
+            int resultado;
             int.TryParse(valor, out resultado);
 
             return resultado;
@@ -217,7 +233,7 @@ namespace CacaoTech.UI.Registros
 
         private Decimal ToDecimal(string valor)
         {
-            decimal resultado = 0;
+            decimal resultado;
             decimal.TryParse(valor, out resultado);
 
             return resultado;

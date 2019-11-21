@@ -16,10 +16,12 @@ namespace CacaoTech.UI.Registros
     public partial class rUsuarios : Form
     {
         GenericaBLL<Usuarios> genericaBLL;
-        public rUsuarios()
+        int UsuarioID;
+        public rUsuarios(int usuarioID)
         {
             genericaBLL = new GenericaBLL<Usuarios>();
             InitializeComponent();
+            UsuarioID = usuarioID;
         }
 
         private int ToInt(string valor)
@@ -178,23 +180,39 @@ namespace CacaoTech.UI.Registros
             }
         }
 
+        private bool isAdministrador()
+        {
+            GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
+            Usuarios usuario = genericaBLL.Buscar(UsuarioID);
+
+            return usuario.Nivel;
+        }
+
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            errorProvider.Clear();
-
-            int id;
-            int.TryParse(IDnumericUpDown.Text, out id);
-
-            Limpiar();
-
-            if (genericaBLL.Eliminar(id))
+            if (isAdministrador())
             {
-                MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                errorProvider.Clear();
 
+                int id;
+                int.TryParse(IDnumericUpDown.Text, out id);
+
+                Limpiar();
+
+                if (genericaBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un usuario inexistente");
+                }
             }
             else
             {
-                errorProvider.SetError(IDnumericUpDown, "No se puede eliminar un usuario inexistente");
+                MessageBox.Show("Debe tener permisos de administrador" +
+                                        "para realizar ésta acción", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
