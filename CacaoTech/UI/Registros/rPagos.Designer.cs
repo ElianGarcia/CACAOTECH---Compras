@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rPagos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TotaltextBox = new System.Windows.Forms.TextBox();
             this.PrestamoComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.AgregarPagobutton = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.TotaltextBox);
             this.groupBox1.Controls.Add(this.PrestamoComboBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.AgregarPagobutton);
@@ -92,14 +92,14 @@
             this.label2.TabIndex = 83;
             this.label2.Text = "Total Pagado:";
             // 
-            // textBox1
+            // TotaltextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(345, 209);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(113, 25);
-            this.textBox1.TabIndex = 84;
+            this.TotaltextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.TotaltextBox.Location = new System.Drawing.Point(345, 209);
+            this.TotaltextBox.Name = "TotaltextBox";
+            this.TotaltextBox.ReadOnly = true;
+            this.TotaltextBox.Size = new System.Drawing.Size(113, 25);
+            this.TotaltextBox.TabIndex = 84;
             // 
             // PrestamoComboBox
             // 
@@ -415,6 +415,6 @@
         private System.Windows.Forms.ComboBox PrestamoComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TotaltextBox;
     }
 }

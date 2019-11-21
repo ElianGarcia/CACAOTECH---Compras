@@ -306,6 +306,7 @@ namespace CacaoTech.UI.Registros
             CargarGrid();
             CantidadtextBox.Clear();
             Total += ToDecimal(CantidadtextBox.Text);
+            TotaltextBox.Text = Total.ToString();
         }
 
         private bool ValidarCantidad()
