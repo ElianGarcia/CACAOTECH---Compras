@@ -133,6 +133,78 @@ namespace CacaoTech.UI.Registros
             }
         }
 
+        private string getNombreCompleto()
+        {
+            return (NombretextBox.Text + ApellidostextBox.Text);
+        }
+
+        private string getCedula()
+        {
+            return (CedulamaskedTextBox.Text);
+        }
+
+        private bool ValidarCedula()
+        {
+            bool realizado = true;
+            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+            List<Productores> productores = genericaBLL.GetList(d => d.Cedula == getCedula());
+
+            if (productores != null)
+            {
+                realizado = false;
+            }
+            return realizado;
+        }
+
+        private string getTelefono()
+        {
+            return (TelefonomaskedTextBox.Text);
+        }
+
+        private bool ValidarTelefono()
+        {
+            bool realizado = true;
+            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+            List<Productores> productores = genericaBLL.GetList(d => d.Telefono == getTelefono());
+
+            if (productores != null)
+            {
+                realizado = false;
+            }
+            return realizado;
+        }
+
+        private string getCelular()
+        {
+            return (CelularmaskedTextBox.Text);
+        }
+
+        private bool ValidarCelular()
+        {
+            bool realizado = true;
+            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+            List<Productores> productores = genericaBLL.GetList(d => d.Celular == getCelular());
+
+            if (productores != null)
+            {
+                realizado = false;
+            }
+            return realizado;
+        }
+
+        private bool ValidarNombre()
+        {
+            bool realizado = true;
+            GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
+            List<Productores> productores = genericaBLL.GetList(d => d.Nombres + d.Apellidos == getNombreCompleto());
+            
+            if(productores != null)
+            {
+                realizado = false;
+            }
+            return realizado;
+        }
+
         private bool Validar()
         {
             bool realizado = true;
@@ -194,11 +266,41 @@ namespace CacaoTech.UI.Registros
                 TelefonomaskedTextBox.Focus();
                 realizado = false;
             }
-            if(FijoradioButton.Checked == false && AmbulanteradioButton.Checked == false)
+            if (TelefonomaskedTextBox.Text == CelularmaskedTextBox.Text)
+            {
+                errorProvider.SetError(CelularmaskedTextBox, obligatorio);
+                CelularmaskedTextBox.Focus();
+                realizado = false;
+            }
+            if (FijoradioButton.Checked == false && AmbulanteradioButton.Checked == false)
             {
                 errorProvider.SetError(AmbulanteradioButton, obligatorio);
                 FijoradioButton.Focus();
                 AmbulanteradioButton.Focus();
+                realizado = false;
+            }
+            if (!ValidarNombre())
+            {
+                errorProvider.SetError(NombretextBox, "Ya existe un productor con este nombre \n vaya a Consultas->Productores para \n mas detalles");
+                NombretextBox.Focus();
+                realizado = false;
+            }
+            if (!ValidarCedula())
+            {
+                errorProvider.SetError(CedulamaskedTextBox, "Ya existe un productor con esta cedula \n vaya a Consultas->Productores para \n mas detalles");
+                CedulamaskedTextBox.Focus();
+                realizado = false;
+            }
+            if (!ValidarCelular())
+            {
+                errorProvider.SetError(CedulamaskedTextBox, "Ya existe un productor con este celular \n vaya a Consultas->Productores para \n mas detalles");
+                CelularmaskedTextBox.Focus();
+                realizado = false;
+            }
+            if (!ValidarTelefono())
+            {
+                errorProvider.SetError(TelefonomaskedTextBox, "Ya existe un productor con este telefono \n vaya a Consultas->Productores para \n mas detalles");
+                TelefonomaskedTextBox.Focus();
                 realizado = false;
             }
 
@@ -247,7 +349,7 @@ namespace CacaoTech.UI.Registros
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
-
+            if()
             if(ToDecimal(BalancetextBox.Text) > 0)
             {
                 MessageBox.Show("Este productor no puede ser eliminado" +

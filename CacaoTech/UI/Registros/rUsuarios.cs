@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,12 +30,31 @@ namespace CacaoTech.UI.Registros
             return resultado;
         }
 
+        public static string encriptar(string Cadena)
+        {
+            SHA1CryptoServiceProvider SHA1 = new SHA1CryptoServiceProvider();
+            byte[] vectoBytes = System.Text.Encoding.UTF8.GetBytes(Cadena);
+            byte[] inArray = SHA1.ComputeHash(vectoBytes);
+            SHA1.Clear();
+            return Convert.ToBase64String(inArray);
+        }
+
         private Usuarios LlenaClase()
         {
             Usuarios usuario = new Usuarios();
             usuario.UsuarioID = ToInt(IDnumericUpDown.Value.ToString());
             usuario.Nombres = NombreTextBox.Text;
-            usuario.Contraseña = ContraseñaTextBox.Text;
+            usuario.Contraseña = encriptar(ContraseñaTextBox.Text);
+            if(AdministradorradioButton.Checked)
+            {
+                usuario.Nivel = true;
+            }
+
+            if(EstandarradioButton.Checked)
+            {
+                usuario.Nivel = false;
+            }
+            
             return usuario;
         }
 
@@ -63,6 +83,24 @@ namespace CacaoTech.UI.Registros
                 ContraseñaTextBox.Focus();
                 realizado = false;
             }
+            if (ContraseñaTextBox.Text == NombreTextBox.Text)
+            {
+                errorProvider.SetError(ContraseñaTextBox, "La contraseña no debe ser igual al nombre");
+                ContraseñaTextBox.Focus();
+                realizado = false;
+            }
+            if (ContraseñaTextBox.Text != ConfirmarContraseñatextBox.Text)
+            {
+                errorProvider.SetError(ContraseñaTextBox, "Las contraseñas no coinciden");
+                ContraseñaTextBox.Focus();
+                realizado = false;
+            }
+            if (AdministradorradioButton.Checked == false && EstandarradioButton.Checked == false)
+            {
+                errorProvider.SetError(EstandarradioButton, "Debe elegir una de las opciones");
+                EstandarradioButton.Focus();
+                realizado = false;
+            }
 
             return realizado;
         }
@@ -73,6 +111,9 @@ namespace CacaoTech.UI.Registros
             IDnumericUpDown.Value = 0;
             NombreTextBox.Text = string.Empty;
             ContraseñaTextBox.Text = string.Empty;
+            ConfirmarContraseñatextBox.Text = string.Empty;
+            AdministradorradioButton.Checked = false;
+            EstandarradioButton.Checked = false;
         }
 
         private void LlenaCampos(Usuarios usuario)
@@ -80,6 +121,15 @@ namespace CacaoTech.UI.Registros
             IDnumericUpDown.Value = usuario.UsuarioID;
             NombreTextBox.Text = usuario.Nombres;
             ContraseñaTextBox.Text = usuario.Contraseña;
+            ConfirmarContraseñatextBox.Text = usuario.Contraseña;
+            if (usuario.Nivel)
+            {
+                AdministradorradioButton.Checked = true;
+            } 
+            else 
+            {
+                EstandarradioButton.Checked = true;
+            }
         }
 
         private bool Existe()

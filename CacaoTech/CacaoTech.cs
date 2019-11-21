@@ -38,30 +38,35 @@ namespace CacaoTech
         private void productorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rProductores registroProductor = new rProductores(ID);
+            registroProductor.MdiParent = this;
             registroProductor.ShowDialog();
         }
 
         private void cacaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rCacao registroCacao = new rCacao(ID);
+            registroCacao.MdiParent = this;
             registroCacao.ShowDialog();
         }
 
         private void prestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rPrestamos registroPrestamo = new rPrestamos(ID);
+            registroPrestamo.MdiParent = this;
             registroPrestamo.ShowDialog();
         }
 
         private void pagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rPagos pagos = new rPagos(ID);
+            pagos.MdiParent = this;
             pagos.ShowDialog();
         }
 
         private void recepcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rRecepciones registroRecepcion = new rRecepciones(ID);
+            registroRecepcion.MdiParent = this;
             registroRecepcion.ShowDialog();
         }
 
@@ -140,30 +145,35 @@ namespace CacaoTech
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cProductores consulta = new cProductores();
+            consulta.MdiParent = this;
             consulta.ShowDialog();
         }
 
         private void prestamosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cPrestamos consulta = new cPrestamos();
+            consulta.MdiParent = this;
             consulta.ShowDialog();
         }
 
         private void pagosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cPagos consulta = new cPagos();
+            consulta.MdiParent = this;
             consulta.ShowDialog();
         }
 
         private void cacaosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cCacao consulta = new cCacao();
+            consulta.MdiParent = this;
             consulta.ShowDialog();
         }
 
         private void recepcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cRecepciones consulta = new cRecepciones();
+            consulta.MdiParent = this;
             consulta.ShowDialog();
         }
 
@@ -172,6 +182,7 @@ namespace CacaoTech
             if(ID == 1)
             {
                 rUsuarios usuarios = new rUsuarios();
+                usuarios.MdiParent = this;
                 usuarios.ShowDialog();
             } else
             {

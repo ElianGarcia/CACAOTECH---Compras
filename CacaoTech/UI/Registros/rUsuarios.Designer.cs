@@ -41,6 +41,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ConfirmarContraseñatextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.AdministradorradioButton = new System.Windows.Forms.RadioButton();
+            this.EstandarradioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +58,9 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(248, 119);
+            this.Eliminarbutton.Location = new System.Drawing.Point(293, 183);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(79, 61);
+            this.Eliminarbutton.Size = new System.Drawing.Size(101, 61);
             this.Eliminarbutton.TabIndex = 19;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -70,9 +75,9 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(132, 119);
+            this.Guardarbutton.Location = new System.Drawing.Point(156, 183);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 61);
+            this.Guardarbutton.Size = new System.Drawing.Size(101, 61);
             this.Guardarbutton.TabIndex = 18;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -82,8 +87,9 @@
             // ContraseñaTextBox
             // 
             this.ContraseñaTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContraseñaTextBox.Location = new System.Drawing.Point(99, 80);
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(166, 80);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
+            this.ContraseñaTextBox.PasswordChar = '■';
             this.ContraseñaTextBox.Size = new System.Drawing.Size(228, 25);
             this.ContraseñaTextBox.TabIndex = 17;
             // 
@@ -105,9 +111,9 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 119);
+            this.Nuevobutton.Location = new System.Drawing.Point(17, 183);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 61);
+            this.Nuevobutton.Size = new System.Drawing.Size(101, 61);
             this.Nuevobutton.TabIndex = 15;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -122,7 +128,7 @@
             this.Buscarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Buscarbutton.Image = global::CacaoTech.Properties.Resources.Search_32;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(230, 4);
+            this.Buscarbutton.Location = new System.Drawing.Point(297, 5);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(97, 40);
             this.Buscarbutton.TabIndex = 14;
@@ -144,9 +150,9 @@
             // IDnumericUpDown
             // 
             this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDnumericUpDown.Location = new System.Drawing.Point(99, 14);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(166, 19);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(125, 25);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(106, 25);
             this.IDnumericUpDown.TabIndex = 12;
             // 
             // label1
@@ -162,7 +168,7 @@
             // NombreTextBox
             // 
             this.NombreTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreTextBox.Location = new System.Drawing.Point(99, 50);
+            this.NombreTextBox.Location = new System.Drawing.Point(166, 50);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(228, 25);
             this.NombreTextBox.TabIndex = 20;
@@ -172,11 +178,69 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // ConfirmarContraseñatextBox
+            // 
+            this.ConfirmarContraseñatextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmarContraseñatextBox.Location = new System.Drawing.Point(166, 110);
+            this.ConfirmarContraseñatextBox.Name = "ConfirmarContraseñatextBox";
+            this.ConfirmarContraseñatextBox.PasswordChar = '■';
+            this.ConfirmarContraseñatextBox.Size = new System.Drawing.Size(228, 25);
+            this.ConfirmarContraseñatextBox.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(11, 116);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(149, 19);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Confirmar Contraseña:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 147);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 19);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Nivel de Usuario:";
+            // 
+            // AdministradorradioButton
+            // 
+            this.AdministradorradioButton.AutoSize = true;
+            this.AdministradorradioButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.AdministradorradioButton.Location = new System.Drawing.Point(166, 147);
+            this.AdministradorradioButton.Name = "AdministradorradioButton";
+            this.AdministradorradioButton.Size = new System.Drawing.Size(101, 19);
+            this.AdministradorradioButton.TabIndex = 41;
+            this.AdministradorradioButton.TabStop = true;
+            this.AdministradorradioButton.Text = "Administrador";
+            this.AdministradorradioButton.UseVisualStyleBackColor = true;
+            // 
+            // EstandarradioButton
+            // 
+            this.EstandarradioButton.AutoSize = true;
+            this.EstandarradioButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.EstandarradioButton.Location = new System.Drawing.Point(324, 147);
+            this.EstandarradioButton.Name = "EstandarradioButton";
+            this.EstandarradioButton.Size = new System.Drawing.Size(70, 19);
+            this.EstandarradioButton.TabIndex = 42;
+            this.EstandarradioButton.TabStop = true;
+            this.EstandarradioButton.Text = "Estándar";
+            this.EstandarradioButton.UseVisualStyleBackColor = true;
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 195);
+            this.ClientSize = new System.Drawing.Size(418, 255);
+            this.Controls.Add(this.EstandarradioButton);
+            this.Controls.Add(this.AdministradorradioButton);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.ConfirmarContraseñatextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.NombreTextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
@@ -210,5 +274,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox ConfirmarContraseñatextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton EstandarradioButton;
+        private System.Windows.Forms.RadioButton AdministradorradioButton;
     }
 }
