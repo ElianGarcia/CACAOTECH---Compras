@@ -12,19 +12,30 @@ namespace CacaoTech.Entidades
     {
         [Key]
         public int PagosDetalleID { get; set; }
+        public int PrestamoID { get; set; }
+        [ForeignKey("PrestamoID")]
+        public virtual Prestamos Prestamos { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal Monto { get; set; }
+        public decimal Balance { get; set; }
+        public decimal Pagado { get; set; }
 
-        public PagosDetalle(int pagosDetalleID, DateTime fecha, decimal monto)
+        public PagosDetalle(int prestamoID, DateTime fecha, decimal balance, decimal pagado)
         {
-            PagosDetalleID = pagosDetalleID;
+            PrestamoID = prestamoID;
             Fecha = fecha;
-            Monto = monto;
+            Balance = balance;
+            Pagado = pagado;
         }
 
         public PagosDetalle()
         {
 
+        }
+
+        public PagosDetalle(int PagosDetalleID, DateTime fecha, decimal monto)
+        {
+            this.PagosDetalleID = PagosDetalleID;
+            Fecha = fecha;
         }
     }
 }

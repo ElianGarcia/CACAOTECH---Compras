@@ -31,12 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rPagos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PrestamoComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.AgregarPagobutton = new System.Windows.Forms.Button();
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BalancetextBox = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.RegistrarProductoresbutton = new System.Windows.Forms.Button();
-            this.ProductorescomboBox = new System.Windows.Forms.ComboBox();
+            this.ProductorComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -44,8 +50,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.BalancetextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -60,17 +64,63 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.PrestamoComboBox);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.AgregarPagobutton);
             this.groupBox1.Controls.Add(this.CantidadtextBox);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.BalancetextBox);
             this.groupBox1.Controls.Add(this.dataGridView);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(12, 117);
+            this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 198);
+            this.groupBox1.Size = new System.Drawing.Size(464, 242);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pagos:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(249, 212);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 19);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "Total Pagado:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(345, 209);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(113, 25);
+            this.textBox1.TabIndex = 84;
+            // 
+            // PrestamoComboBox
+            // 
+            this.PrestamoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PrestamoComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.PrestamoComboBox.FormattingEnabled = true;
+            this.PrestamoComboBox.Location = new System.Drawing.Point(20, 42);
+            this.PrestamoComboBox.Name = "PrestamoComboBox";
+            this.PrestamoComboBox.Size = new System.Drawing.Size(133, 25);
+            this.PrestamoComboBox.TabIndex = 50;
+            this.PrestamoComboBox.SelectedIndexChanged += new System.EventHandler(this.PrestamoComboBox_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(17, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 19);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "PrestamoID:";
             // 
             // AgregarPagobutton
             // 
@@ -81,9 +131,9 @@
             this.AgregarPagobutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AgregarPagobutton.Image = global::CacaoTech.Properties.Resources.Add_32;
             this.AgregarPagobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarPagobutton.Location = new System.Drawing.Point(413, 18);
+            this.AgregarPagobutton.Location = new System.Drawing.Point(413, 21);
             this.AgregarPagobutton.Name = "AgregarPagobutton";
-            this.AgregarPagobutton.Size = new System.Drawing.Size(45, 35);
+            this.AgregarPagobutton.Size = new System.Drawing.Size(45, 46);
             this.AgregarPagobutton.TabIndex = 25;
             this.AgregarPagobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarPagobutton.UseVisualStyleBackColor = false;
@@ -92,9 +142,9 @@
             // CantidadtextBox
             // 
             this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.CantidadtextBox.Location = new System.Drawing.Point(88, 24);
+            this.CantidadtextBox.Location = new System.Drawing.Point(286, 42);
             this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(319, 25);
+            this.CantidadtextBox.Size = new System.Drawing.Size(121, 25);
             this.CantidadtextBox.TabIndex = 24;
             this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
             this.CantidadtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadtextBox_KeyPress);
@@ -103,19 +153,38 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(14, 27);
+            this.label5.Location = new System.Drawing.Point(282, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 19);
             this.label5.TabIndex = 23;
             this.label5.Text = "Cantidad:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(159, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 19);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "Balance:";
+            // 
+            // BalancetextBox
+            // 
+            this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.BalancetextBox.Location = new System.Drawing.Point(163, 42);
+            this.BalancetextBox.Name = "BalancetextBox";
+            this.BalancetextBox.ReadOnly = true;
+            this.BalancetextBox.Size = new System.Drawing.Size(113, 25);
+            this.BalancetextBox.TabIndex = 75;
+            // 
             // dataGridView
             // 
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(5, 59);
+            this.dataGridView.Location = new System.Drawing.Point(7, 73);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(453, 130);
+            this.dataGridView.Size = new System.Drawing.Size(451, 130);
             this.dataGridView.TabIndex = 0;
             // 
             // RegistrarProductoresbutton
@@ -134,16 +203,16 @@
             this.RegistrarProductoresbutton.UseVisualStyleBackColor = false;
             this.RegistrarProductoresbutton.Click += new System.EventHandler(this.RegistrarProductorbutton_Click);
             // 
-            // ProductorescomboBox
+            // ProductorComboBox
             // 
-            this.ProductorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProductorescomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.ProductorescomboBox.FormattingEnabled = true;
-            this.ProductorescomboBox.Location = new System.Drawing.Point(100, 53);
-            this.ProductorescomboBox.Name = "ProductorescomboBox";
-            this.ProductorescomboBox.Size = new System.Drawing.Size(325, 25);
-            this.ProductorescomboBox.TabIndex = 72;
-            this.ProductorescomboBox.SelectedIndexChanged += new System.EventHandler(this.ProductorescomboBox_SelectedIndexChanged);
+            this.ProductorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductorComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.ProductorComboBox.FormattingEnabled = true;
+            this.ProductorComboBox.Location = new System.Drawing.Point(100, 53);
+            this.ProductorComboBox.Name = "ProductorComboBox";
+            this.ProductorComboBox.Size = new System.Drawing.Size(325, 25);
+            this.ProductorComboBox.TabIndex = 72;
+            this.ProductorComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductorescomboBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -215,25 +284,6 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
-            // BalancetextBox
-            // 
-            this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.BalancetextBox.Location = new System.Drawing.Point(100, 86);
-            this.BalancetextBox.Name = "BalancetextBox";
-            this.BalancetextBox.ReadOnly = true;
-            this.BalancetextBox.Size = new System.Drawing.Size(376, 25);
-            this.BalancetextBox.TabIndex = 75;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(15, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 19);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Balance:";
-            // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
@@ -243,7 +293,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = global::CacaoTech.Properties.Resources.Trash_32;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(376, 324);
+            this.Eliminarbutton.Location = new System.Drawing.Point(376, 336);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(100, 62);
             this.Eliminarbutton.TabIndex = 78;
@@ -260,7 +310,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = global::CacaoTech.Properties.Resources.Save_32;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(194, 324);
+            this.Guardarbutton.Location = new System.Drawing.Point(194, 336);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(100, 62);
             this.Guardarbutton.TabIndex = 77;
@@ -277,7 +327,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = global::CacaoTech.Properties.Resources.Plus_Math_32;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(12, 324);
+            this.Nuevobutton.Location = new System.Drawing.Point(12, 336);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(100, 62);
             this.Nuevobutton.TabIndex = 76;
@@ -290,7 +340,7 @@
             // 
             this.Usuariolabel.AutoSize = true;
             this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.Usuariolabel.Location = new System.Drawing.Point(41, 395);
+            this.Usuariolabel.Location = new System.Drawing.Point(41, 407);
             this.Usuariolabel.Name = "Usuariolabel";
             this.Usuariolabel.Size = new System.Drawing.Size(0, 17);
             this.Usuariolabel.TabIndex = 80;
@@ -298,7 +348,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CacaoTech.Properties.Resources.Male_User;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 394);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 406);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 19);
             this.pictureBox1.TabIndex = 79;
@@ -309,16 +359,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(508, 418);
+            this.ClientSize = new System.Drawing.Size(508, 430);
             this.Controls.Add(this.Usuariolabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.BalancetextBox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.RegistrarProductoresbutton);
-            this.Controls.Add(this.ProductorescomboBox);
+            this.Controls.Add(this.ProductorComboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.Buscarbutton);
@@ -348,7 +396,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button RegistrarProductoresbutton;
-        private System.Windows.Forms.ComboBox ProductorescomboBox;
+        private System.Windows.Forms.ComboBox ProductorComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Button Buscarbutton;
@@ -363,5 +411,9 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Label Usuariolabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox PrestamoComboBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

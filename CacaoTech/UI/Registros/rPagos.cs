@@ -17,18 +17,23 @@ namespace CacaoTech.UI.Registros
     public partial class rPagos : Form
     {
         GenericaBLL<Productores> genericaProductorBLL;
+        GenericaBLL<Prestamos> genericaPrestamosBLL;
         public List<PagosDetalle> pagosDetalles { get; set; }
+        decimal Total;
+
         int UsuarioID;
 
         public rPagos(int usuarioID)
         {
             genericaProductorBLL = new GenericaBLL<Productores>();
+            genericaPrestamosBLL = new GenericaBLL<Prestamos>();
             InitializeComponent();
             this.pagosDetalles = new List<PagosDetalle>();
             CargarGrid();
             LlenarCombos();
             UsuarioID = usuarioID;
             BuscarUsuario(usuarioID);
+            Total = 0;
         }
 
         private void BuscarUsuario(int ID)
@@ -40,15 +45,18 @@ namespace CacaoTech.UI.Registros
 
         private void CargarGrid()
         {
+            
             dataGridView.DataSource = null;
             dataGridView.DataSource = pagosDetalles;
+            dataGridView.Columns[0].Visible = false;
+            dataGridView.Columns[2].Visible = false;
         }
 
         public Pagos LlenaClase()
         {
             Pagos pago = new Pagos();
             pago.PagoID = ToInt(IDnumericUpDown.Value.ToString());
-            pago.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
+            pago.ProductorID = ToInt(ProductorComboBox.SelectedValue.ToString());
             pago.PagosDetalle = this.pagosDetalles;
             pago.productores = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
             pago.UsuarioID = UsuarioID;
@@ -62,7 +70,7 @@ namespace CacaoTech.UI.Registros
             Productores productor = genericaBLL.Buscar(pago.ProductorID);
 
             IDnumericUpDown.Value = pago.PagoID;
-            ProductorescomboBox.SelectedIndex = pago.ProductorID;
+            ProductorComboBox.SelectedIndex = pago.ProductorID;
             FechadateTimePicker.Value = DateTime.Now;
             BalancetextBox.Text = productor.Balance.ToString();
             dataGridView.DataSource = pago.PagosDetalle;
@@ -71,11 +79,21 @@ namespace CacaoTech.UI.Registros
         public void LlenarCombos()
         {
             //Llenando combobox de productores
-            ProductorescomboBox.DataSource = null;
+            ProductorComboBox.DataSource = null;
             List<Productores> lista = genericaProductorBLL.GetList(p => true);
-            ProductorescomboBox.DataSource = lista;
-            ProductorescomboBox.DisplayMember = "Nombres";
-            ProductorescomboBox.ValueMember = "ProductorID";
+            ProductorComboBox.DataSource = lista;
+            ProductorComboBox.DisplayMember = "Nombres";
+            ProductorComboBox.ValueMember = "ProductorID";
+        }
+
+        public void LlenarComboPrestamos(int id)
+        {
+            //Llenando combo de Prestamos
+            PrestamoComboBox.DataSource = null;
+            List<Prestamos> lista1 = genericaPrestamosBLL.GetList(pr => pr.ProductorID == id);
+            PrestamoComboBox.DataSource = lista1;
+            PrestamoComboBox.DisplayMember = "PrestamoID";
+            PrestamoComboBox.ValueMember = "PrestamoID";
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -107,7 +125,8 @@ namespace CacaoTech.UI.Registros
         private void Limpiar()
         {
             IDnumericUpDown.Value = 0;
-            ProductorescomboBox.Text = string.Empty;
+            ProductorComboBox.Text = string.Empty;
+            PrestamoComboBox.Text = string.Empty;
             BalancetextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
@@ -206,7 +225,8 @@ namespace CacaoTech.UI.Registros
             Productores productor = new Productores();
             decimal balance;
 
-            int opcion = ToInt(ProductorescomboBox.SelectedValue.ToString());
+            int opcion = ToInt(ProductorComboBox.SelectedValue.ToString());
+            LlenarComboPrestamos(opcion);
             productor = genericaProductorBLL.Buscar(opcion);
             if (productor != null)
             {
@@ -260,14 +280,16 @@ namespace CacaoTech.UI.Registros
             
             this.pagosDetalles.Add(
                 new PagosDetalle(
-                    pagosDetalleID: 0,
+                    prestamoID: ToInt(PrestamoComboBox.SelectedValue.ToString()),
                     fecha: FechadateTimePicker.Value,
-                    monto: ToDecimal(CantidadtextBox.Text)
+                    balance: ToDecimal(BalancetextBox.Text),
+                    pagado: ToDecimal(CantidadtextBox.Text)
                     )
                 );
 
             CargarGrid();
             CantidadtextBox.Clear();
+            Total += ToDecimal(CantidadtextBox.Text);
         }
 
         private bool ValidarCantidad()
@@ -295,6 +317,11 @@ namespace CacaoTech.UI.Registros
         {
             if (!ValidarCantidad())
                 return;
+        }
+
+        private void PrestamoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -25,7 +25,7 @@ namespace CacaoTech.BLL
                 {
                     if (prestamo != null)
                     {
-                        prestamo.Balance -= item.Monto;
+                        prestamo.Balance -= item.Pagado;
                         db.Entry(prestamo).State = EntityState.Modified;
                         realizado = db.SaveChanges() > 0;
                     }
@@ -58,7 +58,7 @@ namespace CacaoTech.BLL
                 {
                     if (productor != null)
                     {
-                        productor.Balance -= item.Monto;
+                        productor.Balance -= item.Pagado;
                         db.Entry(productor).State = EntityState.Modified;
                         realizado = db.SaveChanges() > 0;
                     }
