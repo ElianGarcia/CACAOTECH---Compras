@@ -145,7 +145,7 @@ namespace CacaoTech.UI.Registros
         {
             bool realizado = true;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> productores = genericaBLL.GetList(d => d.Cedula != CedulamaskedTextBox.Text);
+            List<Productores> productores = genericaBLL.GetList(d => d.Cedula.Contains(CedulamaskedTextBox.Text));
 
             if (productores != null)
             {
@@ -158,7 +158,7 @@ namespace CacaoTech.UI.Registros
         {
             bool realizado = true;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> productores = genericaBLL.GetList(d => d.Telefono != TelefonomaskedTextBox.Text);
+            List<Productores> productores = genericaBLL.GetList(d => d.Telefono.Contains(TelefonomaskedTextBox.Text));
 
             if (productores != null)
             {
@@ -171,7 +171,7 @@ namespace CacaoTech.UI.Registros
         {
             bool realizado = true;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> productores = genericaBLL.GetList(d => d.Celular != CelularmaskedTextBox.Text);
+            List<Productores> productores = genericaBLL.GetList(d => d.Celular.Contains(CelularmaskedTextBox.Text));
 
             if (productores != null)
             {
@@ -184,7 +184,7 @@ namespace CacaoTech.UI.Registros
         {
             bool realizado = true;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> productores = genericaBLL.GetList(d => d.Nombres + d.Apellidos == NombretextBox.Text + ApellidostextBox.Text);
+            List<Productores> productores = genericaBLL.GetList(d => (d.Nombres + d.Apellidos).Contains(NombretextBox.Text + ApellidostextBox.Text));
             
             if(productores != null)
             {
@@ -267,25 +267,25 @@ namespace CacaoTech.UI.Registros
                 AmbulanteradioButton.Focus();
                 realizado = false;
             }
-            if (!ValidarNombre())
+            if (ValidarNombre())
             {
                 errorProvider.SetError(NombretextBox, "Ya existe un productor con este nombre \n vaya a Consultas->Productores para \n mas detalles");
                 NombretextBox.Focus();
                 realizado = false;
             }
-            if (!ValidarCedula())
+            if (ValidarCedula())
             {
                 errorProvider.SetError(CedulamaskedTextBox, "Ya existe un productor con esta cedula \n vaya a Consultas->Productores para \n mas detalles");
                 CedulamaskedTextBox.Focus();
                 realizado = false;
             }
-            if (!ValidarCelular())
+            if (ValidarCelular())
             {
                 errorProvider.SetError(CedulamaskedTextBox, "Ya existe un productor con este celular \n vaya a Consultas->Productores para \n mas detalles");
                 CelularmaskedTextBox.Focus();
                 realizado = false;
             }
-            if (!ValidarTelefono())
+            if (ValidarTelefono())
             {
                 errorProvider.SetError(TelefonomaskedTextBox, "Ya existe un productor con este telefono \n vaya a Consultas->Productores para \n mas detalles");
                 TelefonomaskedTextBox.Focus();
