@@ -54,16 +54,9 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Usuariolabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.AgregarPagobutton = new System.Windows.Forms.Button();
-            this.CantidadtextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MontotextBox
@@ -257,7 +250,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(372, 384);
+            this.Eliminarbutton.Location = new System.Drawing.Point(372, 183);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(110, 60);
             this.Eliminarbutton.TabIndex = 36;
@@ -274,7 +267,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(193, 384);
+            this.Guardarbutton.Location = new System.Drawing.Point(193, 183);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(111, 60);
             this.Guardarbutton.TabIndex = 35;
@@ -291,7 +284,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(11, 384);
+            this.Nuevobutton.Location = new System.Drawing.Point(11, 183);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(111, 60);
             this.Nuevobutton.TabIndex = 34;
@@ -320,7 +313,7 @@
             // 
             this.Usuariolabel.AutoSize = true;
             this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.Usuariolabel.Location = new System.Drawing.Point(36, 453);
+            this.Usuariolabel.Location = new System.Drawing.Point(36, 252);
             this.Usuariolabel.Name = "Usuariolabel";
             this.Usuariolabel.Size = new System.Drawing.Size(0, 17);
             this.Usuariolabel.TabIndex = 55;
@@ -328,76 +321,18 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 452);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 251);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 19);
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.AgregarPagobutton);
-            this.groupBox1.Controls.Add(this.CantidadtextBox);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dataGridView);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(9, 167);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(473, 198);
-            this.groupBox1.TabIndex = 56;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pagos:";
-            // 
-            // AgregarPagobutton
-            // 
-            this.AgregarPagobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.AgregarPagobutton.FlatAppearance.BorderSize = 2;
-            this.AgregarPagobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AgregarPagobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.AgregarPagobutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AgregarPagobutton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarPagobutton.Image")));
-            this.AgregarPagobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarPagobutton.Location = new System.Drawing.Point(417, 18);
-            this.AgregarPagobutton.Name = "AgregarPagobutton";
-            this.AgregarPagobutton.Size = new System.Drawing.Size(45, 35);
-            this.AgregarPagobutton.TabIndex = 25;
-            this.AgregarPagobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AgregarPagobutton.UseVisualStyleBackColor = false;
-            // 
-            // CantidadtextBox
-            // 
-            this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.CantidadtextBox.Location = new System.Drawing.Point(88, 24);
-            this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(323, 25);
-            this.CantidadtextBox.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(14, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 19);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Cantidad:";
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(9, 59);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(453, 130);
-            this.dataGridView.TabIndex = 0;
             // 
             // rPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(515, 478);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(515, 280);
             this.Controls.Add(this.Usuariolabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TotaltextBox);
@@ -427,9 +362,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,10 +393,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Usuariolabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button AgregarPagobutton;
-        private System.Windows.Forms.TextBox CantidadtextBox;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
