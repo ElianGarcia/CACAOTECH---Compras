@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,13 +43,17 @@ namespace CacaoTech
         {
             GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
             int id = ToInt(UsuarioscomboBox.SelectedValue.ToString());
+            Seguridad seguridad = new Seguridad();
 
             Usuarios usuario = genericaBLL.Buscar(id);
 
             if (string.IsNullOrWhiteSpace(ContraseñatextBox.Text))
                 return;
 
-            if (usuario.Contraseña == ContraseñatextBox.Text)
+            string c = seguridad.descifrarTextoAES(usuario.Contraseña, "AjpdSoft_Frase_Encriptado",
+                     "AjpdSoft_Frase_Encriptado", "MD5", 22, "1234567891234567", 256);
+
+            if (c == ContraseñatextBox.Text)
             {
                 CacaoTech formPrincipal = new CacaoTech(usuario.UsuarioID);
                 this.Hide();

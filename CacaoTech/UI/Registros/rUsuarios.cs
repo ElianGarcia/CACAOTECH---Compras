@@ -32,21 +32,16 @@ namespace CacaoTech.UI.Registros
             return resultado;
         }
 
-        public static string encriptar(string Cadena)
-        {
-            SHA1CryptoServiceProvider SHA1 = new SHA1CryptoServiceProvider();
-            byte[] vectoBytes = System.Text.Encoding.UTF8.GetBytes(Cadena);
-            byte[] inArray = SHA1.ComputeHash(vectoBytes);
-            SHA1.Clear();
-            return Convert.ToBase64String(inArray);
-        }
-
         private Usuarios LlenaClase()
         {
             Usuarios usuario = new Usuarios();
+            Seguridad seguridad = new Seguridad();
+
             usuario.UsuarioID = ToInt(IDnumericUpDown.Value.ToString());
             usuario.Nombres = NombreTextBox.Text;
-            usuario.Contraseña = encriptar(ContraseñaTextBox.Text);
+            string c = seguridad.cifrarTextoAES(ContraseñaTextBox.Text, "AjpdSoft_Frase_Encriptado",
+                     "AjpdSoft_Frase_Encriptado", "MD5", 22, "1234567891234567", 256);
+            usuario.Contraseña = c;
             if(AdministradorradioButton.Checked)
             {
                 usuario.Nivel = true;
@@ -120,10 +115,15 @@ namespace CacaoTech.UI.Registros
 
         private void LlenaCampos(Usuarios usuario)
         {
+            Seguridad seguridad = new Seguridad();
+
             IDnumericUpDown.Value = usuario.UsuarioID;
             NombreTextBox.Text = usuario.Nombres;
-            ContraseñaTextBox.Text = usuario.Contraseña;
-            ConfirmarContraseñatextBox.Text = usuario.Contraseña;
+            string c = seguridad.descifrarTextoAES(usuario.Contraseña, "AjpdSoft_Frase_Encriptado",
+                     "AjpdSoft_Frase_Encriptado", "MD5", 22, "1234567891234567", 256);
+            ContraseñaTextBox.Text = c;
+            ConfirmarContraseñatextBox.Text = c;
+
             if (usuario.Nivel)
             {
                 AdministradorradioButton.Checked = true;

@@ -4,6 +4,7 @@ using CacaoTech.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,9 +30,13 @@ namespace CacaoTech
             
             GenericaBLL<Usuarios> genericaBLL = new GenericaBLL<Usuarios>();
             Usuarios usuario = genericaBLL.Buscar(1);
+            Seguridad seguridad = new Seguridad();
             if(usuario == null)
             {
-                Usuarios usuario1 = new Usuarios(0, "Administrador", "9e5d50a8bd1bfc52f4161fc0aefbf4817446096c", true);
+                string c = seguridad.cifrarTextoAES("CACAOTECH", "AjpdSoft_Frase_Encriptado",
+                     "AjpdSoft_Frase_Encriptado", "MD5", 22, "1234567891234567", 256);
+
+                Usuarios usuario1 = new Usuarios(0, "Administrador", c, true);
                 db.Usuario.Add(usuario1);
                 db.SaveChanges();
             }
