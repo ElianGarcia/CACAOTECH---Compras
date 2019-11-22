@@ -39,8 +39,7 @@ namespace CacaoTech.UI.Registros
 
             usuario.UsuarioID = ToInt(IDnumericUpDown.Value.ToString());
             usuario.Nombres = NombreTextBox.Text;
-            string c = seguridad.cifrarTextoAES(ContraseñaTextBox.Text, "AjpdSoft_Frase_Encriptado",
-                     "AjpdSoft_Frase_Encriptado", "MD5", 22, "1234567891234567", 256);
+            string c = seguridad.cifrarTexto(ContraseñaTextBox.Text);
             usuario.Contraseña = c;
             if(AdministradorradioButton.Checked)
             {
@@ -119,8 +118,7 @@ namespace CacaoTech.UI.Registros
 
             IDnumericUpDown.Value = usuario.UsuarioID;
             NombreTextBox.Text = usuario.Nombres;
-            string c = seguridad.descifrarTextoAES(usuario.Contraseña, "AjpdSoft_Frase_Encriptado",
-                     "AjpdSoft_Frase_Encriptado", "MD5", 22, "1234567891234567", 256);
+            string c = seguridad.descifrarTexto(usuario.Contraseña);
             ContraseñaTextBox.Text = c;
             ConfirmarContraseñatextBox.Text = c;
 

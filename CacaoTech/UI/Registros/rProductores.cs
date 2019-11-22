@@ -141,39 +141,24 @@ namespace CacaoTech.UI.Registros
             }
         }
 
-        private string getNombreCompleto()
-        {
-            return (NombretextBox.Text + ApellidostextBox.Text);
-        }
-
-        private string getCedula()
-        {
-            return (CedulamaskedTextBox.Text);
-        }
-
         private bool ValidarCedula()
         {
             bool realizado = true;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> productores = genericaBLL.GetList(d => d.Cedula == getCedula());
+            List<Productores> productores = genericaBLL.GetList(d => d.Cedula != CedulamaskedTextBox.Text);
 
             if (productores != null)
             {
                 realizado = false;
             }
             return realizado;
-        }
-
-        private string getTelefono()
-        {
-            return (TelefonomaskedTextBox.Text);
         }
 
         private bool ValidarTelefono()
         {
             bool realizado = true;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> productores = genericaBLL.GetList(d => d.Telefono == getTelefono());
+            List<Productores> productores = genericaBLL.GetList(d => d.Telefono != TelefonomaskedTextBox.Text);
 
             if (productores != null)
             {
@@ -182,16 +167,11 @@ namespace CacaoTech.UI.Registros
             return realizado;
         }
 
-        private string getCelular()
-        {
-            return (CelularmaskedTextBox.Text);
-        }
-
         private bool ValidarCelular()
         {
             bool realizado = true;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> productores = genericaBLL.GetList(d => d.Celular == getCelular());
+            List<Productores> productores = genericaBLL.GetList(d => d.Celular != CelularmaskedTextBox.Text);
 
             if (productores != null)
             {
@@ -204,7 +184,7 @@ namespace CacaoTech.UI.Registros
         {
             bool realizado = true;
             GenericaBLL<Productores> genericaBLL = new GenericaBLL<Productores>();
-            List<Productores> productores = genericaBLL.GetList(d => d.Nombres + d.Apellidos == getNombreCompleto());
+            List<Productores> productores = genericaBLL.GetList(d => d.Nombres + d.Apellidos == NombretextBox.Text + ApellidostextBox.Text);
             
             if(productores != null)
             {

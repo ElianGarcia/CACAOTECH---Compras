@@ -33,8 +33,7 @@ namespace CacaoTech
             Seguridad seguridad = new Seguridad();
             if(usuario == null)
             {
-                string c = seguridad.cifrarTextoAES("CACAOTECH", "AjpdSoft_Frase_Encriptado",
-                     "AjpdSoft_Frase_Encriptado", "MD5", 22, "1234567891234567", 256);
+                string c = seguridad.cifrarTexto("CACAOTECH");
 
                 Usuarios usuario1 = new Usuarios(0, "Administrador", c, true);
                 db.Usuario.Add(usuario1);

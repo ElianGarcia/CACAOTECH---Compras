@@ -50,8 +50,7 @@ namespace CacaoTech
             if (string.IsNullOrWhiteSpace(ContraseñatextBox.Text))
                 return;
 
-            string c = seguridad.descifrarTextoAES(usuario.Contraseña, "AjpdSoft_Frase_Encriptado",
-                     "AjpdSoft_Frase_Encriptado", "MD5", 22, "1234567891234567", 256);
+            string c = seguridad.descifrarTexto(usuario.Contraseña);
 
             if (c == ContraseñatextBox.Text)
             {
