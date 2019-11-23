@@ -4,12 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Scripts.sql" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Scripts.sql" />
-  </ItemGroup>
-
 </Project>

@@ -73,26 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\PagosBLL.cs" />
-    <Compile Include="BLL\GenericaBLL.cs" />
-    <Compile Include="BLL\IRepository.cs" />
-    <Compile Include="BLL\PrestamosBLL.cs" />
-    <Compile Include="BLL\RecepcionesBLL.cs" />
-    <Compile Include="BLL\Seguridad.cs" />
-    <Compile Include="DAL45\Contexto.cs" />
     <Compile Include="CacaoTech.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CacaoTech.Designer.cs">
       <DependentUpon>CacaoTech.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entidades\Cacao.cs" />
-    <Compile Include="Entidades\Pagos.cs" />
-    <Compile Include="Entidades\PagosDetalle.cs" />
-    <Compile Include="Entidades\Prestamos.cs" />
-    <Compile Include="Entidades\Recepciones.cs" />
-    <Compile Include="Entidades\Productores.cs" />
-    <Compile Include="Entidades\Usuarios.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,7 +314,6 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Cacao.ico" />
-    <Content Include="DAL45\Scripts.sql" />
     <None Include="Resources\Save_32.png" />
     <None Include="Resources\Search.ico" />
   </ItemGroup>
