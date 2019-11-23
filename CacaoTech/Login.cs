@@ -56,7 +56,7 @@ namespace CacaoTech
             {
                 CacaoTech formPrincipal = new CacaoTech(usuario.UsuarioID);
                 this.Hide();
-                formPrincipal.ShowDialog();
+                formPrincipal.Show();
                 this.Close();
             }
             else

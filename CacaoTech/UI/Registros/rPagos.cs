@@ -19,7 +19,7 @@ namespace CacaoTech.UI.Registros
     {
         GenericaBLL<Productores> genericaProductorBLL;
         GenericaBLL<Prestamos> genericaPrestamosBLL;
-        public List<PagosDetalle> PagosDetalles { get; set; }
+        public List<PagosDetalle> PagosDetalles;
         decimal Total;
 
         int UsuarioID;
@@ -29,6 +29,7 @@ namespace CacaoTech.UI.Registros
             genericaProductorBLL = new GenericaBLL<Productores>();
             genericaPrestamosBLL = new GenericaBLL<Prestamos>();
             InitializeComponent();
+            ProductorComboBox.SelectedValue = 1;
             this.PagosDetalles = new List<PagosDetalle>();
             CargarGrid();
             LlenarCombos();
@@ -241,8 +242,17 @@ namespace CacaoTech.UI.Registros
         {
             Productores productor = new Productores();
             decimal balance;
+            int opcion = 0;
 
-            int opcion = ToInt(ProductorComboBox.SelectedValue.ToString());
+            try
+            {
+                opcion = ToInt(ProductorComboBox.SelectedValue.ToString());
+            }
+            catch (Exception)
+            {
+
+            }
+            
             LlenarComboPrestamos(opcion);
             productor = genericaProductorBLL.Buscar(opcion);
             if (productor != null)
@@ -339,7 +349,17 @@ namespace CacaoTech.UI.Registros
 
         private void PrestamoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Prestamos prestamo = genericaPrestamosBLL.Buscar(ToInt(PrestamoComboBox.SelectedValue.ToString()));
+            Prestamos prestamo = new Prestamos();
+
+            try
+            {
+                prestamo = genericaPrestamosBLL.Buscar(ToInt(PrestamoComboBox.SelectedValue.ToString()));
+            }
+            catch (Exception)
+            {
+
+            }
+            
             if (prestamo != null)
             {
                 BalancetextBox.Text = prestamo.Balance.ToString();
@@ -350,24 +370,27 @@ namespace CacaoTech.UI.Registros
         {
             if (dataGridView.Rows.Count > 0 && dataGridView.CurrentRow != null)
             {
-                PagosDetalle.RemoveAt(dataGridView.CurrentRow.Index);
+                decimal valorEliminar = Convert.ToDecimal(dataGridView.CurrentRow.Cells[3].Value);
+                Total += valorEliminar;
+                TotaltextBox.Text = Total.ToString();
+
+                //PagosDetalle.RemoveAt(dataGridView.CurrentRow.Index);
                 CargarGrid();
-                //Calcular el nuevo total
             }
         }
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            List<PagosDetalle> pagos = PagosDetalle;
+            ////List<PagosDetalle> pagos = PagosDetalle;
 
-            if (pagos.Count == 0)
-            {
-                MessageBox.Show("No hay datos para mostrar en el Reporte");
-                return;
-            }
+            //if (pagos.Count == 0)
+            //{
+            //    MessageBox.Show("No hay datos para mostrar en el Reporte");
+            //    return;
+            //}
 
-            PagosReportViewer viewer = new PagosReportViewer(pagos);
-            viewer.ShowDialog();
+            ////PagosReportViewer viewer = new PagosReportViewer(pagos);
+            //viewer.ShowDialog();
         }
     }
 }
