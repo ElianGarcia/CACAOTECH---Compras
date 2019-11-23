@@ -1,4 +1,4 @@
-create database CacaoDB
+drop database CacaoDB
 
 use CacaoDB
 

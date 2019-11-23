@@ -56,6 +56,7 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.RegistrarProductoresbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.RemoverFilabutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
@@ -65,6 +66,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.RemoverFilabutton);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TotaltextBox);
             this.groupBox1.Controls.Add(this.PrestamoComboBox);
@@ -78,7 +80,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 242);
+            this.groupBox1.Size = new System.Drawing.Size(464, 249);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pagos:";
@@ -257,7 +259,7 @@
             // 
             this.Usuariolabel.AutoSize = true;
             this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.Usuariolabel.Location = new System.Drawing.Point(41, 407);
+            this.Usuariolabel.Location = new System.Drawing.Point(41, 414);
             this.Usuariolabel.Name = "Usuariolabel";
             this.Usuariolabel.Size = new System.Drawing.Size(0, 17);
             this.Usuariolabel.TabIndex = 80;
@@ -270,18 +272,19 @@
             this.Imprimirbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Imprimirbutton.Location = new System.Drawing.Point(262, 336);
+            this.Imprimirbutton.Location = new System.Drawing.Point(255, 343);
             this.Imprimirbutton.Name = "Imprimirbutton";
             this.Imprimirbutton.Size = new System.Drawing.Size(100, 62);
             this.Imprimirbutton.TabIndex = 81;
             this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Imprimirbutton.UseVisualStyleBackColor = false;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 406);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 413);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 19);
             this.pictureBox1.TabIndex = 79;
@@ -296,7 +299,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(376, 336);
+            this.Eliminarbutton.Location = new System.Drawing.Point(376, 343);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(100, 62);
             this.Eliminarbutton.TabIndex = 78;
@@ -313,7 +316,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(145, 336);
+            this.Guardarbutton.Location = new System.Drawing.Point(134, 343);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(100, 62);
             this.Guardarbutton.TabIndex = 77;
@@ -330,7 +333,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(12, 336);
+            this.Nuevobutton.Location = new System.Drawing.Point(12, 343);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(100, 62);
             this.Nuevobutton.TabIndex = 76;
@@ -370,6 +373,24 @@
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // RemoverFilabutton
+            // 
+            this.RemoverFilabutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.RemoverFilabutton.FlatAppearance.BorderSize = 2;
+            this.RemoverFilabutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoverFilabutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.RemoverFilabutton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.RemoverFilabutton.Image = ((System.Drawing.Image)(resources.GetObject("RemoverFilabutton.Image")));
+            this.RemoverFilabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RemoverFilabutton.Location = new System.Drawing.Point(7, 207);
+            this.RemoverFilabutton.Name = "RemoverFilabutton";
+            this.RemoverFilabutton.Size = new System.Drawing.Size(136, 35);
+            this.RemoverFilabutton.TabIndex = 85;
+            this.RemoverFilabutton.Text = "Remover fila";
+            this.RemoverFilabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RemoverFilabutton.UseVisualStyleBackColor = false;
+            this.RemoverFilabutton.Click += new System.EventHandler(this.RemoverFilabutton_Click);
             // 
             // rPagos
             // 
@@ -435,5 +456,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TotaltextBox;
         private System.Windows.Forms.Button Imprimirbutton;
+        private System.Windows.Forms.Button RemoverFilabutton;
     }
 }

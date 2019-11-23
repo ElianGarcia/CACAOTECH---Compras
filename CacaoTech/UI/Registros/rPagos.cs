@@ -1,6 +1,7 @@
 ﻿using CacaoTech.BLL;
 using CacaoTech.DAL;
 using CacaoTech.Entidades;
+using CacaoTech.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -343,6 +344,30 @@ namespace CacaoTech.UI.Registros
             {
                 BalancetextBox.Text = prestamo.Balance.ToString();
             }
+        }
+
+        private void RemoverFilabutton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.Rows.Count > 0 && dataGridView.CurrentRow != null)
+            {
+                PagosDetalle.RemoveAt(dataGridView.CurrentRow.Index);
+                CargarGrid();
+                //Calcular el nuevo total
+            }
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            List<PagosDetalle> pagos = PagosDetalle;
+
+            if (pagos.Count == 0)
+            {
+                MessageBox.Show("No hay datos para mostrar en el Reporte");
+                return;
+            }
+
+            PagosReportViewer viewer = new PagosReportViewer(pagos);
+            viewer.ShowDialog();
         }
     }
 }
