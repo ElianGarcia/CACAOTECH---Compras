@@ -81,7 +81,7 @@ namespace CacaoTech.UI.Registros
         {
             //Llenando combobox de productores
             ProductorComboBox.DataSource = null;
-            List<Productores> lista = genericaProductorBLL.GetList(p => true);
+            List<Productores> lista = genericaProductorBLL.GetList(p => p.Balance > 0);
             ProductorComboBox.DataSource = lista;
             ProductorComboBox.DisplayMember = "Nombres";
             ProductorComboBox.ValueMember = "ProductorID";

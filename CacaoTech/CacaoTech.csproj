@@ -122,6 +122,12 @@
     <Compile Include="UI\Consultas\cRecepciones.Designer.cs">
       <DependentUpon>cRecepciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\RecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RecuperarContraseña.Designer.cs">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rCacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cRecepciones.resx">
       <DependentUpon>cRecepciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RecuperarContraseña.resx">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCacao.resx">
       <DependentUpon>rCacao.cs</DependentUpon>

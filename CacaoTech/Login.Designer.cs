@@ -34,6 +34,8 @@
             this.Loginbutton = new System.Windows.Forms.Button();
             this.UsuarioscomboBox = new System.Windows.Forms.ComboBox();
             this.ContraseñatextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.VerContraseñacheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -41,7 +43,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(15, 18);
+            this.label1.Location = new System.Drawing.Point(9, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 19);
             this.label1.TabIndex = 0;
@@ -52,7 +54,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(15, 58);
+            this.label2.Location = new System.Drawing.Point(9, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 19);
             this.label2.TabIndex = 1;
@@ -65,7 +67,7 @@
             this.Loginbutton.FlatAppearance.BorderSize = 2;
             this.Loginbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Loginbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Loginbutton.Location = new System.Drawing.Point(19, 106);
+            this.Loginbutton.Location = new System.Drawing.Point(13, 99);
             this.Loginbutton.Name = "Loginbutton";
             this.Loginbutton.Size = new System.Drawing.Size(298, 31);
             this.Loginbutton.TabIndex = 2;
@@ -79,7 +81,7 @@
             this.UsuarioscomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.UsuarioscomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.UsuarioscomboBox.FormattingEnabled = true;
-            this.UsuarioscomboBox.Location = new System.Drawing.Point(103, 18);
+            this.UsuarioscomboBox.Location = new System.Drawing.Point(97, 18);
             this.UsuarioscomboBox.Name = "UsuarioscomboBox";
             this.UsuarioscomboBox.Size = new System.Drawing.Size(214, 25);
             this.UsuarioscomboBox.TabIndex = 3;
@@ -87,18 +89,44 @@
             // ContraseñatextBox
             // 
             this.ContraseñatextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.ContraseñatextBox.Location = new System.Drawing.Point(103, 56);
+            this.ContraseñatextBox.Location = new System.Drawing.Point(97, 56);
             this.ContraseñatextBox.Name = "ContraseñatextBox";
             this.ContraseñatextBox.PasswordChar = '*';
             this.ContraseñatextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ContraseñatextBox.Size = new System.Drawing.Size(214, 25);
             this.ContraseñatextBox.TabIndex = 4;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label3.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label3.Location = new System.Drawing.Point(78, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(169, 19);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "¿Olvidaste tu contraseña?";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // VerContraseñacheckBox
+            // 
+            this.VerContraseñacheckBox.AutoSize = true;
+            this.VerContraseñacheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VerContraseñacheckBox.Image = ((System.Drawing.Image)(resources.GetObject("VerContraseñacheckBox.Image")));
+            this.VerContraseñacheckBox.Location = new System.Drawing.Point(317, 52);
+            this.VerContraseñacheckBox.Name = "VerContraseñacheckBox";
+            this.VerContraseñacheckBox.Size = new System.Drawing.Size(44, 32);
+            this.VerContraseñacheckBox.TabIndex = 7;
+            this.VerContraseñacheckBox.UseVisualStyleBackColor = true;
+            this.VerContraseñacheckBox.CheckedChanged += new System.EventHandler(this.VerContraseñabutton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 155);
+            this.ClientSize = new System.Drawing.Size(365, 173);
+            this.Controls.Add(this.VerContraseñacheckBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ContraseñatextBox);
             this.Controls.Add(this.UsuarioscomboBox);
             this.Controls.Add(this.Loginbutton);
@@ -119,5 +147,7 @@
         private System.Windows.Forms.Button Loginbutton;
         private System.Windows.Forms.ComboBox UsuarioscomboBox;
         private System.Windows.Forms.TextBox ContraseñatextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox VerContraseñacheckBox;
     }
 }

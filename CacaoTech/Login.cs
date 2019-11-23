@@ -1,5 +1,6 @@
 ﻿using CacaoTech.BLL;
 using CacaoTech.Entidades;
+using CacaoTech.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,6 +64,18 @@ namespace CacaoTech
             {
                 MessageBox.Show("Contraseña incorrecta", "Oh no!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            int id = ToInt(UsuarioscomboBox.SelectedValue.ToString());
+            RecuperarContraseña recovery = new RecuperarContraseña(id);
+            recovery.ShowDialog();
+        }
+
+        private void VerContraseñabutton_Click(object sender, EventArgs e)
+        {
+            ContraseñatextBox.UseSystemPasswordChar = false;
         }
     }
 }

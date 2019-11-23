@@ -118,6 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="VerContraseñacheckBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAH3SURBVFhH7dVNS1RRHMfxiRQKUst0megbCKRNBNWicpEgvZPAZSBohm2i2gatW2jhOtoalIZm
+        KSEmuCmtrKCiJ3r6fu+co2cGZe6YK7k/+DD3/OfcO2fuOefeUpEiRYrUkb04jet4iNf4EHg8gWs4Cfvu
+        WA5jCG/xNyf7DqIV285+DOMb4oUXcQPn0YlDQRd6cRMvEfv/gAPZh7pyDkuIF3qHE8gbp+EL4vkO/Axq
+        pgFX8QeeGG/7ZaRphP2WA4+tpbkEz10Ln79xBVuuj4N4ADt76y7iSWgfQxp/0HpqBGmOwvoC+vEztO+j
+        BRVxoT2DHV7hOMxHWHNwaVz11lPW0riGrH/NWuUpXIG1p1hfoE2YhF/M4Qhi4jweyFobiRdKVQ/A61r/
+        lLXK6cA8rD+CfbJ/74gsVg/A22fd25kmzxR0w/qLrFVOOoAZrN+FdjyHX6RTcBvWBrLWRuIidJFqs0Xo
+        9vPcW1mrcgpm0YaKbLYIe0LbbdiMvPFa7+G5br+aizCmehs+xnQ4HsUe1Ip97sFz3EVT4bjmNkyTPogc
+        TBz9Xfjk2yqup3HY13PiH/HpeBZ1xW3kiD/Di0Q+mu+gD95qXQi170j7ugN8j3itbSe+jOKc5uHT779f
+        RtVx7k7B+X2DX4g/6PEqxrDjr+MiRYrs5pRK/wA2AMHiWWjs+wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
