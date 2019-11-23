@@ -79,7 +79,7 @@
     <Compile Include="BLL\PrestamosBLL.cs" />
     <Compile Include="BLL\RecepcionesBLL.cs" />
     <Compile Include="BLL\Seguridad.cs" />
-    <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="DAL45\Contexto.cs" />
     <Compile Include="CacaoTech.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,7 +328,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Cacao.ico" />
-    <Content Include="DAL\Scripts.sql" />
+    <Content Include="DAL45\Scripts.sql" />
     <None Include="Resources\Save_32.png" />
     <None Include="Resources\Search.ico" />
   </ItemGroup>

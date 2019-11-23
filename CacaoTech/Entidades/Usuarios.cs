@@ -14,9 +14,17 @@ namespace CacaoTech.Entidades
         public string Nombres { get; set; }
         public string Contraseña { get; set; }
         public bool Nivel { get; set; }
+        public string PreguntaSeguridad { get; set; }
+        public string RespuestaSeguridad { get; set; }
 
         public Usuarios()
         {
+        }
+
+        public Usuarios(int usuarioID, string nombres, string contraseña, bool nivel, string preguntaSeguridad, string respuestaSeguridad) : this(usuarioID, nombres, contraseña, nivel)
+        {
+            PreguntaSeguridad = preguntaSeguridad ?? throw new ArgumentNullException(nameof(preguntaSeguridad));
+            RespuestaSeguridad = respuestaSeguridad ?? throw new ArgumentNullException(nameof(respuestaSeguridad));
         }
 
         public Usuarios(int usuarioID, string nombres, string contraseña, bool nivel)

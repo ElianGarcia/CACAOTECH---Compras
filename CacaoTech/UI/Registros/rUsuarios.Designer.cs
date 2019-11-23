@@ -46,6 +46,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.AdministradorradioButton = new System.Windows.Forms.RadioButton();
             this.EstandarradioButton = new System.Windows.Forms.RadioButton();
+            this.RespuestaSeguridadtextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PreguntaSeguridadtextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +62,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(293, 183);
+            this.Eliminarbutton.Location = new System.Drawing.Point(293, 239);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(101, 61);
             this.Eliminarbutton.TabIndex = 19;
@@ -75,7 +79,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(156, 183);
+            this.Guardarbutton.Location = new System.Drawing.Point(156, 239);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(101, 61);
             this.Guardarbutton.TabIndex = 18;
@@ -97,7 +101,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 83);
+            this.label3.Location = new System.Drawing.Point(13, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 19);
             this.label3.TabIndex = 16;
@@ -111,7 +115,7 @@
             this.Nuevobutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(17, 183);
+            this.Nuevobutton.Location = new System.Drawing.Point(17, 239);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(101, 61);
             this.Nuevobutton.TabIndex = 15;
@@ -141,7 +145,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 50);
+            this.label2.Location = new System.Drawing.Point(13, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 19);
             this.label2.TabIndex = 13;
@@ -191,7 +195,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 116);
+            this.label4.Location = new System.Drawing.Point(11, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 19);
             this.label4.TabIndex = 21;
@@ -201,7 +205,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 147);
+            this.label5.Location = new System.Drawing.Point(11, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 23;
@@ -211,7 +215,7 @@
             // 
             this.AdministradorradioButton.AutoSize = true;
             this.AdministradorradioButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.AdministradorradioButton.Location = new System.Drawing.Point(166, 147);
+            this.AdministradorradioButton.Location = new System.Drawing.Point(166, 203);
             this.AdministradorradioButton.Name = "AdministradorradioButton";
             this.AdministradorradioButton.Size = new System.Drawing.Size(101, 19);
             this.AdministradorradioButton.TabIndex = 41;
@@ -223,7 +227,7 @@
             // 
             this.EstandarradioButton.AutoSize = true;
             this.EstandarradioButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.EstandarradioButton.Location = new System.Drawing.Point(324, 147);
+            this.EstandarradioButton.Location = new System.Drawing.Point(324, 203);
             this.EstandarradioButton.Name = "EstandarradioButton";
             this.EstandarradioButton.Size = new System.Drawing.Size(70, 19);
             this.EstandarradioButton.TabIndex = 42;
@@ -231,11 +235,53 @@
             this.EstandarradioButton.Text = "Estándar";
             this.EstandarradioButton.UseVisualStyleBackColor = true;
             // 
+            // RespuestaSeguridadtextBox
+            // 
+            this.RespuestaSeguridadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RespuestaSeguridadtextBox.Location = new System.Drawing.Point(166, 170);
+            this.RespuestaSeguridadtextBox.Name = "RespuestaSeguridadtextBox";
+            this.RespuestaSeguridadtextBox.PasswordChar = '■';
+            this.RespuestaSeguridadtextBox.Size = new System.Drawing.Size(228, 25);
+            this.RespuestaSeguridadtextBox.TabIndex = 46;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(11, 173);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 19);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Respuesta:";
+            // 
+            // PreguntaSeguridadtextBox
+            // 
+            this.PreguntaSeguridadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreguntaSeguridadtextBox.Location = new System.Drawing.Point(166, 140);
+            this.PreguntaSeguridadtextBox.Name = "PreguntaSeguridadtextBox";
+            this.PreguntaSeguridadtextBox.PasswordChar = '■';
+            this.PreguntaSeguridadtextBox.Size = new System.Drawing.Size(228, 25);
+            this.PreguntaSeguridadtextBox.TabIndex = 44;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(11, 143);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(152, 19);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Pregunta de seguridad:";
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 255);
+            this.ClientSize = new System.Drawing.Size(418, 313);
+            this.Controls.Add(this.RespuestaSeguridadtextBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.PreguntaSeguridadtextBox);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.EstandarradioButton);
             this.Controls.Add(this.AdministradorradioButton);
             this.Controls.Add(this.label5);
@@ -279,5 +325,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton EstandarradioButton;
         private System.Windows.Forms.RadioButton AdministradorradioButton;
+        private System.Windows.Forms.TextBox RespuestaSeguridadtextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox PreguntaSeguridadtextBox;
+        private System.Windows.Forms.Label label7;
     }
 }

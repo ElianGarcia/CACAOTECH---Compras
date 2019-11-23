@@ -120,14 +120,14 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RemoverFilabutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAFcSURBVFhH7ZVJSsRAGEazUTcKunDjDRwRUfRI6l0UFHG4iXgEQQQnEHGnG92p4Dy8l05BTDqQ
-        7qRdSB48qPoqqfpDqpKooaGhoSHF9x+bo91FvTRH4UDNNAX8/wKmcB3P8D7xNMkmsWcF9OMWfmCYK2t6
-        LEfhQAlc/AC9/xV3cB5HEhdwF9/Qa+7Qe35RpQAn994bnDUoYA5v0Wu3DdKEArrxC59xGmUZR1vNGNtm
-        YoEv6OuYMAi0m7gT3WSyivZP0IXVttkKygbaX4t7FblAJ/M9yzAeotl1om0zx2QRzTwdlXlEJxuMey1c
-        6BjN1XZYXIbQ/CHuVeQJswWM4RWGAmybBWotIPsKXOgSzY4SbZuFIpbQzI9VZcKG6mYThnsq4dH7RI/h
-        jAGUOYbvOG5QB3voE3XyIarlCAaKPsUDidlP8T72Ya2U/RltYu2Lpwm/43N0X6jt8DtOEUU/ehblIDyH
-        MIEAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAVxJREFUWEft
+        lUlKxEAYRrNRNwq6cOMNHBFR9EjqXRQUcbiJeARBBCcQcacb3angPLyXTkFMOpDupF1IHjyo+iqp+kOq
+        kqihoaGhIcX3H5uj3UW9NEfhQM00Bfz/AqZwHc/wPvE0ySaxZwX04xZ+YJgra3osR+FACVz8AL3/FXdw
+        HkcSF3AX39Br7tB7flGlACf33hucNShgDm/Ra7cN0oQCuvELn3EaZRlHW80Y22ZigS/o65gwCLSbuBPd
+        ZLKK9k/QhdW22QrKBtpfi3sVuUAn8z3LMB6i2XWibTPHZBHNPB2VeUQnG4x7LVzoGM3VdlhchtD8Ie5V
+        5AmzBYzhFYYCbJsFai0g+wpc6BLNjhJtm4UiltDMj1VlwobqZhOGeyrh0ftEj+GMAZQ5hu84blAHe+gT
+        dfIhquUIBoo+xQOJ2U/xPvZhrZT9GW1i7YunCb/jc3RfqO3wO04RRT96FuUgPIcwgQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="AgregarPagobutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

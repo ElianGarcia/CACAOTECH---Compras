@@ -41,6 +41,8 @@ namespace CacaoTech.UI.Registros
             usuario.Nombres = NombreTextBox.Text;
             string c = seguridad.cifrarTexto(ContraseñaTextBox.Text);
             usuario.Contraseña = c;
+            usuario.PreguntaSeguridad = PreguntaSeguridadtextBox.Text;
+            usuario.RespuestaSeguridad = seguridad.cifrarTexto(RespuestaSeguridadtextBox.Text);
             if(AdministradorradioButton.Checked)
             {
                 usuario.Nivel = true;
@@ -79,6 +81,18 @@ namespace CacaoTech.UI.Registros
                 ContraseñaTextBox.Focus();
                 realizado = false;
             }
+            if (string.IsNullOrWhiteSpace(PreguntaSeguridadtextBox.Text))
+            {
+                errorProvider.SetError(PreguntaSeguridadtextBox, obligatorio + "\n será necesario en caso de \n pérdida de la contraseña");
+                PreguntaSeguridadtextBox.Focus();
+                realizado = false;
+            }
+            if (string.IsNullOrWhiteSpace(RespuestaSeguridadtextBox.Text))
+            {
+                errorProvider.SetError(RespuestaSeguridadtextBox, obligatorio + "\n será necesario en caso de \n pérdida de la contraseña");
+                RespuestaSeguridadtextBox.Focus();
+                realizado = false;
+            }
             if (ContraseñaTextBox.Text == NombreTextBox.Text)
             {
                 errorProvider.SetError(ContraseñaTextBox, "La contraseña no debe ser igual al nombre");
@@ -108,6 +122,8 @@ namespace CacaoTech.UI.Registros
             NombreTextBox.Text = string.Empty;
             ContraseñaTextBox.Text = string.Empty;
             ConfirmarContraseñatextBox.Text = string.Empty;
+            PreguntaSeguridadtextBox.Text = string.Empty;
+            RespuestaSeguridadtextBox.Text = string.Empty;
             AdministradorradioButton.Checked = false;
             EstandarradioButton.Checked = false;
         }
@@ -118,9 +134,21 @@ namespace CacaoTech.UI.Registros
 
             IDnumericUpDown.Value = usuario.UsuarioID;
             NombreTextBox.Text = usuario.Nombres;
-            string c = seguridad.descifrarTexto(usuario.Contraseña);
-            ContraseñaTextBox.Text = c;
-            ConfirmarContraseñatextBox.Text = c;
+            
+            if (isAdministrador())
+            {
+                PreguntaSeguridadtextBox.Text = usuario.PreguntaSeguridad;
+                RespuestaSeguridadtextBox.Text = usuario.RespuestaSeguridad;
+                ContraseñaTextBox.Text = seguridad.descifrarTexto(usuario.Contraseña);
+                ConfirmarContraseñatextBox.Text = seguridad.descifrarTexto(usuario.Contraseña);
+            }
+            else
+            {
+                PreguntaSeguridadtextBox.Text = seguridad.cifrarTexto(usuario.PreguntaSeguridad);
+                RespuestaSeguridadtextBox.Text = seguridad.cifrarTexto(usuario.RespuestaSeguridad);
+                ContraseñaTextBox.Text = seguridad.cifrarTexto(usuario.Contraseña);
+                ConfirmarContraseñatextBox.Text = seguridad.cifrarTexto(usuario.Contraseña);
+            }
 
             if (usuario.Nivel)
             {

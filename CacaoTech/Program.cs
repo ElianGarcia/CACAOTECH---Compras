@@ -33,9 +33,11 @@ namespace CacaoTech
             Seguridad seguridad = new Seguridad();
             if(usuario == null)
             {
-                string c = seguridad.cifrarTexto("CACAOTECH");
+                string password = seguridad.cifrarTexto("CACAOTECH");
+                string pregunta = seguridad.cifrarTexto("¿Cual es tu nombre?");
+                string respuesta = seguridad.cifrarTexto("Elian Garcia");
 
-                Usuarios usuario1 = new Usuarios(0, "Administrador", c, true);
+                Usuarios usuario1 = new Usuarios(0, "Administrador", password, true, pregunta, respuesta);
                 db.Usuario.Add(usuario1);
                 db.SaveChanges();
             }

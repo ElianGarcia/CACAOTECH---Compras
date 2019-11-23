@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rPagos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RemoverFilabutton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TotaltextBox = new System.Windows.Forms.TextBox();
             this.PrestamoComboBox = new System.Windows.Forms.ComboBox();
@@ -56,7 +57,6 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.RegistrarProductoresbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.RemoverFilabutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
@@ -84,6 +84,24 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pagos:";
+            // 
+            // RemoverFilabutton
+            // 
+            this.RemoverFilabutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.RemoverFilabutton.FlatAppearance.BorderSize = 2;
+            this.RemoverFilabutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoverFilabutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.RemoverFilabutton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.RemoverFilabutton.Image = ((System.Drawing.Image)(resources.GetObject("RemoverFilabutton.Image")));
+            this.RemoverFilabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RemoverFilabutton.Location = new System.Drawing.Point(7, 207);
+            this.RemoverFilabutton.Name = "RemoverFilabutton";
+            this.RemoverFilabutton.Size = new System.Drawing.Size(136, 35);
+            this.RemoverFilabutton.TabIndex = 85;
+            this.RemoverFilabutton.Text = "Remover fila";
+            this.RemoverFilabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RemoverFilabutton.UseVisualStyleBackColor = false;
+            this.RemoverFilabutton.Click += new System.EventHandler(this.RemoverFilabutton_Click);
             // 
             // label2
             // 
@@ -185,9 +203,9 @@
             // 
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(7, 73);
+            this.dataGridView.Location = new System.Drawing.Point(20, 73);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(451, 130);
+            this.dataGridView.Size = new System.Drawing.Size(438, 130);
             this.dataGridView.TabIndex = 0;
             // 
             // ProductorComboBox
@@ -374,30 +392,12 @@
             this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // RemoverFilabutton
-            // 
-            this.RemoverFilabutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.RemoverFilabutton.FlatAppearance.BorderSize = 2;
-            this.RemoverFilabutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoverFilabutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.RemoverFilabutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RemoverFilabutton.Image = ((System.Drawing.Image)(resources.GetObject("RemoverFilabutton.Image")));
-            this.RemoverFilabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RemoverFilabutton.Location = new System.Drawing.Point(7, 207);
-            this.RemoverFilabutton.Name = "RemoverFilabutton";
-            this.RemoverFilabutton.Size = new System.Drawing.Size(136, 35);
-            this.RemoverFilabutton.TabIndex = 85;
-            this.RemoverFilabutton.Text = "Remover fila";
-            this.RemoverFilabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RemoverFilabutton.UseVisualStyleBackColor = false;
-            this.RemoverFilabutton.Click += new System.EventHandler(this.RemoverFilabutton_Click);
-            // 
             // rPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(508, 430);
+            this.ClientSize = new System.Drawing.Size(508, 434);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Usuariolabel);
             this.Controls.Add(this.pictureBox1);
