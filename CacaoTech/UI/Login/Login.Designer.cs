@@ -91,10 +91,10 @@
             this.ContraseñatextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.ContraseñatextBox.Location = new System.Drawing.Point(97, 56);
             this.ContraseñatextBox.Name = "ContraseñatextBox";
-            this.ContraseñatextBox.PasswordChar = '*';
             this.ContraseñatextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ContraseñatextBox.Size = new System.Drawing.Size(214, 25);
             this.ContraseñatextBox.TabIndex = 4;
+            this.ContraseñatextBox.UseSystemPasswordChar = true;
             // 
             // label3
             // 

@@ -40,6 +40,20 @@ namespace CacaoTech.Entidades
             Usuarios = usuarios ?? throw new ArgumentNullException(nameof(usuarios));
         }
 
+        public Prestamos(int prestamoID, DateTime fecha, int productorID, int tiempo, decimal monto, decimal balance, decimal interes, decimal total, int usuarioID)
+        {
+            PrestamoID = prestamoID;
+            Fecha = fecha;
+            ProductorID = productorID;
+            Tiempo = tiempo;
+            Monto = monto;
+            Balance = balance;
+            Interes = interes;
+            Total = total;
+            UsuarioID = usuarioID;
+        }
+
+
         public Prestamos()
         {
 

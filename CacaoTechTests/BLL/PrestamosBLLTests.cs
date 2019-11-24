@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CacaoTech.Entidades;
 
 namespace CacaoTech.BLL.Tests
 {
@@ -14,37 +15,40 @@ namespace CacaoTech.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
-            Assert.Fail();
+            Prestamos d = new Prestamos(0, DateTime.Now, 1, 10, 50000, 50000, Convert.ToDecimal(0.05), 50500, 1);
+            bool guardado = PrestamosBLL.Guardar(d);
+            Assert.AreEqual(true, guardado);
         }
 
         [TestMethod()]
         public void ModificarTest()
         {
-            Assert.Fail();
+            Prestamos d = new Prestamos(0, DateTime.Now, 1, 10, 50000, 42310, Convert.ToDecimal(0.05), 50500, 1);
+            bool guardado = PrestamosBLL.Modificar(d);
+            Assert.AreEqual(true, guardado);
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            bool realizado = PrestamosBLL.Eliminar(1);
+            Assert.AreEqual(realizado, true);
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            var realizado = PrestamosBLL.Buscar(1);
+            Assert.IsNotNull(realizado);
         }
 
         [TestMethod()]
         public void GetListTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void AfectarTablaProductoresTest()
-        {
-            Assert.Fail();
+            GenericaBLL<Prestamos> genericaBLL = new GenericaBLL<Prestamos>();
+            List<Prestamos> lista = new List<Prestamos>();
+            lista = PrestamosBLL.GetList(l => true);
+            Assert.IsNotNull(lista);
         }
     }
 }

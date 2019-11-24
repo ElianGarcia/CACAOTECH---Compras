@@ -19,6 +19,7 @@ namespace CacaoTech.UI
         {
             ID = id;
             InitializeComponent();
+            DataUsuario();
         }
 
         public void DataUsuario()

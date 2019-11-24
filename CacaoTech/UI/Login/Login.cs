@@ -57,7 +57,7 @@ namespace CacaoTech
             {
                 CacaoTech formPrincipal = new CacaoTech(usuario.UsuarioID);
                 this.Hide();
-                formPrincipal.Show();
+                formPrincipal.ShowDialog();
                 this.Close();
             }
             else
@@ -86,7 +86,6 @@ namespace CacaoTech
                 ContraseñatextBox.UseSystemPasswordChar = true;
                 ContraseñatextBox.Text = contraseña;
             }
-            
         }
 
         private void Login_Load(object sender, EventArgs e)

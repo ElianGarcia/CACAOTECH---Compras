@@ -59,6 +59,7 @@
             // 
             // PreguntatextBox
             // 
+            this.PreguntatextBox.Enabled = false;
             this.PreguntatextBox.Location = new System.Drawing.Point(16, 32);
             this.PreguntatextBox.Name = "PreguntatextBox";
             this.PreguntatextBox.Size = new System.Drawing.Size(388, 20);
