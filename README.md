@@ -63,3 +63,11 @@ En esta ventana el usuario podra consultar y modificar Cacaos, para registrar so
 ![Registro Usuarios](https://user-images.githubusercontent.com/54606147/69497970-0ee74e80-0eb9-11ea-900d-a3ca6a53a873.PNG)
 
 En esta ventana el usuario podra registrar, consultar, modificar y eliminar Uusarios, para registrar se debe llenar TODA la informacion requerida, ya que la misma es muy relevante para el tratamiento de este usuario, debe prestar atencion a la pregunta y respuesta de seguridad, ya que la misma servira a la hora de restablecerla.
+
+
+
+# Contacto
+Para contactar con el programador, sirvase enviar un correo a: eliangarciarguez@gmail.com, responderemos con la mayor brevedad posible.
+
+# "Es ridículo vivir 100 años y sólo ser capaces de recordar 30 millones de bytes. O sea, menos que un compact disc. La condición humana se hace más obsoleta cada minuto"
+-- Marvin Minsky
