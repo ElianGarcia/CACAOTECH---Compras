@@ -16,8 +16,8 @@ namespace CacaoTech.BLL.Tests
         public void GuardarTest()
         {
             Prestamos d = new Prestamos(0, DateTime.Now, 1, 10, 50000, 50000, Convert.ToDecimal(0.05), 50500, 1);
-            bool guardado = PrestamosBLL.Guardar(d);
-            Assert.AreEqual(true, guardado);
+            bool saved = PrestamosBLL.Guardar(d);
+            Assert.AreEqual(true, saved);
         }
 
         [TestMethod()]
