@@ -33,6 +33,15 @@ namespace CacaoTech.Entidades
             PagosDetalle = pagosDetalle ?? throw new ArgumentNullException(nameof(pagosDetalle));
         }
 
+        public Pagos(int pagoID, int productorID, int prestamoID, int usuarioID, List<PagosDetalle> pagosDetalle)
+        {
+            PagoID = pagoID;
+            ProductorID = productorID;
+            PrestamoID = prestamoID;
+            UsuarioID = usuarioID;
+            PagosDetalle = pagosDetalle ?? throw new ArgumentNullException(nameof(pagosDetalle));
+        }
+
         public Pagos()
         {
 
