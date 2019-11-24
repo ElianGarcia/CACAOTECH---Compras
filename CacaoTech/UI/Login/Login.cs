@@ -75,7 +75,23 @@ namespace CacaoTech
 
         private void VerContraseñabutton_Click(object sender, EventArgs e)
         {
-            ContraseñatextBox.UseSystemPasswordChar = false;
+            string contraseña = ContraseñatextBox.Text;
+            if (VerContraseñacheckBox.Checked)
+            {
+                ContraseñatextBox.UseSystemPasswordChar = false;
+                ContraseñatextBox.Text = contraseña;
+            }
+            else
+            {
+                ContraseñatextBox.UseSystemPasswordChar = true;
+                ContraseñatextBox.Text = contraseña;
+            }
+            
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

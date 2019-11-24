@@ -79,10 +79,10 @@
     <Compile Include="CacaoTech.Designer.cs">
       <DependentUpon>CacaoTech.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="UI\Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="UI\Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -122,10 +122,10 @@
     <Compile Include="UI\Consultas\cRecepciones.Designer.cs">
       <DependentUpon>cRecepciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\RecuperarContraseña.cs">
+    <Compile Include="UI\Login\RecuperarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\RecuperarContraseña.Designer.cs">
+    <Compile Include="UI\Login\RecuperarContraseña.Designer.cs">
       <DependentUpon>RecuperarContraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rCacao.cs">
@@ -227,7 +227,7 @@
     <EmbeddedResource Include="CacaoTech.resx">
       <DependentUpon>CacaoTech.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="UI\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -250,7 +250,7 @@
     <EmbeddedResource Include="UI\Consultas\cRecepciones.resx">
       <DependentUpon>cRecepciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\RecuperarContraseña.resx">
+    <EmbeddedResource Include="UI\Login\RecuperarContraseña.resx">
       <DependentUpon>RecuperarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCacao.resx">

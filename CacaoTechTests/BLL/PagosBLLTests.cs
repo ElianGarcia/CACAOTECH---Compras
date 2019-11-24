@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CacaoTech.Entidades;
 
 namespace CacaoTech.BLL.Tests
 {
@@ -12,15 +13,9 @@ namespace CacaoTech.BLL.Tests
     public class PagosBLLTests
     {
         [TestMethod()]
-        public void afectarPrestamosTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void GuardarTest()
         {
-            Assert.Fail();
+            Pagos pagos = new Pagos(1, 1, null, 1, 1, null, )
         }
 
         [TestMethod()]
