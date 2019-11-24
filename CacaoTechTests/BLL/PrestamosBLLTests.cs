@@ -38,8 +38,8 @@ namespace CacaoTech.BLL.Tests
         [TestMethod()]
         public void BuscarTest()
         {
-            var realizado = PrestamosBLL.Buscar(1);
-            Assert.IsNotNull(realizado);
+            var encontrado = PrestamosBLL.Buscar(1);
+            Assert.IsNotNull(encontrado);
         }
 
         [TestMethod()]
