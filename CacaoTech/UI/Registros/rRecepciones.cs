@@ -42,7 +42,7 @@ namespace CacaoTech.UI.Registros
         {
             Recepciones recepcion = new Recepciones();
             recepcion.RecepcionID = ToInt(IDnumericUpDown.Value.ToString());
-            recepcion.Fecha = FechadateTimePicker.Value;
+            recepcion.Fecha = FechadateTimePicker.Value.Date;
             recepcion.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
             recepcion.Cantidad = ToDecimal(CantidadtextBox.Text);
             recepcion.UsuarioID = UsuarioID;

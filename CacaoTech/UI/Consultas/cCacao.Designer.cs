@@ -34,10 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
-            this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Imrimirbutton = new System.Windows.Forms.Button();
             this.btConsulta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
@@ -62,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(188, 6);
+            this.label1.Location = new System.Drawing.Point(8, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 19);
@@ -89,10 +85,10 @@
             "Todo",
             "ID",
             "Nombre"});
-            this.FiltroComboBox.Location = new System.Drawing.Point(190, 26);
+            this.FiltroComboBox.Location = new System.Drawing.Point(9, 26);
             this.FiltroComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.FiltroComboBox.Name = "FiltroComboBox";
-            this.FiltroComboBox.Size = new System.Drawing.Size(92, 25);
+            this.FiltroComboBox.Size = new System.Drawing.Size(273, 25);
             this.FiltroComboBox.TabIndex = 3;
             // 
             // CriterioTextBox
@@ -105,51 +101,6 @@
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(222, 25);
             this.CriterioTextBox.TabIndex = 4;
-            // 
-            // DesdeDateTimePicker
-            // 
-            this.DesdeDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.DesdeDateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(11, 26);
-            this.DesdeDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
-            this.DesdeDateTimePicker.Size = new System.Drawing.Size(84, 25);
-            this.DesdeDateTimePicker.TabIndex = 6;
-            // 
-            // HastaDateTimePicker
-            // 
-            this.HastaDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.HastaDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.HastaDateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(99, 26);
-            this.HastaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.HastaDateTimePicker.Name = "HastaDateTimePicker";
-            this.HastaDateTimePicker.Size = new System.Drawing.Size(85, 25);
-            this.HastaDateTimePicker.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(97, 6);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 19);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Hasta";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(8, 6);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 19);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Desde";
             // 
             // Imrimirbutton
             // 
@@ -196,10 +147,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(640, 436);
             this.Controls.Add(this.Imrimirbutton);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.HastaDateTimePicker);
-            this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.btConsulta);
             this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.FiltroComboBox);
@@ -225,10 +172,6 @@
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Button btConsulta;
-        private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
-        private System.Windows.Forms.DateTimePicker HastaDateTimePicker;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Imrimirbutton;
     }
 }

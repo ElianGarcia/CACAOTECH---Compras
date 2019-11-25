@@ -143,6 +143,13 @@ namespace CacaoTech.BLL
                 if(pago != null)
                 {
                     pago.PagosDetalle.Count();
+
+                    foreach (var item in pago.PagosDetalle)
+                    {
+                        string s = item.PrestamoID.ToString();
+                        string ss = item.Prestamos.PrestamoID.ToString();
+                    }
+
                 }
             }
             catch (Exception)

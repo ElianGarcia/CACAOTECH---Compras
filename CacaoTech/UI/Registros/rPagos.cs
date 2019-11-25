@@ -31,7 +31,7 @@ namespace CacaoTech.UI.Registros
             InitializeComponent();
             ProductorComboBox.SelectedValue = 1;
             this.PagosDetalles = new List<PagosDetalle>();
-            CargarGrid();
+            //CargarGrid();
             LlenarCombos();
             UsuarioID = usuarioID;
             BuscarUsuario(usuarioID);
@@ -77,7 +77,7 @@ namespace CacaoTech.UI.Registros
             pago.PagosDetalle = this.PagosDetalles;
             pago.productores = genericaProductorBLL.Buscar(ToInt(IDnumericUpDown.Value.ToString()));
             pago.UsuarioID = UsuarioID;
-
+            pago.Total = ToDecimal(TotaltextBox.Text);
             return pago;
         }
 
@@ -91,6 +91,7 @@ namespace CacaoTech.UI.Registros
             FechadateTimePicker.Value = DateTime.Now;
             BalancetextBox.Text = productor.Balance.ToString();
             dataGridView.DataSource = pago.PagosDetalle;
+            TotaltextBox.Text = pago.Total.ToString();
         }
 
         public void LlenarCombos()
@@ -101,6 +102,39 @@ namespace CacaoTech.UI.Registros
             ProductorComboBox.DataSource = lista;
             ProductorComboBox.DisplayMember = "Nombres";
             ProductorComboBox.ValueMember = "ProductorID";
+        }
+
+        private void LlenaTotal()
+        {
+            List<PagosDetalle> detalle = new List<PagosDetalle>();
+            if (dataGridView.DataSource != null)
+            {
+                detalle = (List<PagosDetalle>)dataGridView.DataSource;
+            }
+
+            decimal total = 0;
+            foreach (var item in detalle)
+            {
+                total += item.Pagado;
+            }
+            TotaltextBox.Text = total.ToString();
+        }
+
+        private void MenosTotal()
+        {
+            List<PagosDetalle> detalle = new List<PagosDetalle>();
+            if (dataGridView.DataSource != null)
+            {
+                detalle = (List<PagosDetalle>)dataGridView.DataSource;
+            }
+
+            decimal total = 0;
+            foreach (var item in detalle)
+            {
+                total -= item.Pagado;
+            }
+            total *= (-1);
+            TotaltextBox.Text = total.ToString();
         }
 
         public void LlenarComboPrestamos(int id)
@@ -147,6 +181,8 @@ namespace CacaoTech.UI.Registros
             BalancetextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
+            TotaltextBox.Text = string.Empty;
+            dataGridView.DataSource = null;
             
             errorProvider.Clear();
         }
@@ -248,7 +284,7 @@ namespace CacaoTech.UI.Registros
         private void rDeposito_Load(object sender, EventArgs e)
         {
             LlenarCombos();
-            CargarGrid();
+            //CargarGrid();
         }
 
         private void ProductorescomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -332,7 +368,7 @@ namespace CacaoTech.UI.Registros
             this.PagosDetalles.Add(
                 new PagosDetalle(
                     prestamoID: id,
-                    fecha: FechadateTimePicker.Value,
+                    fecha: FechadateTimePicker.Value.Date,
                     balance: ToDecimal(BalancetextBox.Text),
                     pagado: ToDecimal(CantidadtextBox.Text)
                     )
@@ -340,8 +376,9 @@ namespace CacaoTech.UI.Registros
 
             CargarGrid();
             CantidadtextBox.Clear();
-            Total += ToDecimal(CantidadtextBox.Text);
-            TotaltextBox.Text = Total.ToString();
+            LlenaTotal();
+            //Total += ToDecimal(CantidadtextBox.Text);
+            //TotaltextBox.Text = Total.ToString();
         }
 
         private bool ValidarCantidad()
@@ -406,6 +443,7 @@ namespace CacaoTech.UI.Registros
 
                     this.PagosDetalles.RemoveAt(dataGridView.CurrentRow.Index);
                     CargarGrid();
+                    MenosTotal();
                 }
             }
         }
@@ -422,6 +460,11 @@ namespace CacaoTech.UI.Registros
 
             PagosDetalleViewer viewer = new PagosDetalleViewer(pagos);
             viewer.ShowDialog();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

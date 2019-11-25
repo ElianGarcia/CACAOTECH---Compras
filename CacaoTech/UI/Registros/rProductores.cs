@@ -40,6 +40,7 @@ namespace CacaoTech.UI.Registros
             ApellidostextBox.Text = string.Empty;
             EmailtextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
+            FechadateTimePicker.Value = DateTime.Now;
             TelefonomaskedTextBox.Text = string.Empty;
             CelularmaskedTextBox.Text = string.Empty;
             CedulamaskedTextBox.Text = string.Empty;
@@ -68,6 +69,7 @@ namespace CacaoTech.UI.Registros
             productor.Cedula = CedulamaskedTextBox.Text;
             productor.Balance = ToDecimal(BalancetextBox.Text);
             productor.UsuarioID = UsuarioID;
+            productor.Fecha = FechadateTimePicker.Value.Date;
 
             if(AmbulanteradioButton.Checked)
             {
@@ -100,6 +102,7 @@ namespace CacaoTech.UI.Registros
             CelularmaskedTextBox.Text = productor.Celular;
             CedulamaskedTextBox.Text = productor.Cedula;
             BalancetextBox.Text = productor.Balance.ToString();
+            FechadateTimePicker.Value = productor.Fecha;
 
             if (productor.Tipo)
             {

@@ -150,7 +150,7 @@ namespace CacaoTech.UI.Registros
             Prestamos prestamo = new Prestamos();
             prestamo.PrestamoID = ToInt(IDnumericUpDown.Value.ToString());
             prestamo.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
-            prestamo.Fecha = FechadateTimePicker.Value;
+            prestamo.Fecha = FechadateTimePicker.Value.Date;
             prestamo.Monto = ToDecimal(MontotextBox.Text);
             prestamo.Balance = ToDecimal(BalancetextBox.Text);
             prestamo.Interes = ToDecimal(InterestextBox.Text);

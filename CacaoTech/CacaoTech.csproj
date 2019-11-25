@@ -348,17 +348,17 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{b4be1483-9e79-4f70-b3f5-01b3ff605e39}</Project>
-      <Name>BLL</Name>
+    <ProjectReference Include="..\Entities\Entidades.csproj">
+      <Project>{0049792E-0622-49CC-9A35-3E0D7A0331CC}</Project>
+      <Name>Entidades</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{7395bd89-62f8-4606-b362-b1604fa744ab}</Project>
+    <ProjectReference Include="..\LAD\DAL.csproj">
+      <Project>{95A9DA53-7E3D-4727-B7CD-41309A09C12F}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{e0378bcd-4f1b-4f09-b2c6-0f3d847af238}</Project>
-      <Name>Entidades</Name>
+    <ProjectReference Include="..\llb\BLL.csproj">
+      <Project>{CBFE4231-CE25-450D-B4C5-1030B0658C8A}</Project>
+      <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
