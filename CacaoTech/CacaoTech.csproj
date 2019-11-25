@@ -194,6 +194,12 @@
       <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\Reportes\PagosDetalleViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\PagosDetalleViewer.Designer.cs">
+      <DependentUpon>PagosDetalleViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\PagosReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListProductores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\Recibo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recibo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Reportes\UsuariosReportViewer.cs">
@@ -290,6 +302,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\PagosDetalleViewer.resx">
+      <DependentUpon>PagosDetalleViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\PagosReportViewer.resx">
       <DependentUpon>PagosReportViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +317,10 @@
     <EmbeddedResource Include="UI\Reportes\ListProductores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListProductores.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\Recibo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Recibo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\UsuariosReportViewer.resx">
       <DependentUpon>UsuariosReportViewer.cs</DependentUpon>

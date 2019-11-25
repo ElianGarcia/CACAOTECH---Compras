@@ -201,5 +201,13 @@ namespace CacaoTech
                     MessageBoxIcon.Information);
             }
         }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login form = new Login();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
     }
 }

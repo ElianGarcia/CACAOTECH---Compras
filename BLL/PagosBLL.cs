@@ -38,6 +38,7 @@ namespace CacaoTech.BLL
             
             finally
             {
+                genericaPrestamosBLL.Dispose();
                 db.Dispose();
             }
             
@@ -52,6 +53,7 @@ namespace CacaoTech.BLL
 
                 GenericaBLL<Productores> genericaProductoresBLL = new GenericaBLL<Productores>();
                 var productor = genericaProductoresBLL.Buscar(pagos.ProductorID);
+                genericaProductoresBLL.Dispose();
                 Contexto db = new Contexto();
                 
                 foreach (var item in pagos.PagosDetalle)
@@ -84,13 +86,14 @@ namespace CacaoTech.BLL
 
             try
             {
-                var Anterior = PagosBLL.Buscar(pago.PagoID);
+                var Anterior = Buscar(pago.PagoID);
+                //afectarPrestamos(pago);
                 foreach (var item in Anterior.PagosDetalle)
                 {
                     if (!pago.PagosDetalle.Exists(d => d.PagosDetalleID == item.PagosDetalleID))
                         db.Entry(item).State = EntityState.Deleted;
                 }
-                db.Entry(pago).State = EntityState.Modified;
+                db.Entry(pago).State = EntityState.Added;
                 realizado = (db.SaveChanges() > 0);
             }
             catch (Exception)

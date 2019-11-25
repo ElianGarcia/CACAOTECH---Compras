@@ -66,6 +66,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.RemoverFilabutton);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TotaltextBox);
@@ -87,6 +88,7 @@
             // 
             // RemoverFilabutton
             // 
+            this.RemoverFilabutton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RemoverFilabutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.RemoverFilabutton.FlatAppearance.BorderSize = 2;
             this.RemoverFilabutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -105,6 +107,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(249, 212);
@@ -115,6 +118,7 @@
             // 
             // TotaltextBox
             // 
+            this.TotaltextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TotaltextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.TotaltextBox.Location = new System.Drawing.Point(345, 209);
             this.TotaltextBox.Name = "TotaltextBox";
@@ -124,6 +128,7 @@
             // 
             // PrestamoComboBox
             // 
+            this.PrestamoComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PrestamoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PrestamoComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.PrestamoComboBox.FormattingEnabled = true;
@@ -135,6 +140,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(17, 21);
@@ -145,6 +151,7 @@
             // 
             // AgregarPagobutton
             // 
+            this.AgregarPagobutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.AgregarPagobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.AgregarPagobutton.FlatAppearance.BorderSize = 2;
             this.AgregarPagobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -162,6 +169,7 @@
             // 
             // CantidadtextBox
             // 
+            this.CantidadtextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CantidadtextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.CantidadtextBox.Location = new System.Drawing.Point(286, 42);
             this.CantidadtextBox.Name = "CantidadtextBox";
@@ -172,6 +180,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(282, 20);
@@ -182,6 +191,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(159, 21);
@@ -192,6 +202,7 @@
             // 
             // BalancetextBox
             // 
+            this.BalancetextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BalancetextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.BalancetextBox.Location = new System.Drawing.Point(163, 42);
             this.BalancetextBox.Name = "BalancetextBox";
@@ -201,6 +212,7 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(20, 73);
@@ -210,6 +222,7 @@
             // 
             // ProductorComboBox
             // 
+            this.ProductorComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ProductorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductorComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.ProductorComboBox.FormattingEnabled = true;
@@ -221,6 +234,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(15, 56);
@@ -231,6 +245,7 @@
             // 
             // FechadateTimePicker
             // 
+            this.FechadateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.FechadateTimePicker.CalendarFont = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechadateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
@@ -242,6 +257,7 @@
             // 
             // IDnumericUpDown
             // 
+            this.IDnumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.IDnumericUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.IDnumericUpDown.Location = new System.Drawing.Point(100, 19);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
@@ -250,6 +266,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(294, 20);
@@ -260,6 +277,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(15, 21);
@@ -275,6 +293,7 @@
             // 
             // Usuariolabel
             // 
+            this.Usuariolabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Usuariolabel.AutoSize = true;
             this.Usuariolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.Usuariolabel.Location = new System.Drawing.Point(41, 414);
@@ -284,6 +303,7 @@
             // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Imprimirbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Imprimirbutton.FlatAppearance.BorderSize = 2;
             this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -301,6 +321,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(15, 413);
             this.pictureBox1.Name = "pictureBox1";
@@ -310,6 +331,7 @@
             // 
             // Eliminarbutton
             // 
+            this.Eliminarbutton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Eliminarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Eliminarbutton.FlatAppearance.BorderSize = 2;
             this.Eliminarbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(235)))), ((int)(((byte)(198)))));
@@ -328,6 +350,7 @@
             // 
             // Guardarbutton
             // 
+            this.Guardarbutton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Guardarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Guardarbutton.FlatAppearance.BorderSize = 2;
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -345,6 +368,7 @@
             // 
             // Nuevobutton
             // 
+            this.Nuevobutton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Nuevobutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Nuevobutton.FlatAppearance.BorderSize = 2;
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -362,6 +386,7 @@
             // 
             // RegistrarProductoresbutton
             // 
+            this.RegistrarProductoresbutton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RegistrarProductoresbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.RegistrarProductoresbutton.FlatAppearance.BorderSize = 2;
             this.RegistrarProductoresbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -378,6 +403,7 @@
             // 
             // Buscarbutton
             // 
+            this.Buscarbutton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Buscarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.Buscarbutton.FlatAppearance.BorderSize = 2;
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

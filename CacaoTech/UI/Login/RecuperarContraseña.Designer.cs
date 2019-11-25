@@ -42,44 +42,53 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.Size = new System.Drawing.Size(154, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pregunta de Seguridad:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(13, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(75, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Respuesta:";
             // 
             // PreguntatextBox
             // 
             this.PreguntatextBox.Enabled = false;
+            this.PreguntatextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.PreguntatextBox.Location = new System.Drawing.Point(16, 32);
             this.PreguntatextBox.Name = "PreguntatextBox";
-            this.PreguntatextBox.Size = new System.Drawing.Size(388, 20);
+            this.PreguntatextBox.Size = new System.Drawing.Size(388, 25);
             this.PreguntatextBox.TabIndex = 2;
             // 
             // RespuestatextBox
             // 
+            this.RespuestatextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.RespuestatextBox.Location = new System.Drawing.Point(16, 72);
             this.RespuestatextBox.Name = "RespuestatextBox";
-            this.RespuestatextBox.Size = new System.Drawing.Size(388, 20);
+            this.RespuestatextBox.Size = new System.Drawing.Size(388, 25);
             this.RespuestatextBox.TabIndex = 3;
             // 
             // Recuperarbutton
             // 
-            this.Recuperarbutton.Location = new System.Drawing.Point(168, 112);
+            this.Recuperarbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.Recuperarbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Recuperarbutton.FlatAppearance.BorderSize = 2;
+            this.Recuperarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Recuperarbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Recuperarbutton.Location = new System.Drawing.Point(152, 103);
             this.Recuperarbutton.Name = "Recuperarbutton";
-            this.Recuperarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Recuperarbutton.Size = new System.Drawing.Size(91, 32);
             this.Recuperarbutton.TabIndex = 4;
             this.Recuperarbutton.Text = "Recuperar";
-            this.Recuperarbutton.UseVisualStyleBackColor = true;
+            this.Recuperarbutton.UseVisualStyleBackColor = false;
             this.Recuperarbutton.Click += new System.EventHandler(this.Recuperarbutton_Click);
             // 
             // errorProvider
@@ -90,6 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(418, 148);
             this.Controls.Add(this.Recuperarbutton);
             this.Controls.Add(this.RespuestatextBox);

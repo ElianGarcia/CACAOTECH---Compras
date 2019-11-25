@@ -41,11 +41,12 @@ namespace CacaoTech.UI.Registros
         public Recepciones LlenaClase()
         {
             Recepciones recepcion = new Recepciones();
-            recepcion.RecepcionID = Convert.ToInt32(IDnumericUpDown.Value);
+            recepcion.RecepcionID = ToInt(IDnumericUpDown.Value.ToString());
             recepcion.Fecha = FechadateTimePicker.Value;
-            recepcion.ProductorID = ProductorescomboBox.SelectedIndex;
+            recepcion.ProductorID = ToInt(ProductorescomboBox.SelectedValue.ToString());
             recepcion.Cantidad = ToDecimal(CantidadtextBox.Text);
             recepcion.UsuarioID = UsuarioID;
+            recepcion.CacaoID = ToInt(TipoCacaocomboBox.SelectedValue.ToString()); 
 
             return recepcion;
         }
@@ -57,6 +58,7 @@ namespace CacaoTech.UI.Registros
             TipoCacaocomboBox.Text = string.Empty;
             FechadateTimePicker.Value = recepcion.Fecha;
             CantidadtextBox.Text = string.Empty;
+            TipoCacaocomboBox.SelectedValue = recepcion.CacaoID;
         }
 
         public void LlenarCombos()
@@ -163,6 +165,18 @@ namespace CacaoTech.UI.Registros
             {
                 errorProvider.SetError(IDnumericUpDown, obligatorio);
                 IDnumericUpDown.Focus();
+                validado = false;
+            }
+            if (string.IsNullOrWhiteSpace(CantidadtextBox.Text))
+            {
+                errorProvider.SetError(CantidadtextBox, obligatorio);
+                CantidadtextBox.Focus();
+                validado = false;
+            }
+            if (string.IsNullOrWhiteSpace(PreciotextBox.Text))
+            {
+                errorProvider.SetError(PreciotextBox, "Seleccione un tipo de cacao");
+                TipoCacaocomboBox.Focus();
                 validado = false;
             }
 
