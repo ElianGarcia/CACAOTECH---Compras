@@ -75,9 +75,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CacaoTech\CacaoTech.csproj">
-      <Project>{2F240D19-9EC3-439E-8892-8DECEBD119A9}</Project>
-      <Name>CacaoTech</Name>
+    <ProjectReference Include="..\Entities\Entidades.csproj">
+      <Project>{0049792e-0622-49cc-9a35-3e0d7a0331cc}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LAD\DAL.csproj">
+      <Project>{95a9da53-7e3d-4727-b7cd-41309a09c12f}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\llb\BLL.csproj">
+      <Project>{cbfe4231-ce25-450d-b4c5-1030b0658c8a}</Project>
+      <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

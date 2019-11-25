@@ -18,7 +18,7 @@ namespace CacaoTech.BLL.Tests
             PagosDetalle pagosDetalle = new PagosDetalle(1, DateTime.Now, 5000, 5200);
             List<PagosDetalle> list = new List<PagosDetalle>();
             list.Add(pagosDetalle);
-            Pagos pagos = new Pagos(1, 1, 1, 1, list);
+            Pagos pagos = new Pagos(1, 1, 1, 1, 5200, list);
             bool realizado = PagosBLL.Guardar(pagos);
             Assert.AreEqual(true, realizado);
         }
