@@ -15,7 +15,7 @@ el programa intentara iniciar sesion con los datos suministrados, en caso de est
 no concedera el paso, cuando se hayan digitado correctamente los datos y pulsado el boton LOGIN, el programa abrira la ventana principal.
 En caso de que el usuario haya olvidado su contraseña, puede darle clic a la pregunta que esta debajo del boton LOGIN donde se le abrira 
 la siguiente ventana.
-
+La contraseña para el usuario Administrador es: CACAOTECH.
 
 
 # Recuperar Contraseña
