@@ -43,7 +43,7 @@ En esta ventana el usuario podra registrar, consultar, modificar y eliminar Prod
 # Registro de Prestamos
 ![Registro Prestamos](https://user-images.githubusercontent.com/54606147/69497540-9088ad80-0eb4-11ea-9f30-20588f2a01f0.PNG)
 
-En esta ventana el usuario podra registrar, consultar, modificar y eliminar prestamos a los Productores, para registrar solo debe seleccionar el productor al que se le acreditara el prestamo, digitar el monto del prestamo, la cantidad de meses y lo demas se calculara automaticamente.
+En esta ventana el usuario podra registrar, consultar, modificar y eliminar prestamos a los Productores, para registrar solo debe seleccionar el productor al que se le acreditara el prestamo, el cual deberá estar registrado desde el registro de productores y marcado de tipo fijo, digitar el monto del prestamo, la cantidad de meses y lo demas se calculara automaticamente ya que utilizamos una taza fija de 5%.
 
 
 
@@ -70,4 +70,4 @@ En esta ventana el usuario podra registrar, consultar, modificar y eliminar Usua
 Para contactar con el programador, sirvase enviar un correo a: eliangarciarguez@gmail.com, responderemos con la mayor brevedad posible.
 
 # "Es ridículo vivir 100 años y sólo ser capaces de recordar 30 millones de bytes. O sea, menos que un compact disc. La condición humana se hace más obsoleta cada minuto"
--- Marvin Minsky
+## Marvin Minsky
